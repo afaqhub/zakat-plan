@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f6f3ec">
+<meta name="theme-color" content="#0c1e33">
 <title>التخطيط الزكوي: حكمه وأثره — منصة تفاعلية</title>
 <meta name="description" content="منصة تفاعلية تقرّب بحث أ.د. حسن بن صالح القرني «التخطيط الزكوي: حكمه وأثره». إهداء من جهاد بن جمال حولدار.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,9 +36,12 @@ h1,h2,h3{font-family:var(--ffh)}
 
 /* الإهداء */
 .ded{background:var(--navy);color:#e9eef3;text-align:center;padding:7px 12px 8px;line-height:1.55}
-.ded span{display:block;font-size:.84rem;font-weight:700}
-.ded span+span{color:#f0d79a}
-.ded small{display:block;font-size:.7rem;opacity:.75;margin-top:1px}
+.ded{padding:9px 12px 8px}
+.ded span{display:block}
+.ded .t{font-size:.72rem;opacity:.8}
+.ded .pt{font-family:var(--ffh);font-size:1.12rem;font-weight:700;color:#f0d79a;line-height:1.5}
+.ded .au{font-size:.86rem;font-weight:700}
+.ded small{display:block;font-size:.66rem;opacity:.55;margin-top:4px;padding-top:4px;border-top:1px solid rgba(240,215,154,.18)}
 
 /* الترويسة */
 header.top{position:sticky;top:0;z-index:70;background:var(--bg);border-bottom:1px solid var(--line)}
@@ -298,11 +301,340 @@ h3:before{content:"";position:absolute;inset-inline-start:0;top:.55em;width:7px;
 .sp.on>.card:first-child,.sp.on>.note:first-child{animation:fade .35s}
 html[data-theme="dark"] .phead{background:linear-gradient(160deg,#0a1d31 0%,#10304f 120%)}
 
+/* ===== تحسينات بصرية v3 ===== */
+@keyframes drift{from{background-position:0 0}to{background-position:64px 64px}}
+.hero:before,.phead:before{animation:drift 30s linear infinite}
+.phead[data-c="afham"]{background:linear-gradient(160deg,#0e4d4a 0%,#0f2a47 120%)}
+.phead[data-c="mawaqif"]{background:linear-gradient(160deg,#5a3d12 0%,#0f2a47 120%)}
+.phead[data-c="hukm"]{background:linear-gradient(160deg,#4a1f2a 0%,#0f2a47 115%)}
+.phead[data-c="jarrib"]{background:linear-gradient(160deg,#1d4d2c 0%,#0f2a47 120%)}
+.phead[data-c="quiz"]{background:linear-gradient(160deg,#3a2a5c 0%,#0f2a47 120%)}
+.phead[data-c="about"]{background:linear-gradient(160deg,#6a4f14 0%,#0f2a47 120%)}
+/* ظهور عند التمرير */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.rv.in{opacity:1;transform:none}
+/* تموج اللمس */
+.btn,.opt,.entry button,.nd{position:relative;overflow:hidden}
+.rip{position:absolute;border-radius:50%;background:currentColor;opacity:.18;transform:scale(0);animation:rip .55s ease-out;pointer-events:none}
+@keyframes rip{to{transform:scale(3.2);opacity:0}}
+/* خرائط SVG */
+.svgmap{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:20px;padding:12px 10px 8px;margin:12px 0;box-shadow:var(--shadow)}
+.svgmap .mh{display:flex;align-items:center;gap:8px;font-weight:700;font-family:var(--ffh);font-size:1.1rem;padding:0 6px}
+.svgmap .mh small{font-family:var(--ff);font-weight:400;font-size:.75rem;color:var(--muted);margin-inline-start:auto}
+.svgmap svg{width:100%;height:auto;display:block;overflow:visible}
+.svgmap text{font-family:var(--ff);fill:var(--ink)}
+.svgmap .ln{fill:none;stroke:var(--line);stroke-width:2.2;stroke-linecap:round}
+.svgmap .flow{fill:none;stroke:var(--gold);stroke-width:2.2;stroke-dasharray:6 8;animation:dash 1.6s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-28}}
+.svgmap .draw{stroke-dasharray:400;stroke-dashoffset:400;transition:stroke-dashoffset 1.4s ease}
+.svgmap.in .draw{stroke-dashoffset:0}
+.svgmap g.n{cursor:pointer;transition:transform .2s}
+.svgmap g.n:active{transform:scale(.96)}
+.svgmap g.n rect,.svgmap g.n circle{transition:.25s}
+.svgmap .cap{font-size:.7rem;fill:var(--muted);text-align:center}
+.svgmap .hint{font-size:.75rem;color:var(--muted);text-align:center;margin-top:4px}
+@keyframes pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+.svgmap.in g.n{animation:pop .45s backwards}
+.jprog{display:flex;align-items:center;gap:8px;padding:2px 8px 4px;font-size:.82rem;color:var(--muted)}
+.jprog .bar2{flex:1;height:6px;border-radius:6px;background:var(--line);overflow:hidden}
+.jprog .bar2 b{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--accent));width:0;transition:width .8s}
+/* شريط خريطة البحث */
+.spine{display:flex;gap:4px;margin:8px 4px 4px;direction:rtl}
+.spine button{border:0;border-radius:10px;color:#fff;padding:10px 2px 8px;font-size:.66rem;white-space:normal;word-break:keep-all;min-width:56px !important;font-weight:700;line-height:1.35;min-width:0;transition:transform .2s,filter .2s}
+.spine button small{display:block;font-weight:400;opacity:.85;font-size:.6rem;white-space:nowrap;direction:rtl;unicode-bidi:plaintext}
+.spine button:active{transform:translateY(2px);filter:brightness(1.1)}
+/* فاصل زخرفي */
+.orn{display:flex;align-items:center;gap:10px;margin:22px 0 10px;color:var(--gold)}
+.orn:before,.orn:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.orn svg{width:22px;height:22px}
+/* حلقة النتيجة */
+.ring{display:grid;place-items:center;position:relative;width:150px;height:150px;margin:4px auto 8px}
+.ring svg{position:absolute;inset:0;transform:rotate(-90deg)}
+.ring .v{font-size:2.2rem;font-weight:700;color:var(--accent);font-family:var(--ff)}
+.burst{position:absolute;width:8px;height:8px;background:var(--gold);transform:rotate(45deg);animation:burst 1s ease-out forwards;opacity:0}
+@keyframes burst{0%{opacity:1;transform:translate(0,0) rotate(45deg) scale(1)}100%{opacity:0;transform:translate(var(--x),var(--y)) rotate(225deg) scale(.4)}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.hero:before,.phead:before,.svgmap .flow{animation:none}}
+/* =====================================================================
+   v4 — لغة بصرية جديدة
+   الهوية: كحلي عميق + بترولي + زيتي، ولمسات نحاسية/ذهبية، وورق فاتح بارد
+   أربعة أنماط بحسب المحتوى:
+   (1) المفاهيم «تحريري»  (2) المواقف «ملف حالة»  (3) الأحكام «لوح الحكم»  (4) الأدوات والاختبار «طاولة عمل»
+   ===================================================================== */
+:root{
+  --bg:#eef0ee; --card:#fbfbf8; --ink:#16212c; --muted:#5d6874; --line:#d9ddd8;
+  --navy:#0c1e33; --navy2:#16334f; --petrol:#0d4b55; --olive:#56622f; --copper:#a8683a; --gold:#c39a45; --ivory:#f6f1e4;
+  --accent:#0d6b73; --soft:#e2ecea; --soft2:#e9edf1;
+  --shadow:0 1px 1px rgba(12,30,51,.04),0 10px 30px -12px rgba(12,30,51,.22);
+  --hair:rgba(195,154,69,.55);
+}
+html[data-theme="dark"]{
+  --bg:#09141f; --card:#0f1d2b; --ink:#e8edf1; --muted:#9fb0bd; --line:#21344a;
+  --navy:#061220; --navy2:#10283f; --petrol:#0b3a43; --olive:#3f4a22; --copper:#d0935f; --gold:#d8b25e; --ivory:#1a2a3a;
+  --accent:#4cc3c0; --soft:#11302f; --soft2:#13263a;
+}
+body{
+  background:
+    radial-gradient(1200px 500px at 110% -10%,rgba(13,75,85,.10),transparent 60%),
+    radial-gradient(900px 500px at -20% 30%,rgba(195,154,69,.08),transparent 60%),
+    var(--bg);
+  background-attachment:fixed;
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%230c1e33' stroke-width='1'%3E%3Cpath d='M48 8l11 29 29 11-29 11-11 29-11-29L8 48l29-11z'/%3E%3Crect x='30' y='30' width='36' height='36' transform='rotate(45 48 48)'/%3E%3C/g%3E%3C/svg%3E");background-size:96px}
+html[data-theme="dark"] body:before{filter:invert(1);opacity:.04}
+main,header,nav,.ded{position:relative;z-index:1}
+
+/* ---------- الإهداء والترويسة: كتلة داكنة واحدة ---------- */
+.ded{background:linear-gradient(180deg,#081627,#0c1e33);border-bottom:0}
+.ded .pt{letter-spacing:.2px;text-shadow:0 1px 12px rgba(195,154,69,.25)}
+header.top{background:rgba(12,30,51,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.brand h1{color:#fff}.brand small{color:#c9d3dc}
+.mark{background:linear-gradient(145deg,#c39a45,#8a5a2b);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.mark svg{stroke:#0c1e33 !important}
+.ib{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+.ib svg{stroke:#e8edf1}
+.ib:active{background:rgba(195,154,69,.25)}
+
+/* ---------- شريط التبويبات السفلي ---------- */
+nav.tabs{background:#0c1e33;border-top:1px solid var(--hair);box-shadow:0 -10px 30px rgba(6,18,32,.35)}
+nav.tabs button{color:#93a5b6;position:relative;border-radius:0;background:none !important}
+nav.tabs button svg{transition:transform .25s}
+nav.tabs button.on{color:#f0d79a}
+nav.tabs button.on svg{transform:translateY(-2px)}
+nav.tabs button:before{content:"";position:absolute;top:-5px;left:30%;right:30%;height:3px;border-radius:0 0 4px 4px;background:var(--gold);transform:scaleX(0);transition:transform .3s}
+nav.tabs button.on:before{transform:scaleX(1)}
+
+/* ---------- انتقال الأقسام ---------- */
+section.pg.on{animation:secIn .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes secIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.sp.on{animation:secIn .35s cubic-bezier(.2,.7,.2,1)}
+
+/* ---------- رؤوس الأقسام ---------- */
+.phead{border-radius:0 0 26px 26px;margin:0 -16px 6px;padding:26px 20px 30px;align-items:flex-end;box-shadow:inset 0 -1px 0 var(--hair)}
+.phead:after{height:1px;bottom:12px;left:20px;right:20px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.7}
+.phead h2{font-size:1.85rem;letter-spacing:.2px}
+.phead .pi{width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(240,215,154,.28),rgba(240,215,154,.06));}
+.phead[data-c="afham"]{background:linear-gradient(155deg,#0d4b55 0%,#0c1e33 100%)}
+.phead[data-c="mawaqif"]{background:linear-gradient(155deg,#56622f 0%,#0c1e33 105%)}
+.phead[data-c="hukm"]{background:linear-gradient(155deg,#16334f 0%,#081627 100%)}
+.phead[data-c="jarrib"]{background:linear-gradient(155deg,#7a4a26 0%,#0c1e33 105%)}
+.phead[data-c="quiz"]{background:linear-gradient(155deg,#0d6b73 0%,#0c1e33 105%)}
+.phead[data-c="about"]{background:linear-gradient(155deg,#6b5321 0%,#0c1e33 105%)}
+
+/* ---------- التبويبات الفرعية: خط ينزلق بدل الكبسولات ---------- */
+.chips{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);gap:2px;border-bottom:1px solid var(--line);margin:0 -16px 12px;padding:6px 16px 0}
+.chips button{background:none !important;border:0 !important;border-radius:0 !important;color:var(--muted);padding:9px 10px 11px;position:relative;font-weight:600}
+.chips button:after{content:"";position:absolute;left:10px;right:10px;bottom:-1px;height:3px;border-radius:3px 3px 0 0;background:var(--copper);transform:scaleX(0);transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.chips button.on{color:var(--ink) !important}
+.chips button.on:after{transform:scaleX(1)}
+
+/* ---------- عناوين ---------- */
+h3{font-size:1.18rem;color:var(--navy2);margin:26px 0 10px;display:flex;align-items:center;gap:8px;padding-inline-start:0}
+h3:before{position:static;flex:0 0 auto;width:10px;height:10px;background:none;border:1.5px solid var(--copper);transform:rotate(45deg);margin-inline-end:4px;display:inline-block}
+html[data-theme="dark"] h3{color:#dfe7ee}
+.lead{font-size:.98rem}
+
+/* ---------- أرقام الصفحات: شارة نحاسية مرتبطة بالمصدر ---------- */
+.pg-ref{display:inline-flex;align-items:center;gap:3px;font-size:.72rem;font-weight:700;color:var(--copper);background:none;border:1px solid color-mix(in srgb,var(--copper) 45%,transparent);border-radius:4px;padding:0 6px;line-height:1.6;vertical-align:middle;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pg-ref:before{content:"";width:9px;height:9px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 4h7a3 3 0 013 3v14a2 2 0 00-2-2H4zM20 4h-7a3 3 0 00-3 3v14a2 2 0 012-2h8z' fill='black'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 4h7a3 3 0 013 3v14a2 2 0 00-2-2H4zM20 4h-7a3 3 0 00-3 3v14a2 2 0 012-2h8z' fill='black'/%3E%3C/svg%3E") center/contain no-repeat}
+details>summary .chip{background:none;border:1px solid color-mix(in srgb,var(--copper) 45%,transparent);color:var(--copper);border-radius:4px;font-size:.7rem}
+.mine{border-style:dashed;border-radius:4px;color:var(--olive);border-color:var(--olive);background:none}
+
+/* ---------- عناصر عامة ---------- */
+.card{border-radius:16px;border:1px solid var(--line);border-top:1px solid var(--line);box-shadow:var(--shadow)}
+.btn{background:linear-gradient(180deg,#14596a,#0d4b55);border-radius:10px;box-shadow:0 6px 16px -8px rgba(13,75,85,.7),inset 0 1px 0 rgba(255,255,255,.15);letter-spacing:.2px}
+.btn.ghost{background:transparent;color:var(--accent);box-shadow:none;border:1px solid color-mix(in srgb,var(--accent) 45%,transparent)}
+.opt{border-radius:12px;border:1px solid var(--line);background:var(--card);transition:border-color .2s,background .2s,transform .15s,box-shadow .2s;position:relative}
+.opt:hover{border-color:color-mix(in srgb,var(--accent) 50%,var(--line))}
+.opt.sel{border-color:var(--accent);background:linear-gradient(90deg,var(--soft),var(--card));box-shadow:inset -3px 0 0 var(--accent)}
+.opt.right{box-shadow:inset -3px 0 0 var(--ok);animation:okPulse .5s}
+.opt.wrong{box-shadow:inset -3px 0 0 var(--bad);animation:shake .4s}
+@keyframes okPulse{50%{transform:scale(1.015)}}
+@keyframes shake{20%{transform:translateX(-4px)}40%{transform:translateX(4px)}60%{transform:translateX(-3px)}80%{transform:translateX(2px)}}
+.verdict{border-radius:10px;border-inline-start:4px solid currentColor;animation:secIn .35s}
+details{border-radius:14px}
+details[open]>.b{animation:secIn .3s}
+details.fiqh{border:1px solid color-mix(in srgb,var(--gold) 55%,transparent);background:linear-gradient(180deg,color-mix(in srgb,var(--gold) 7%,var(--card)),var(--card))}
+.quote{font-size:1.22rem;background:none;border:0;border-inline-start:0;padding:14px 18px;position:relative;text-align:center;color:var(--navy2)}
+.quote:before,.quote:after{content:"";position:absolute;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.quote:before{top:2px}.quote:after{bottom:2px}
+html[data-theme="dark"] .quote{color:#f0d79a}
+.note{border-radius:10px;border-inline-start:3px solid var(--copper);background:color-mix(in srgb,var(--copper) 8%,var(--card))}
+.note.nv{border-inline-start-color:var(--petrol);background:color-mix(in srgb,var(--petrol) 7%,var(--card))}
+table{border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+th{background:var(--navy) !important;color:#f0d79a !important;font-family:var(--ffh);font-size:1rem}
+
+/* =====================================================================
+   النمط 1 — «تحريري» للمفاهيم (الرئيسية / افهم / عن البحث)
+   لا صناديق: نص على الصفحة، خط ذهبي جانبي، أرقام كبيرة مفرّغة
+   ===================================================================== */
+#afham .card,#about .card:not(.navy){background:transparent;border:0;box-shadow:none;border-radius:0;padding:4px 18px 4px 0;padding-inline:18px 0;border-inline-start:2px solid transparent;border-image:linear-gradient(180deg,var(--gold),transparent) 1}
+#afham .card.soft{border-image:none;border:0;border-radius:18px;padding:20px 20px;background:linear-gradient(150deg,#0d4b55,#0c1e33);color:#e8f0f0;box-shadow:var(--shadow);position:relative;overflow:hidden}
+#afham .card.soft:after{content:"";position:absolute;inset-inline-end:-30px;top:-30px;width:130px;height:130px;opacity:.12;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23f0d79a' stroke-width='1.4'%3E%3Cpath d='M50 5l12 33 33 12-33 12-12 33-12-33L5 50l33-12z'/%3E%3Ccircle cx='50' cy='50' r='18'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+#afham .card.soft b{color:#f0d79a;font-family:var(--ffh);font-size:1.15rem}
+#afham .card.soft .gl{color:#fff;border-bottom-color:#f0d79a}
+#afham .card.soft .mine{color:#f0d79a;border-color:#f0d79a}
+/* أجزاء التعريف كقطع جملة متصلة */
+#defParts{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start}
+#defParts .opt{width:auto;margin:0;padding:8px 14px;font-family:var(--ffh);font-size:1.05rem;border-radius:999px;background:var(--card)}
+#defParts .opt b{font-weight:700}
+#defParts .opt.sel{background:var(--navy);color:#f0d79a;border-color:var(--navy);box-shadow:none}
+#defOut{background:none !important;border-inline-start-color:var(--gold);color:var(--ink) !important}
+/* بطاقات «لماذا مهم» بأرقام كبيرة مفرّغة */
+#why .flip>button{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;min-height:0;padding:14px 4px 14px 0;padding-inline:64px 4px;position:relative}
+#why .flip .n{position:absolute;inset-inline-start:0;top:6px;width:auto;height:auto;background:none;color:transparent;-webkit-text-stroke:1.3px var(--gold);font-size:2.6rem;font-family:var(--ffh);line-height:1;border-radius:0}
+#why .flip .f b{font-family:var(--ffh);font-size:1.15rem}
+#why .flip.on>button{background:linear-gradient(90deg,color-mix(in srgb,var(--gold) 10%,transparent),transparent)}
+#why .flip .bk{padding-inline-start:0}
+#why .flip.on .bk:before{content:attr(data-n)}
+/* مقارنة التخطيط والتجنب: دفتر بعمودين */
+.cmp .rw{border:0;border-bottom:1px solid var(--line);border-radius:0;background:none}
+.cmp .rw>button{font-family:var(--ffh);font-size:1.08rem;padding:14px 4px}
+.cmp .two{border:0;gap:10px;padding-bottom:12px}
+.cmp .two>div{border-radius:12px;border:0 !important}
+.cmp .two>div:first-child{background:linear-gradient(160deg,color-mix(in srgb,var(--petrol) 14%,var(--card)),var(--card))}
+.cmp .two>div:last-child{background:linear-gradient(160deg,color-mix(in srgb,var(--copper) 12%,var(--card)),var(--card))}
+/* الخط الزمني */
+.tl .bd{background:none;border:0;border-bottom:1px dashed var(--line);border-radius:0;padding:4px 2px 10px}
+.tl .it.on .bd{background:none;border-bottom-color:var(--gold)}
+.tl .it.on .bd b{color:var(--accent)}
+.tl .nb{border-color:var(--gold);color:var(--copper);font-family:var(--ffh)}
+.tl .it.on .nb{background:var(--navy);color:#f0d79a;border-color:var(--navy);box-shadow:0 0 0 4px color-mix(in srgb,var(--gold) 25%,transparent)}
+.tl .ln{background:linear-gradient(180deg,var(--gold),var(--line))}
+/* خريطة وقائي/علاجي */
+.map .root{background:linear-gradient(150deg,#16334f,#0c1e33);border:1px solid var(--hair)}
+.map .nd{border-width:1px;border-radius:12px}
+.map .nd.on{background:var(--petrol);color:#fff;border-color:var(--petrol)}
+.map .nd.on small{color:#cfe3e3}
+#mapOut{background:none;box-shadow:none;border:0;border-inline-start:2px solid var(--gold);border-radius:0}
+/* الأشرطة */
+.bars .tr{height:14px;background:color-mix(in srgb,var(--line) 70%,transparent)}
+
+/* =====================================================================
+   النمط 2 — «ملف حالة» للمواقف
+   رأس داكن برقم كبير، وجسم فاتح، وشريط جانبي بلون نوع الحالة
+   ===================================================================== */
+#cases{counter-reset:cs}
+#cases .card{padding:0;overflow:hidden;border:0;border-radius:18px;counter-increment:cs;background:var(--card)}
+#cases .card>*:not(.cs-h){margin-inline:18px}
+#cases .card>.cs-h{margin:0 0 12px;padding:16px 18px 14px;background:linear-gradient(130deg,#2c3518,#56622f 55%,#6e7a3a);color:#f6f1e4;position:relative;flex-direction:column;align-items:flex-start;gap:4px}
+#cases .card>.cs-h:before{content:counter(cs,decimal-leading-zero);position:absolute;inset-inline-end:16px;top:4px;font-family:var(--ffh);font-size:3.2rem;line-height:1;color:transparent;-webkit-text-stroke:1.2px rgba(240,215,154,.55)}
+#cases .card>.cs-h b{font-size:1.2rem;color:#fff;max-width:75%}
+#cases .card>.cs-h .tag{background:rgba(240,215,154,.16);color:#f0d79a;border:1px solid rgba(240,215,154,.4);font-size:.72rem}
+#cases .card>p:first-of-type{font-size:1rem}
+#cases .card>div:last-child{padding-bottom:14px}
+#cases .card>div>div>p b,#cases .card p>b{color:var(--olive)}
+html[data-theme="dark"] #cases .card>div>div>p b{color:#c6d38a}
+#cases .opt{border-radius:999px;padding:9px 16px}
+.paths>div{border:0;border-radius:14px;background:linear-gradient(160deg,color-mix(in srgb,var(--olive) 12%,var(--card)),var(--card));box-shadow:inset 0 0 0 1px var(--line)}
+.paths>div b{color:var(--olive)}
+
+/* =====================================================================
+   النمط 3 — «لوح الحكم» للأحكام الفقهية
+   ألواح كحلية عميقة بإطار ذهبي رفيع، وأحكام كأختام
+   ===================================================================== */
+#hukm .card{background:linear-gradient(170deg,#132c46,#0b1d31);color:#e7edf3;border:1px solid var(--hair);box-shadow:0 18px 40px -22px rgba(6,18,32,.8);position:relative}
+#hukm .card:before{content:"";position:absolute;inset:6px;border:1px solid rgba(195,154,69,.18);border-radius:11px;pointer-events:none}
+#hukm .card b{color:#f0d79a}
+#hukm .card .small,#hukm .card .crumb{color:#a9b8c6}
+#hukm .card .pg-ref{color:#e4b47d;border-color:rgba(228,180,125,.45)}
+#hukm .card .opt{background:rgba(255,255,255,.05);color:#e7edf3;border-color:rgba(255,255,255,.16)}
+#hukm .card .opt .small{color:#a9b8c6}
+#hukm .card .opt.sel,#hukm .card .opt:active{background:rgba(195,154,69,.18);border-color:var(--gold);box-shadow:inset -3px 0 0 var(--gold)}
+#hukm .card details.sub{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12)}
+#hukm .card details.sub>summary{color:#fff}
+#hukm .card details.sub>summary:after{color:#f0d79a}
+#hukm .card .note.nv{background:rgba(13,107,115,.18);color:#dfeeee;border-inline-start-color:#4cc3c0}
+#hukm .card .btn.ghost,#hukm .btn.ghost{color:var(--accent)}
+#hukm .card .seg button{background:rgba(255,255,255,.05);color:#e7edf3;border-color:rgba(255,255,255,.16)}
+#hukm .card .seg button.on{background:var(--gold);color:#0c1e33;border-color:var(--gold)}
+/* الأحكام كأختام */
+.verdict.ok,.verdict.bad{position:relative;padding-inline-end:58px}
+.verdict.ok:after,.verdict.bad:after{content:"";position:absolute;inset-inline-end:10px;top:50%;width:38px;height:38px;margin-top:-19px;border-radius:50%;border:2px double currentColor;opacity:.55;transform:rotate(-12deg);background:center/18px no-repeat}
+.verdict.ok:after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231f7a4d' stroke-width='3'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7'/%3E%3C/svg%3E")}
+.verdict.bad:after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a63a2e' stroke-width='3'%3E%3Cpath d='M6 6l12 12M18 6L6 18'/%3E%3C/svg%3E")}
+.verdict.ok:after,.verdict.bad:after{animation:stamp .45s cubic-bezier(.3,1.6,.5,1) backwards .15s}
+@keyframes stamp{from{transform:rotate(-30deg) scale(1.8);opacity:0}}
+/* ضوابط المعاوضة: ثلاث ركائز */
+#h2 .card{background:linear-gradient(170deg,#132c46,#0b1d31)}
+#h2 .flip>button{background:rgba(255,255,255,.04);border:1px solid rgba(195,154,69,.35);color:#e7edf3;box-shadow:none;border-radius:14px}
+#h2 .flip .n{background:linear-gradient(145deg,#d7b061,#9a6a35);color:#0c1e33;border-radius:0;width:34px;height:34px;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);font-weight:700}
+#h2 .flip .bk{line-height:1.9}
+#h2 .flip .hint{color:#a9b8c6}
+#h2 .flip.on>button{background:rgba(195,154,69,.12);border-color:var(--gold)}
+#h2 .flip.on>button b{color:#f0d79a}
+#svc{background:var(--card) !important;color:var(--ink) !important}
+#svc:before{display:none}
+#svc b{color:var(--ink) !important}
+#svc .pg-ref{color:var(--copper) !important}
+#svc .seg button{background:var(--card) !important;color:var(--ink) !important;border-color:var(--line) !important}
+#svc .seg button.on{background:var(--navy) !important;color:#f0d79a !important}
+/* لوح الأثر */
+#h3 .card .opt{text-align:center;font-family:var(--ffh);font-size:1.1rem}
+#hukm .steps i{height:3px;background:color-mix(in srgb,var(--navy) 15%,transparent)}
+#hukm .steps i.on{background:linear-gradient(90deg,var(--gold),var(--copper))}
+
+/* =====================================================================
+   النمط 4 — «طاولة عمل» للأدوات والاختبار
+   سطح شبكي منقّط خفيف، وملصق أداة في الأعلى
+   ===================================================================== */
+#jarrib .card,#quiz .card{background-color:var(--card);background-image:radial-gradient(color-mix(in srgb,var(--navy) 12%,transparent) 1px,transparent 1.2px);background-size:16px 16px;border:1px solid var(--line);border-radius:14px;position:relative;padding-top:20px}
+#jarrib .card:before,#quiz .card:before{content:"";position:absolute;top:0;inset-inline-start:18px;width:46px;height:4px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,var(--copper),var(--gold))}
+#scList{grid-template-columns:1fr 1fr !important;gap:8px}
+#scList .opt{margin:0;padding:14px 12px;min-height:76px;display:flex;align-items:center;border-radius:14px;background:linear-gradient(160deg,color-mix(in srgb,var(--copper) 9%,var(--card)),var(--card));font-size:.92rem}
+#scList .opt.sel{background:linear-gradient(160deg,#7a4a26,#4b2d17);color:#fff;border-color:transparent;box-shadow:0 10px 20px -12px rgba(122,74,38,.9)}
+label.ck{border-radius:12px;transition:background .2s}
+label.ck:has(input:checked){background:color-mix(in srgb,var(--ok) 9%,var(--card));border-color:color-mix(in srgb,var(--ok) 40%,var(--line))}
+#quiz .progress{height:4px;background:color-mix(in srgb,var(--navy) 10%,transparent)}
+#quiz .progress>b{background:linear-gradient(90deg,var(--gold),var(--accent))}
+.ord button,.mt button{border-radius:10px;background:var(--card)}
+.skills .sk{border-radius:10px}
+
+/* ---------- عن البحث: صفحة كتاب ---------- */
+#about .card.navy{background:linear-gradient(160deg,#16334f,#0c1e33);border:1px solid var(--hair);border-radius:18px;position:relative;overflow:hidden}
+#about .card.navy:after{content:"";position:absolute;inset-inline-end:-40px;bottom:-40px;width:170px;height:170px;opacity:.1;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23f0d79a' stroke-width='1.2'%3E%3Cpath d='M50 5l12 33 33 12-33 12-12 33-12-33L5 50l33-12z'/%3E%3Crect x='29' y='29' width='42' height='42' transform='rotate(45 50 50)'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+#about .card.navy h3{color:#f0d79a;font-size:1.4rem}
+#about details{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0}
+#about details>summary{font-family:var(--ffh);font-size:1.1rem;padding-inline:2px}
+.gterm{padding:14px 0}
+.gterm b{font-family:var(--ffh);font-size:1.12rem;color:var(--petrol)}
+html[data-theme="dark"] .gterm b{color:#7fd3cf}
+
+/* ---------- الرئيسية ---------- */
+.hero{border-radius:0 0 30px 30px;margin:0 -16px 14px;padding:30px 22px 26px;background:
+  radial-gradient(500px 220px at 90% 0%,rgba(195,154,69,.22),transparent 60%),
+  linear-gradient(165deg,#16334f 0%,#0c1e33 55%,#0d4b55 130%)}
+.hero h2{font-size:2.5rem;text-shadow:0 2px 20px rgba(0,0,0,.25)}
+.entry button{border-radius:16px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)}
+.entry .ic{background:linear-gradient(145deg,#0d4b55,#0c1e33) !important;border-radius:12px}
+.entry .ic svg{stroke:#f0d79a !important}
+.entry button:nth-child(2) .ic{background:linear-gradient(145deg,#56622f,#2c3518) !important}
+.entry button:nth-child(3) .ic{background:linear-gradient(145deg,#a8683a,#5a3519) !important}
+#home>.card.sx{background:linear-gradient(170deg,#132c46,#0b1d31);color:#e7edf3;border:1px solid var(--hair)}
+#home>.card.sx b{color:#f0d79a;font-family:var(--ffh);font-size:1.15rem}
+#home>.card.sx .quote{color:#fff}
+#home>.card.sx .pg-ref{color:#e4b47d;border-color:rgba(228,180,125,.45)}
+#home>.card.sx li b{font-size:1rem;font-family:var(--ff)}
+#home>.card.soft{background:linear-gradient(160deg,color-mix(in srgb,var(--gold) 14%,var(--card)),var(--card));border:1px solid color-mix(in srgb,var(--gold) 40%,var(--line))}
+.svgmap{border-top:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,var(--card),color-mix(in srgb,var(--soft2) 60%,var(--card)))}
+#hukm .svgmap{background:var(--card)}
+
+/* ---------- الفاصل الزخرفي والتذييل ---------- */
+.orn{margin:34px 0 6px}
+footer{border-top:0;position:relative;padding-top:22px}
+footer:before{content:"";position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+/* ---------- النوافذ السفلية ---------- */
+.sheet .pane{border-radius:24px 24px 0 0;border-top:1px solid var(--hair)}
+.sheet .pane:before{content:"";display:block;width:44px;height:4px;border-radius:4px;background:var(--line);margin:-4px auto 12px}
+.seg{border-radius:10px}
+.seg button.on{background:var(--navy) !important;color:#f0d79a !important}
+
 </style>
 </head>
 <body>
 <div id="prog"></div>
-<div class="ded"><span>إهداء من جهاد بن جمال حولدار</span><span>إلى أ.د. حسن بن صالح القرني</span><small>تقريب اجتهادي لبحثه، لم يُراجَع من الدكتور</small></div>
+<div class="ded"><span class="t">منصة تفاعلية مستفادة من بحث</span><span class="pt">«التخطيط الزكوي: حكمه وأثره»</span><span class="au">أ.د. حسن بن صالح القرني</span><small>إهداء من جهاد بن جمال حولدار · تقريب اجتهادي لم يراجعه الدكتور</small></div>
 <header class="top"><div class="wrap bar">
   <div class="brand">
     <div class="mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0d79a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5.6L20 11l-5.6 2.4L12 19l-2.4-5.6L4 11l5.6-2.4z"/></svg></div>
@@ -624,7 +956,8 @@ html[data-theme="dark"] .phead{background:linear-gradient(160deg,#0a1d31 0%,#103
 </section>
 
 <footer>
-  <div><b>إهداء</b> من جهاد بن جمال حولدار إلى أ.د. حسن بن صالح القرني. هذه الصفحة محاولة اجتهادية لتقريب بحثه «التخطيط الزكوي: حكمه وأثره» للقارئ، <b>ولم يراجعها الدكتور</b>؛ والمرجع هو البحث المنشور نفسه. وهي للتعريف والفائدة العلمية، وليست فتوى ولا استشارة زكوية ولا اعتمادًا نظاميًا.<button id="dot" aria-label=" "></button></div>
+  <div>هذه المنصة مستفادة من بحث <b>«التخطيط الزكوي: حكمه وأثره»</b> لأ.د. حسن بن صالح القرني، أستاذ الفقه المقارن بكلية الشريعة بجامعة الملك فيصل. وهي محاولة اجتهادية لتقريب البحث للقارئ، <b>ولم يراجعها الدكتور</b>؛ والمرجع هو البحث المنشور نفسه. وهي للتعريف والفائدة العلمية، وليست فتوى ولا استشارة زكوية ولا اعتمادًا نظاميًا.<button id="dot" aria-label=" "></button></div>
+  <div style="margin-top:6px;font-size:.85em;opacity:.8">إهداء من جهاد بن جمال حولدار إلى أ.د. حسن بن صالح القرني.</div>
   <div style="margin-top:6px"><a href="https://drive.google.com/file/d/1U71tO-QuSIepRH6X1VznZefoCNaEzqln/view?usp=sharing" target="_blank" rel="noopener">الرجوع إلى البحث الأصلي</a></div>
 </footer>
 </main>
@@ -755,7 +1088,7 @@ function applySet() {
   h.style.setProperty('--ff', f.ff); h.style.setProperty('--ffh', f.ffh); h.style.setProperty('--ffx', f.ffx);
   h.style.setProperty('--fs', S.fs + 'px');
   marks('#segTheme', S.theme); marks('#segFont', S.font); marks('#segMode', S.mode); marks('#segMode2', S.mode); marks('#segSnd', store.get('snd', '1'));
-  var m = document.querySelector('meta[name=theme-color]'); if (m) m.setAttribute('content', S.theme === 'dark' ? '#0b1520' : '#f6f3ec');
+  var m = document.querySelector('meta[name=theme-color]'); if (m) m.setAttribute('content', S.theme === 'dark' ? '#09141f' : '#0c1e33');
 }
 function applyMode() {
   $$('details.fiqh').forEach(function (d) { d.open = (S.mode === 'sci'); });
@@ -1664,6 +1997,175 @@ function boot() {
   log('open');
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
+
+/* ===== v3: خرائط وحركات ===== */
+var SVGNS = 'http://www.w3.org/2000/svg';
+function svgEl(t, a, txt) { var e = document.createElementNS(SVGNS, t); for (var k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; return e; }
+function nodeBox(svg, x, y, w, h, lines, kind, fn) {
+  var col = { n: ['var(--soft2)', 'var(--navy2)'], ok: ['var(--ok-bg)', 'var(--ok)'], bad: ['var(--bad-bg)', 'var(--bad)'], root: ['var(--navy)', 'var(--gold)'], mid: ['var(--mid-bg)', 'var(--mid)'] }[kind];
+  var g = svgEl('g', { 'class': 'n', style: 'transform-origin:' + x + 'px ' + y + 'px' });
+  g.appendChild(svgEl('rect', { x: x - w / 2, y: y - h / 2, width: w, height: h, rx: 12, fill: col[0], stroke: col[1], 'stroke-width': 1.6 }));
+  lines.forEach(function (l, i) {
+    g.appendChild(svgEl('text', { x: x, y: y + (i - (lines.length - 1) / 2) * 15 + 5, 'text-anchor': 'middle', 'font-size': i === 0 ? 12.5 : 11, 'font-weight': i === 0 ? 700 : 400, style: 'fill:' + (kind === 'root' ? '#fff' : col[1]) }, l));
+  });
+  if (fn) g.addEventListener('click', function () { snd('tap'); fn(); });
+  svg.appendChild(g); return g;
+}
+function link(svg, x1, y1, x2, y2, cls) {
+  var my = (y1 + y2) / 2;
+  svg.appendChild(svgEl('path', { d: 'M' + x1 + ',' + y1 + ' C' + x1 + ',' + my + ' ' + x2 + ',' + my + ' ' + x2 + ',' + y2, 'class': cls || 'ln draw' }));
+}
+function mapBox(title, note) {
+  var d = E('div', 'svgmap'); d.innerHTML = '<div class="mh"><svg viewBox="0 0 24 24" width="20" height="20" style="width:20px;stroke:var(--gold);fill:none;stroke-width:1.8"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>' + title + (note ? '<small>' + note + '</small>' : '') + '</div>';
+  return d;
+}
+
+/* خريطة الحكم */
+function buildHukmMap() {
+  var box = mapBox('خريطة الحكم والأثر', 'اضغط أي عقدة');
+  var svg = svgEl('svg', { viewBox: '0 0 360 372' });
+  var L = [[180, 46, 85, 82], [180, 46, 270, 82], [85, 118, 85, 162], [270, 118, 215, 162], [270, 118, 315, 162], [215, 198, 215, 238], [315, 198, 315, 238], [215, 274, 215, 300], [315, 274, 315, 300]];
+  L.forEach(function (l) { link(svg, l[0], l[1], l[2], l[3]); });
+  link(svg, 180, 46, 85, 82, 'flow'); link(svg, 180, 46, 270, 82, 'flow');
+  var T = function (p) { return function () { treeState.path = p; treeRender(); $('#tree').scrollIntoView({ behavior: 'smooth', block: 'start' }); }; };
+  var EF = function (k) { return function () { go('hukm', 'h3'); var b = $('[data-ef=' + k + ']'); if (b && !b.classList.contains('sel')) b.click(); }; };
+  nodeBox(svg, 180, 28, 150, 36, ['التخطيط الزكوي'], 'root', T([]));
+  nodeBox(svg, 85, 100, 130, 36, ['قبل التصرف المالي'], 'n', T(['before']));
+  nodeBox(svg, 270, 100, 130, 36, ['بعد التصرف المالي'], 'n', T(['after']));
+  nodeBox(svg, 85, 180, 130, 40, ['لا مانع شرعًا', 'ص26-27'], 'ok', T(['before']));
+  nodeBox(svg, 215, 180, 92, 40, ['قصد التحايل', 'ص27'], 'mid', T(['after', 'tahayul']));
+  nodeBox(svg, 315, 180, 90, 40, ['رفع الضرر', 'ص31'], 'mid', T(['after', 'darar']));
+  nodeBox(svg, 215, 256, 92, 40, ['يحرم', 'على الراجح'], 'bad', T(['after', 'tahayul']));
+  nodeBox(svg, 315, 256, 90, 40, ['جائز', 'ص31-34'], 'ok', T(['after', 'darar']));
+  nodeBox(svg, 215, 322, 92, 44, ['الزكاة لا تسقط', 'ص42-43'], 'bad', EF('bad'));
+  nodeBox(svg, 315, 322, 90, 44, ['لا تجب عنه', 'ص42'], 'ok', EF('ok'));
+  svg.appendChild(svgEl('text', { x: 85, y: 240, 'text-anchor': 'middle', 'class': 'cap' }, 'تصرف لم يقع بعد'));
+  svg.appendChild(svgEl('text', { x: 85, y: 256, 'text-anchor': 'middle', 'class': 'cap' }, 'فلا ينطبق وصف الفرار'));
+  svg.appendChild(svgEl('text', { x: 265, y: 366, 'text-anchor': 'middle', 'class': 'cap' }, 'الأثر على الزكاة تابع للحكم'));
+  box.appendChild(svg);
+  var h1 = $('#h1'); h1.insertBefore(box, $('.steps', h1));
+}
+
+/* خريطة رحلة المنصة في الرئيسية */
+var JR = [['afham', 'افهم'], ['mawaqif', 'مواقف'], ['hukm', 'الحكم'], ['jarrib', 'جرّب'], ['quiz', 'اختبر'], ['about', 'عن البحث']];
+var JP = [[310, 48], [180, 48], [50, 48], [50, 168], [180, 168], [310, 168]];
+function seen() { try { return JSON.parse(store.get('seen', '[]')) || []; } catch (e) { return []; } }
+function markSeen(pg) { var s = seen(); if (pg !== 'home' && s.indexOf(pg) < 0) { s.push(pg); store.set('seen', JSON.stringify(s)); } }
+function buildJourney() {
+  var box = mapBox('رحلتك في المنصة', 'ابدأ من اليمين'); box.id = 'journey';
+  var svg = svgEl('svg', { viewBox: '0 0 360 215' });
+  var d = 'M310,48 L50,48 C-8,48 -8,168 50,168 L310,168';
+  svg.appendChild(svgEl('path', { d: d, 'class': 'ln', 'stroke-width': 10, style: 'stroke:var(--soft2)' }));
+  svg.appendChild(svgEl('path', { d: d, 'class': 'flow' }));
+  JR.forEach(function (j, i) {
+    var x = JP[i][0], y = JP[i][1];
+    var g = svgEl('g', { 'class': 'n', 'data-j': j[0], style: 'transform-origin:' + x + 'px ' + y + 'px;animation-delay:' + (i * .08) + 's' });
+    g.appendChild(svgEl('circle', { cx: x, cy: y, r: 22, fill: 'var(--card)', stroke: 'var(--line)', 'stroke-width': 2.5 }));
+    var ic = $('#tabs [data-go=' + j[0] + '] svg');
+    if (ic) { var u = ic.cloneNode(true); u.setAttribute('x', x - 11); u.setAttribute('y', y - 11); u.setAttribute('width', 22); u.setAttribute('height', 22); u.setAttribute('style', 'stroke:var(--navy2);fill:none;stroke-width:1.7'); g.appendChild(u); }
+    g.appendChild(svgEl('text', { x: x, y: y + 40, 'text-anchor': 'middle', 'font-size': 13, 'font-weight': 700 }, (i + 1) + '. ' + j[1]));
+    g.addEventListener('click', function () { go(j[0]); });
+    svg.appendChild(g);
+  });
+  box.appendChild(svg);
+  var pr = E('div', 'jprog', '<span id="jtx"></span><span class="bar2"><b id="jbar"></b></span>'); box.appendChild(pr);
+  var home = $('#home'); home.insertBefore(box, $('.entry', home).nextSibling);
+  paintJourney();
+}
+function paintJourney() {
+  var s = seen();
+  $$('#journey g.n').forEach(function (g) {
+    var on = s.indexOf(g.getAttribute('data-j')) >= 0, c = g.querySelector('circle');
+    c.setAttribute('fill', on ? 'var(--gold)' : 'var(--card)'); c.setAttribute('stroke', on ? 'var(--gold)' : 'var(--line)');
+    var u = g.querySelector('svg'); if (u) u.style.stroke = on ? '#fff' : 'var(--navy2)';
+  });
+  var t = $('#jtx'); if (t) t.textContent = s.length >= 6 ? 'أتممت جولة المنصة كاملة' : 'زرت ' + s.length + ' من 6';
+  var b = $('#jbar'); if (b) b.style.width = (s.length / 6 * 100) + '%';
+}
+
+/* خريطة البحث (هيكله وصفحاته) */
+var SPINE = [['المقدمة', 'ص15-18', 4, '#6a4f14', ['about', 'b1']], ['التمهيد', 'ص19-26', 8, '#0e4d4a', ['afham', 'a1']], ['المبحث الأول', 'ص26-36', 10, '#4a1f2a', ['hukm', 'h1']], ['المبحث الثاني', 'ص36-43', 7, '#173a5f', ['hukm', 'h3']], ['الخاتمة', 'ص43-44', 3, '#1d4d2c', ['about', 'b3']]];
+function buildSpine(where, before) {
+  var box = mapBox('خريطة البحث', 'حجم كل جزء بعدد صفحاته');
+  var sp = E('div', 'spine');
+  SPINE.forEach(function (s) {
+    var b = E('button', '', s[0] + '<small>' + s[1] + '</small>'); b.style.flex = s[2] + ' 1 0'; b.style.background = s[3];
+    b.onclick = function () { go(s[4][0], s[4][1]); }; sp.appendChild(b);
+  });
+  box.appendChild(sp);
+  box.appendChild(E('div', 'hint', 'التمهيد: التعريفات والأهمية · المبحث الأول: الحكم والمعاوضة · المبحث الثاني: الأثر على الزكاة'));
+  where.insertBefore(box, before);
+}
+
+/* خريطة "افهم" المفاهيمية */
+function buildConceptMap() {
+  var box = mapBox('خريطة المفاهيم', 'اضغط للانتقال');
+  var svg = svgEl('svg', { viewBox: '0 0 360 230' });
+  var C = [180, 115];
+  var P = [[180, 26, ['التعريف', 'ص23'], ['afham', 'a1']], [322, 80, ['وقاية', 'ومعالجة'], ['afham', 'a2']], [322, 170, ['5 فوائد', 'ص25-26'], ['afham', 'a3']], [180, 205, ['تخطيط', 'أم تجنّب؟'], ['afham', 'a4']], [38, 170, ['الحكم', 'ص26-34'], ['hukm', 'h1']], [38, 80, ['المعاوضة', '3 ضوابط'], ['hukm', 'h2']]];
+  P.forEach(function (p) { svg.appendChild(svgEl('path', { d: 'M' + C[0] + ',' + C[1] + ' L' + p[0] + ',' + p[1], 'class': 'ln draw' })); });
+  P.forEach(function (p) { svg.appendChild(svgEl('path', { d: 'M' + C[0] + ',' + C[1] + ' L' + p[0] + ',' + p[1], 'class': 'flow', style: 'opacity:.5' })); });
+  svg.appendChild(svgEl('circle', { cx: C[0], cy: C[1], r: 46, fill: 'var(--navy)', stroke: 'var(--gold)', 'stroke-width': 2 }));
+  svg.appendChild(svgEl('text', { x: C[0], y: C[1] - 2, 'text-anchor': 'middle', 'font-size': 13.5, 'font-weight': 700, style: 'fill:#fff' }, 'التخطيط'));
+  svg.appendChild(svgEl('text', { x: C[0], y: C[1] + 16, 'text-anchor': 'middle', 'font-size': 13.5, 'font-weight': 700, style: 'fill:#f0d79a' }, 'الزكوي'));
+  P.forEach(function (p) { nodeBox(svg, p[0], p[1], 74, 40, p[2], 'n', function () { go(p[3][0], p[3][1]); }); });
+  box.appendChild(svg);
+  var a1 = $('#a1'); a1.insertBefore(box, a1.firstChild.nextSibling);
+}
+
+/* ظهور عند التمرير */
+var IO = null;
+function reveal() {
+  var els = $$('.card,.flip,details,.cmp .rw,.tl .it,.entry button,.map,.svgmap,.note,table,.ord,.mt,.orn').filter(function (e) { return !e.closest('.sheet') && !e.classList.contains('rv'); });
+  if (!('IntersectionObserver' in window)) return;
+  if (!IO) IO = new IntersectionObserver(function (es) { es.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('in'); IO.unobserve(x.target); } }); }, { rootMargin: '0px 0px -30px 0px' });
+  els.forEach(function (e) { if (e.closest('.svgmap') && !e.classList.contains('svgmap')) return; e.classList.add('rv'); IO.observe(e); });
+}
+
+/* تموّج اللمس */
+document.addEventListener('pointerdown', function (e) {
+  var b = e.target.closest && e.target.closest('.btn,.opt,.entry button,.nd'); if (!b) return;
+  var r = b.getBoundingClientRect(), s = Math.max(r.width, r.height), sp = document.createElement('span');
+  sp.className = 'rip'; sp.style.width = sp.style.height = s + 'px'; sp.style.left = (e.clientX - r.left - s / 2) + 'px'; sp.style.top = (e.clientY - r.top - s / 2) + 'px';
+  b.appendChild(sp); setTimeout(function () { sp.remove(); }, 600);
+});
+
+/* فواصل زخرفية */
+function ornaments() {
+  var star = '<svg viewBox="0 0 24 24"><path d="M12 2l2.6 5.4L20 6l-1.4 5.4L22 14l-5.4 1.4L18 21l-5.6-2L12 22l-.4-3L6 21l1.4-5.6L2 14l3.4-2.6L4 6l5.4 1.4z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>';
+  $$('section.pg').forEach(function (s) { var o = E('div', 'orn', star); s.appendChild(o); });
+}
+
+/* حلقة النتيجة واحتفال بسيط */
+function scoreRing(card, pct) {
+  var big = $('.bigo', card); if (!big) return;
+  var r = E('div', 'ring');
+  r.innerHTML = '<svg viewBox="0 0 150 150"><circle cx="75" cy="75" r="64" fill="none" stroke="var(--line)" stroke-width="11"/><circle id="rg" cx="75" cy="75" r="64" fill="none" stroke="var(--accent)" stroke-width="11" stroke-linecap="round" stroke-dasharray="402" stroke-dashoffset="402" style="transition:stroke-dashoffset 1.3s ease"/></svg><span class="v">0%</span>';
+  big.replaceWith(r);
+  setTimeout(function () { $('#rg', r).setAttribute('stroke-dashoffset', 402 - 402 * pct / 100); }, 60);
+  var v = $('.v', r), n = 0, t = setInterval(function () { n = Math.min(pct, n + Math.max(1, Math.round(pct / 30))); v.textContent = n + '%'; if (n >= pct) clearInterval(t); }, 40);
+  if (pct >= 60) for (var i = 0; i < 18; i++) {
+    var p = E('i', 'burst'), a = i / 18 * Math.PI * 2, d = 70 + Math.random() * 30;
+    p.style.left = '71px'; p.style.top = '71px'; p.style.setProperty('--x', Math.cos(a) * d + 'px'); p.style.setProperty('--y', Math.sin(a) * d + 'px'); p.style.animationDelay = (.9 + Math.random() * .2) + 's';
+    if (i % 2) p.style.background = 'var(--accent)'; r.appendChild(p);
+  }
+}
+
+function bootV3() {
+  $$('.phead').forEach(function (p) { p.setAttribute('data-c', p.parentNode.id); });
+  buildJourney(); buildConceptMap(); buildHukmMap();
+  buildSpine($('#b1'), $('#b1').children[1]);
+  buildSpine($('#home'), $('#cmSec'));
+  ornaments(); reveal();
+  var _go = go;
+  go = function (pg, sp, ns) { _go(pg, sp, ns); markSeen(pg); paintJourney(); setTimeout(reveal, 30); };
+  var _qe = quizEnd;
+  quizEnd = function () { _qe(); var c = $('#qbox .card'); var tot = 0; QS.sc.forEach(function (s) { tot += s; }); scoreRing(c, Math.round(tot / QZ.length * 100)); };
+  var _cs = quizStep; quizStep = function () { _cs(); setTimeout(reveal, 30); };
+  var _tr = treeRender; treeRender = function () { _tr(); setTimeout(reveal, 30); };
+  markSeen(cur); paintJourney();
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bootV3); else bootV3();
 
 
 </script>
