@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f6f3ec">
+<title>التخطيط الزكوي: حكمه وأثره — منصة تفاعلية</title>
+<meta name="description" content="منصة تفاعلية تقرّب بحث أ.د. حسن بن صالح القرني «التخطيط الزكوي: حكمه وأثره». إهداء من جهاد بن جمال حولدار.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f3ec; --card:#ffffff; --ink:#14212e; --muted:#5b6978; --line:#e3ddd0;
+  --navy:#0f2a47; --navy2:#173a5f; --accent:#0f7a6e; --accent-ink:#ffffff; --gold:#b98a2e; --soft:#e4f1ee; --soft2:#eef3f8;
+  --ok:#1f7a4d; --ok-bg:#e3f3ea; --bad:#a63a2e; --bad-bg:#f8e6e2; --mid:#8a6a1c; --mid-bg:#f7efd9;
+  --fs:17px;
+  --ff:'Tajawal','Cairo',system-ui,sans-serif;
+  --ffh:'Amiri','Traditional Arabic',serif;
+  --ffx:'Amiri','Traditional Arabic',serif;
+  --shadow:0 1px 2px rgba(15,42,71,.05),0 8px 22px rgba(15,42,71,.07);
+}
+html[data-theme="dark"]{
+  --bg:#0b1520; --card:#122030; --ink:#e7eef4; --muted:#9db0bf; --line:#223548;
+  --navy:#0a1d31; --navy2:#10304f; --accent:#3cc2ad; --accent-ink:#04120f; --gold:#d8b25e; --soft:#12302e; --soft2:#14283b;
+  --ok:#6fd19c; --ok-bg:#15301f; --bad:#f09a8d; --bad-bg:#37191a; --mid:#e3c068; --mid-bg:#33290f;
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{font-size:var(--fs);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ff);line-height:1.85;padding-bottom:calc(76px + env(safe-area-inset-bottom));overflow-x:hidden}
+button{font-family:inherit;font-size:inherit;color:inherit;cursor:pointer}
+a{color:var(--accent)}
+h1,h2,h3{font-family:var(--ffh)}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+#prog{position:fixed;top:0;right:0;height:3px;width:0;background:var(--gold);z-index:90;transition:width .1s}
+
+/* الإهداء */
+.ded{background:var(--navy);color:#e9eef3;text-align:center;padding:7px 12px 8px;line-height:1.55}
+.ded span{display:block;font-size:.84rem;font-weight:700}
+.ded span+span{color:#f0d79a}
+.ded small{display:block;font-size:.7rem;opacity:.75;margin-top:1px}
+
+/* الترويسة */
+header.top{position:sticky;top:0;z-index:70;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:8px;min-height:56px;padding-top:4px;padding-bottom:4px}
+.brand{flex:1;min-width:0;display:flex;align-items:center;gap:10px}
+.mark{flex:0 0 auto;width:36px;height:36px;border-radius:11px;background:var(--navy);display:grid;place-items:center}
+.brand h1{margin:0;font-size:1.2rem;line-height:1.1;color:var(--ink)}
+.brand small{display:block;font-family:var(--ff);font-size:.72rem;color:var(--muted);margin-top:2px;font-weight:500}
+.ib{flex:0 0 auto;width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:var(--card);display:grid;place-items:center}
+.ib svg{width:20px;height:20px;stroke:var(--ink);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ib:active{transform:scale(.94)}
+
+/* التنقل السفلي */
+nav.tabs{position:fixed;bottom:0;right:0;left:0;z-index:80;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -6px 20px rgba(15,42,71,.08)}
+nav.tabs .in{display:flex;overflow-x:auto;scrollbar-width:none;max-width:720px;margin:0 auto;padding:5px 4px;gap:1px}
+nav.tabs .in::-webkit-scrollbar{display:none}
+nav.tabs button{flex:1 1 0;min-width:0;border:0;background:none;padding:5px 1px;border-radius:12px;font-size:.66rem;white-space:nowrap;font-weight:500;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:2px}
+nav.tabs button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+nav.tabs button.on{background:var(--soft);color:var(--accent);font-weight:700}
+
+section.pg{display:none;padding:16px 0 28px;animation:fade .28s ease}
+section.pg.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.sp{display:none}.sp.on{display:block;animation:fade .25s ease}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 12px;scrollbar-width:none;position:sticky;top:60px;z-index:20;background:var(--bg)}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:0 0 auto;border:1.5px solid var(--line);background:var(--card);border-radius:99px;padding:6px 15px;font-size:.88rem;font-weight:500}
+.chips button.on{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:700}
+html[data-theme="dark"] .chips button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+
+h2{font-size:1.45rem;margin:4px 0 2px;color:var(--navy);line-height:1.4}
+html[data-theme="dark"] h2{color:var(--ink)}
+h3{font-size:1.12rem;margin:20px 0 8px;color:var(--navy)}
+html[data-theme="dark"] h3{color:var(--ink)}
+.lead{color:var(--muted);margin:0 0 14px;font-size:.95rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px 17px;margin:12px 0;box-shadow:var(--shadow)}
+.card.soft{background:var(--soft);border-color:transparent;box-shadow:none}
+.card.navy{background:var(--navy);color:#eaf0f5;border-color:transparent}
+.card.navy h3{color:#fff;margin-top:0}
+
+/* البطل */
+.hero{position:relative;overflow:hidden;border-radius:24px;padding:24px 18px 20px;margin:4px 0 14px;color:#fff;background:linear-gradient(160deg,#10304f 0%,#0f2a47 55%,#0b4a47 130%)}
+.hero:before{content:"";position:absolute;inset:0;opacity:.09;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 4l6 14 14-6-6 14 14 6-14 6 6 14-14-6-6 14-6-14-14 6 6-14L4 32l14-6-6-14 14 6z' fill='none' stroke='white' stroke-width='1.2'/%3E%3C/svg%3E");background-size:64px}
+.hero>*{position:relative}
+.hero .k{font-size:.78rem;color:#f0d79a;font-weight:700;letter-spacing:.2px}
+.hero h2{color:#fff;font-size:2.1rem;margin:2px 0 4px;line-height:1.25}
+.hero .tag2{font-family:var(--ffh);font-size:1.2rem;color:#f0d79a;margin:0 0 10px}
+.hero p{margin:6px 0;opacity:.94;font-size:.95rem}
+.flow{margin:16px 0 4px;display:grid;gap:0}
+.flow .st{display:flex;align-items:center;gap:12px;padding:7px 0;opacity:.45;transition:.4s}
+.flow .st.on{opacity:1}
+.flow .dot2{flex:0 0 auto;width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.5);display:grid;place-items:center;font-weight:700;font-size:.82rem;position:relative;transition:.4s}
+.flow .st.on .dot2{background:#f0d79a;color:#0f2a47;border-color:#f0d79a;transform:scale(1.1)}
+.flow .st:not(:last-child) .dot2:after{content:"";position:absolute;top:32px;right:50%;width:2px;height:15px;margin-right:-1px;background:rgba(255,255,255,.28)}
+.flow .tx{font-size:.95rem;font-weight:500}
+.entry{display:grid;gap:10px;margin:12px 0}
+.entry button{display:flex;align-items:center;gap:14px;text-align:right;border:1px solid var(--line);background:var(--card);border-radius:18px;padding:14px 16px;box-shadow:var(--shadow)}
+.entry button:active{transform:scale(.985)}
+.entry .ic{flex:0 0 auto;width:46px;height:46px;border-radius:14px;background:var(--soft);display:grid;place-items:center}
+.entry .ic svg{width:24px;height:24px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.entry b{display:block;font-size:1.02rem}.entry small{color:var(--muted);font-size:.82rem;line-height:1.5;display:block}
+.entry .ar{margin-inline-start:auto;color:var(--muted);font-size:1.2rem}
+
+.def{font-family:var(--ffx);font-size:1.2rem;line-height:2.05}
+.quote{font-family:var(--ffx);font-size:1.15rem;line-height:2;border-inline-start:3px solid var(--gold);padding:3px 13px;margin:10px 0;background:var(--soft2);border-radius:10px}
+.chip{display:inline-block;font-size:.7rem;padding:1px 9px;border-radius:99px;background:var(--soft);color:var(--accent);margin-inline-start:6px;font-weight:700;white-space:nowrap;font-family:var(--ff)}
+.tag{display:inline-block;font-size:.76rem;padding:2px 10px;border-radius:99px;font-weight:700;font-family:var(--ff)}
+.t-ok{background:var(--ok-bg);color:var(--ok)}.t-bad{background:var(--bad-bg);color:var(--bad)}.t-mid{background:var(--mid-bg);color:var(--mid)}.t-nv{background:var(--soft2);color:var(--navy2)}
+html[data-theme="dark"] .t-nv{color:var(--ink)}
+.pg-ref{font-size:.72rem;color:var(--muted);margin-inline-start:6px;white-space:nowrap}
+.mine{display:inline-block;font-size:.68rem;padding:0 8px;border-radius:99px;border:1px dashed var(--gold);color:var(--gold);font-weight:700;margin-inline-start:6px;font-family:var(--ff)}
+.btn{border:0;background:var(--accent);color:var(--accent-ink);padding:11px 18px;border-radius:14px;font-weight:700;display:inline-block;margin:4px 0;text-decoration:none;font-size:.95rem}
+.btn.navy{background:var(--navy);color:#fff}
+.btn.ghost{background:var(--soft);color:var(--accent)}
+.btn:active{transform:scale(.97)}
+.btn[disabled]{opacity:.5}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.opt{display:block;width:100%;text-align:right;border:1.5px solid var(--line);background:var(--card);border-radius:14px;padding:12px 14px;margin:8px 0;transition:.15s}
+.opt:active{transform:scale(.99)}
+.opt.sel{border-color:var(--accent);background:var(--soft)}
+.opt.right{border-color:var(--ok);background:var(--ok-bg)}.opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.opts2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opts2 .opt{margin:4px 0;text-align:center;font-weight:700}
+
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:10px 0;box-shadow:var(--shadow)}
+details>summary{list-style:none;cursor:pointer;padding:13px 16px;font-weight:700;display:flex;align-items:center;gap:8px}
+details>summary::-webkit-details-marker{display:none}
+details>summary:after{content:"＋";margin-inline-start:auto;color:var(--accent);font-weight:700}
+details[open]>summary:after{content:"－"}
+details>.b{padding:2px 16px 14px;border-top:1px dashed var(--line)}
+details.sub{box-shadow:none;background:var(--bg)}
+details.fiqh{border-color:var(--gold);background:var(--card)}
+details.fiqh>summary{color:var(--mid)}
+html[data-theme="dark"] details.fiqh>summary{color:var(--gold)}
+
+.flip{margin:10px 0}
+.flip>button{width:100%;text-align:right;border:1px solid var(--line);background:var(--card);border-radius:18px;padding:15px 17px;min-height:88px;box-shadow:var(--shadow);position:relative}
+.flip .bk{display:none}
+.flip.on>button{background:var(--soft);border-color:var(--accent)}
+.flip.on .f{display:none}.flip.on .bk{display:block;animation:fade .25s}
+.flip .n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:.85rem;margin-inline-end:8px}
+.flip .hint{display:block;color:var(--muted);font-size:.78rem;margin-top:6px}
+.verdict{border-radius:14px;padding:12px 14px;margin:10px 0;font-weight:700}
+.verdict.ok{background:var(--ok-bg);color:var(--ok)}.verdict.bad{background:var(--bad-bg);color:var(--bad)}.verdict.mid{background:var(--mid-bg);color:var(--mid)}.verdict.nv{background:var(--soft2);color:var(--navy2)}
+html[data-theme="dark"] .verdict.nv{color:var(--ink)}
+.verdict ul{font-weight:400}
+.crumb{font-size:.8rem;color:var(--muted);margin-bottom:6px}
+.steps{display:flex;gap:6px;margin:6px 0 12px}
+.steps i{flex:1;height:5px;border-radius:5px;background:var(--line)}.steps i.on{background:var(--accent)}
+.progress{height:8px;background:var(--line);border-radius:8px;overflow:hidden;margin:8px 0}
+.progress>b{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:right}
+th{background:var(--soft);color:var(--accent)}
+label.ck{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1.5px solid var(--line);border-radius:12px;margin:8px 0;background:var(--card)}
+label.ck input{width:22px;height:22px;margin-top:4px;accent-color:var(--accent);flex:0 0 auto}
+input[type=number],input[type=text],textarea,input.s{width:100%;font:inherit;padding:11px 13px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+input[type=number]{direction:ltr;text-align:right}
+textarea{min-height:96px;resize:vertical;line-height:1.7}
+.bigo{font-size:2rem;font-weight:700;color:var(--accent)}
+.small{font-size:.85rem;color:var(--muted)}
+.note{background:var(--mid-bg);color:var(--mid);border-radius:14px;padding:10px 13px;font-size:.86rem;margin:10px 0;line-height:1.7}
+.note.nv{background:var(--soft2);color:var(--navy2)}
+html[data-theme="dark"] .note.nv{color:var(--ink)}
+ul.clean,ol.clean{margin:6px 0;padding-inline-start:22px}
+ul.clean li,ol.clean li{margin:5px 0}
+.fx{animation:flash 1.4s ease}
+@keyframes flash{0%,60%{box-shadow:0 0 0 3px var(--gold)}100%{box-shadow:var(--shadow)}}
+.stat{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px dashed var(--line)}
+
+/* خريطة التخطيط */
+.map{display:grid;gap:8px;margin:8px 0}
+.map .root{background:var(--navy);color:#fff;border-radius:14px;padding:10px 14px;text-align:center;font-weight:700;font-family:var(--ffh);font-size:1.1rem}
+.map .brs{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:relative}
+.map .brs:before{content:"";position:absolute;top:-8px;right:25%;left:25%;height:8px;border:2px solid var(--line);border-bottom:0;border-radius:8px 8px 0 0}
+.map .sub2{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:relative;margin-top:2px}
+.map .col{display:grid;gap:8px;align-content:start}
+.map .nd{border:2px solid var(--line);background:var(--card);border-radius:14px;padding:9px 8px;text-align:center;font-weight:700;font-size:.92rem;transition:.2s}
+.map .nd small{display:block;font-weight:400;font-size:.72rem;color:var(--muted);line-height:1.4}
+.map .nd.on{border-color:var(--accent);background:var(--soft);transform:translateY(-1px)}
+.map .nd:active{transform:scale(.97)}
+
+/* الخط الزمني */
+.tl{position:relative;margin:10px 0;padding-inline-start:4px}
+.tl .it{display:flex;gap:12px;margin:0;padding-bottom:6px;cursor:pointer}
+.tl .rail{flex:0 0 auto;width:30px;display:flex;flex-direction:column;align-items:center}
+.tl .nb{width:30px;height:30px;border-radius:50%;background:var(--card);border:2px solid var(--line);display:grid;place-items:center;font-weight:700;font-size:.82rem;transition:.25s}
+.tl .ln{flex:1;width:2px;background:var(--line);margin-top:2px}
+.tl .it:last-child .ln{display:none}
+.tl .bd{flex:1;border:1px solid var(--line);background:var(--card);border-radius:16px;padding:10px 14px;margin-bottom:8px}
+.tl .bd b{display:block}
+.tl .bd .more{display:none;margin-top:6px;font-size:.92rem}
+.tl .it.on .nb{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.tl .it.on .bd{border-color:var(--accent);background:var(--soft)}
+.tl .it.on .more{display:block}
+
+/* مقارنة */
+.cmp{display:grid;gap:10px}
+.cmp .rw{border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden}
+.cmp .rw>button{width:100%;text-align:right;border:0;background:none;padding:12px 14px;font-weight:700;display:flex;align-items:center;gap:8px}
+.cmp .rw>button:after{content:"＋";margin-inline-start:auto;color:var(--accent)}
+.cmp .rw.on>button:after{content:"－"}
+.cmp .two{display:none;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.cmp .rw.on .two{display:grid}
+.cmp .two>div{padding:10px 12px;font-size:.9rem}
+.cmp .two>div:first-child{background:var(--soft);border-inline-end:1px solid var(--line)}
+.cmp .two h4{margin:0 0 4px;font-size:.82rem;color:var(--accent)}
+.cmp .two>div:last-child h4{color:var(--mid)}
+
+/* مقارنة المثال 2.5% */
+.bars{display:grid;gap:8px;margin:10px 0}
+.bars .br{display:flex;align-items:center;gap:10px;font-size:.88rem}
+.bars .lb{flex:0 0 96px}
+.bars .tr{flex:1;height:22px;background:var(--line);border-radius:8px;overflow:hidden;position:relative}
+.bars .tr i{display:block;height:100%;border-radius:8px;width:0;transition:width 1s ease}
+.bars .v{flex:0 0 44px;font-weight:700;text-align:left;direction:ltr}
+
+/* مسارات */
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.paths>div{border:2px solid var(--line);border-radius:16px;padding:10px 12px;background:var(--card);font-size:.88rem}
+.paths>div b{display:block;color:var(--accent);margin-bottom:4px}
+.paths .arrow{grid-column:1/-1;text-align:center;color:var(--muted);font-size:.8rem}
+
+/* القاموس والنوافذ */
+.gl{border-bottom:2px dotted var(--gold);cursor:help;font-weight:700}
+.sheet{position:fixed;inset:0;z-index:100;background:rgba(5,15,25,.5);display:none;align-items:flex-end;justify-content:center}
+.sheet.on{display:flex}
+.sheet .pane{background:var(--bg);width:100%;max-width:720px;max-height:88vh;overflow:auto;border-radius:24px 24px 0 0;padding:16px 16px calc(24px + env(safe-area-inset-bottom));animation:up .25s ease}
+@keyframes up{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+.pane h3:first-child{margin-top:0}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{flex:1;min-width:76px;border:1.5px solid var(--line);background:var(--card);border-radius:12px;padding:8px}
+.seg button.on{border-color:var(--accent);background:var(--soft);color:var(--accent);font-weight:700}
+.sr{padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--card);margin:8px 0;cursor:pointer}
+.sr small{color:var(--muted)}
+.gterm{padding:10px 0;border-bottom:1px dashed var(--line)}
+.gterm b{color:var(--accent)}
+
+/* الاختبار */
+.mt{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.mt button{border:1.5px solid var(--line);background:var(--card);border-radius:12px;padding:9px 8px;font-size:.88rem;line-height:1.5}
+.mt button.sel{border-color:var(--accent);background:var(--soft)}
+.mt button.done{opacity:.95}
+.mt button.p0{border-color:#2f7fd1;background:#e7f1fb;color:#14395f}.mt button.p1{border-color:#c77d1d;background:#fbf0de;color:#5c3a07}
+.mt button.p2{border-color:#7a4fb5;background:#efe9f8;color:#3d2468}.mt button.p3{border-color:#1b8a73;background:#e0f3ee;color:#0d4a3d}
+.mt button.bad{border-color:var(--bad);background:var(--bad-bg);color:var(--bad)}
+.ord{display:grid;gap:8px;margin:8px 0}
+.ord button{display:flex;align-items:center;gap:10px;text-align:right;border:1.5px solid var(--line);background:var(--card);border-radius:12px;padding:10px 12px}
+.ord button .bdg{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--line);display:grid;place-items:center;font-weight:700;font-size:.8rem}
+.ord button.sel{border-color:var(--accent);background:var(--soft)}
+.ord button.sel .bdg{background:var(--accent);color:var(--accent-ink)}
+.skills{display:grid;gap:8px;margin:10px 0}
+.skills .sk{display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;background:var(--card);border:1px solid var(--line)}
+.skills .sk i{flex:0 0 auto;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:700}
+.skills .sk.ok i{background:var(--ok-bg);color:var(--ok)}.skills .sk.no i{background:var(--mid-bg);color:var(--mid)}
+
+/* التعليقات */
+.cm{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:11px 14px;margin:10px 0}
+.cm .h{display:flex;justify-content:space-between;gap:8px;font-size:.8rem;color:var(--muted);margin-bottom:4px}
+.cm .h b{color:var(--ink)}
+.cm p{margin:0;white-space:pre-wrap;word-break:break-word;font-size:.95rem}
+.cm.adm{border-style:dashed}.cm.hid{opacity:.6}
+.cm .ac{display:flex;gap:8px;margin-top:8px}
+.cm .ac button{border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:4px 12px;font-size:.8rem}
+.cm .ac button.dl{color:var(--bad);border-color:var(--bad)}
+.hp{position:absolute;right:-9999px;opacity:0}
+
+footer{border-top:1px solid var(--line);padding:18px 0 10px;color:var(--muted);font-size:.84rem;line-height:1.85}
+footer b{color:var(--ink)}
+#dot{display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--line);opacity:.35;vertical-align:middle;margin-inline-start:6px;border:0;padding:0}
+@media (min-width:720px){body{font-size:1.02rem}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* مضاف: تنبيه عابر وبحث */
+.toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);background:var(--navy);color:#fff;padding:9px 16px;border-radius:12px;font-size:.88rem;opacity:0;pointer-events:none;transition:.25s;z-index:200;max-width:90%;text-align:center}
+.toast.on{opacity:1;transform:translateX(-50%)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.res-tag{display:inline-block;font-size:.72rem;background:var(--soft);color:var(--accent);border-radius:8px;padding:0 8px;margin-inline-start:6px}
+.cs-h{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:4px}
+.cs-h b{font-family:var(--ffh);font-size:1.08rem}
+.fb{margin-top:10px}
+
+/* رأس الأقسام المزخرف */
+.phead{position:relative;overflow:hidden;border-radius:22px;padding:18px 18px 16px;margin:6px 0 14px;color:#fff;background:linear-gradient(160deg,#10304f 0%,#0f2a47 55%,#0b4a47 135%);display:flex;gap:14px;align-items:center}
+.phead:before{content:"";position:absolute;inset:0;opacity:.09;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 4l6 14 14-6-6 14 14 6-14 6 6 14-14-6-6 14-6-14-14 6 6-14L4 32l14-6-6-14 14 6z' fill='none' stroke='white' stroke-width='1.2'/%3E%3C/svg%3E");background-size:64px}
+.phead:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,transparent,#d8b25e,transparent)}
+.phead>*{position:relative}
+.phead .pi{flex:0 0 auto;width:48px;height:48px;border-radius:15px;background:rgba(240,215,154,.16);border:1px solid rgba(240,215,154,.45);display:grid;place-items:center}
+.phead .pi svg{width:26px;height:26px;stroke:#f0d79a;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.phead h2{color:#fff;margin:0;font-size:1.6rem}
+.phead .lead{color:#f0d79a;margin:2px 0 0;font-size:.9rem;opacity:.95}
+.card{border-top:3px solid var(--gold)}
+.card.soft,.card.navy{border-top-width:1px}
+h3{position:relative;padding-inline-start:14px}
+h3:before{content:"";position:absolute;inset-inline-start:0;top:.55em;width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
+.pane h3:before,.card h3:before,.phead h3:before{display:none}.pane h3,.card h3{padding-inline-start:0}
+.sp.on>.card:first-child,.sp.on>.note:first-child{animation:fade .35s}
+html[data-theme="dark"] .phead{background:linear-gradient(160deg,#0a1d31 0%,#10304f 120%)}
+
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<div class="ded"><span>إهداء من جهاد بن جمال حولدار</span><span>إلى أ.د. حسن بن صالح القرني</span><small>تقريب اجتهادي لبحثه، لم يُراجَع من الدكتور</small></div>
+<header class="top"><div class="wrap bar">
+  <div class="brand">
+    <div class="mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0d79a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5.6L20 11l-5.6 2.4L12 19l-2.4-5.6L4 11l5.6-2.4z"/></svg></div>
+    <div><h1>التخطيط الزكوي</h1><small>حكمه وأثره · تقريب تفاعلي</small></div>
+  </div>
+  <button class="ib" id="bSearch" aria-label="بحث"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+  <button class="ib" id="bShare" aria-label="مشاركة"><svg viewBox="0 0 24 24"><path d="M12 15V4M8 8l4-4 4 4"/><path d="M5 13v6a1 1 0 001 1h12a1 1 0 001-1v-6"/></svg></button>
+  <button class="ib" id="bSet" aria-label="الإعدادات"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg></button>
+</div></header>
+
+<main class="wrap">
+
+<!-- ================= الرئيسية ================= -->
+<section class="pg on" id="home">
+  <div class="hero">
+    <div class="k">منصة تفاعلية لتقريب بحث محكَّم</div>
+    <h2>التخطيط الزكوي</h2>
+    <div class="tag2">قرارات مالية واعية، وزكاة محسوبة على وجهها الصحيح</div>
+    <p>قد يؤثر قرار مالي واحد في مقدار الزكاة المستحقة على الشركة. فكيف تدرس الشركات هذه الآثار؟ ومتى يكون التخطيط مشروعًا؟</p>
+    <div class="flow" id="flow">
+      <div class="st on"><span class="dot2">١</span><span class="tx">قرار مالي</span></div>
+      <div class="st"><span class="dot2">٢</span><span class="tx">أثر زكوي محتمل</span></div>
+      <div class="st"><span class="dot2">٣</span><span class="tx">دراسة وتخطيط</span></div>
+      <div class="st"><span class="dot2">٤</span><span class="tx">قرار واعٍ متوافق مع الشرع والنظام</span></div>
+    </div>
+  </div>
+
+  <div class="entry">
+    <button data-go="afham"><span class="ic"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 00-3.5 10.9c.7.6 1 1.3 1 2.1h5c0-.8.3-1.5 1-2.1A6 6 0 0012 3z"/></svg></span><span><b>تعرّف على الفكرة</b><small>ما التخطيط الزكوي؟ وكيف يحدث؟ ولماذا يهتم به أصحاب الشركات؟</small></span><span class="ar">‹</span></button>
+    <button data-go="mawaqif"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></span><span><b>استكشف أمثلة ومواقف</b><small>حالات مستمدة من البحث: اسأل نفسك أولًا ثم اقرأ التفسير.</small></span><span class="ar">‹</span></button>
+    <button data-go="quiz"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg></span><span><b>اختبر فهمك</b><small>أنشطة متنوعة: تصنيف وترتيب ومطابقة واكتشاف خطأ.</small></span><span class="ar">‹</span></button>
+  </div>
+
+  <div class="card">
+    <b>اختر مستوى العرض</b>
+    <div class="seg" id="segMode" style="margin-top:8px"><button data-v="simple">مبسَّط</button><button data-v="sci">علمي (يفتح التفاصيل الفقهية)</button></div>
+    <p class="small" style="margin:8px 0 0">في أي وضع تبقى التفاصيل الفقهية متاحة عند الضغط على «اعرض التفصيل الفقهي».</p>
+  </div>
+
+  <div class="card sx" data-t="الخلاصة في دقيقة">
+    <b>الخلاصة في دقيقة</b>
+    <div class="quote">مراعاة الأثر الزكوي في التصرفات المالية وبنود الوعاء الزكوي وإجراءاته<span class="pg-ref">تعريف الباحث، ص23</span></div>
+    <ul class="clean">
+      <li><b>قبل التصرف المالي:</b> لا مانع شرعًا من التخطيط الزكوي عند الباحث. <span class="pg-ref">ص26-27</span></li>
+      <li><b>بعد التصرف المالي:</b> الحكم يتبع القصد؛ فالتحايل على الزكاة محرَّم على الراجح، ورفع الضرر عن المالك جائز. <span class="pg-ref">ص27-34</span></li>
+      <li><b>الأثر على الزكاة:</b> مرتبط بالحكم؛ إن كان التخطيط جائزًا فلا تجب الزكاة عن المال المتصرَّف فيه قبل الحول، وإن كان محرَّمًا فلا تسقط. <span class="pg-ref">ص42-43</span></li>
+    </ul>
+  </div>
+
+  <div class="card soft">
+    <b>البحث الأصلي</b>
+    <p style="margin:6px 0">«التخطيط الزكوي، حكمه وأثره» — أ.د. حسن بن صالح القرني، أستاذ الفقه المقارن بكلية الشريعة بجامعة الملك فيصل.<br><span class="small">مجلة الجامعة الإسلامية للعلوم الشرعية، العدد 216، الجزء 3، السنة 60، مارس 2026م.</span></p>
+    <a class="btn" href="https://drive.google.com/file/d/1U71tO-QuSIepRH6X1VznZefoCNaEzqln/view?usp=sharing" target="_blank" rel="noopener" id="lnkOrig">الرجوع إلى البحث الأصلي</a>
+    <button class="btn ghost" data-go="about">عن البحث</button>
+  </div>
+
+  <div class="card" id="cmSec" style="display:none">
+    <b>رأيك يهمّنا</b>
+    <p class="small" style="margin:2px 0 8px">اترك تعليقًا أو ملاحظة أو استفسارًا.</p>
+    <div id="cmTop"></div>
+    <div id="cmForm" style="display:none">
+      <input type="text" id="cmName" maxlength="40" placeholder="اسمك (اختياري)">
+      <textarea id="cmText" maxlength="500" placeholder="اكتب تعليقك هنا…" style="margin-top:8px"></textarea>
+      <input type="text" id="cmHp" class="hp" tabindex="-1" autocomplete="off">
+      <div class="row" style="margin-top:6px;justify-content:space-between"><span class="small" id="cmCnt" style="direction:ltr;unicode-bidi:isolate">0 / 500</span><button class="btn" id="cmSend">إرسال</button></div>
+      <div id="cmMsg" class="small"></div>
+    </div>
+    <h3 style="margin-top:16px;font-size:1rem">التعليقات</h3>
+    <div id="cmList"><p class="small">…</p></div>
+  </div>
+</section>
+
+<!-- ================= افهم ================= -->
+<section class="pg" id="afham">
+  <h2>افهم التخطيط الزكوي</h2>
+  <p class="lead">من الفكرة العامة إلى التفاصيل، على مهل.</p>
+  <div class="chips"><button class="on" data-sp="a1">الفكرة</button><button data-sp="a2">كيف يحدث؟</button><button data-sp="a3">لماذا هو مهم؟</button><button data-sp="a4">تخطيط أم تجنّب؟</button></div>
+
+  <!-- الفكرة -->
+  <div class="sp on" id="a1">
+    <div class="card soft sx" data-t="تبسيط الفكرة">
+      <b>الفكرة ببساطة</b><span class="mine">تبسيط من الصفحة</span>
+      <p style="margin:6px 0 0">الشركة تتخذ قرارات مالية طوال العام، وهذه القرارات قد تؤثر في مقدار <span class="gl" data-g="zakat">الزكاة</span> المستحقة. لذلك تدرس أثر القرار قبل اتخاذه، وتراجع بنودها المالية وإجراءاتها عند احتساب الزكاة، لتصل إلى المقدار الصحيح وتتجنب الزيادة غير اللازمة، دون مخالفة الشرع أو النظام.</p>
+    </div>
+
+    <h3>التعريف الذي اختاره الباحث <span class="pg-ref">ص23</span></h3>
+    <div class="card sx" data-t="تعريف التخطيط الزكوي">
+      <p class="small" style="margin-top:0">اضغط على كل جزء من التعريف لتعرف معناه:</p>
+      <div class="def" id="defParts">
+        <button class="opt" data-d="0" style="font-family:inherit"><b>مراعاة الأثر الزكوي</b></button>
+        <button class="opt" data-d="1"><b>في التصرفات المالية</b></button>
+        <button class="opt" data-d="2"><b>وبنود الوعاء الزكوي</b></button>
+        <button class="opt" data-d="3"><b>وإجراءاته</b></button>
+      </div>
+      <div id="defOut" class="verdict nv" style="font-weight:400">اختر جزءًا لتظهر شرحه.</div>
+    </div>
+
+    <details class="fiqh sx" data-t="الزكاة لغة واصطلاحا"><summary>اعرض التفصيل الفقهي: ما الزكاة؟ <span class="chip">ص19-22</span></summary><div class="b">
+      <p><b>لغةً:</b> أصلان: <b>النماء والزيادة</b> (زكا الزرع: ازداد ونما)، و<b>الطهارة والصلاح</b> كقوله تعالى ﴿خَيْرًا مِنْهُ زَكَوٰةً﴾ [الكهف: 81] أي عملًا صالحًا. وسُميت زكاة لأنها يُرجى بها زيادة المال ونماؤه وطهارته ﴿خُذْ مِنْ أَمْوَٰلِهِمْ صَدَقَةً تُطَهِّرُهُمْ وَتُزَكِّيهِم بِهَا﴾ [التوبة: 103].</p>
+      <p><b>اصطلاحًا (الراجح عند الباحث):</b></p>
+      <div class="quote">جزءٌ من مالٍ معينٍ يُخرج وجوبًا لطائفةٍ معينة</div>
+      <p class="small">(جزء): قدر الزكاة. (من مال معين): الأموال الزكوية. (يُخرج): سواء أخرجه المالك أو أُخرج عنه كمال الصبي والمجنون. (وجوبًا): لتخرج الصدقات المستحبة. (لطائفة معينة): الأصناف الثمانية. واقتصر على الأركان دون الشروط لأن المقصود معرفة ماهية الزكاة. (ص21-22)</p>
+      <details class="sub"><summary>تعريفات المذاهب الأربعة</summary><div class="b">
+        <p><b>الحنفية:</b> «تمليك المال من فقير مسلم غير هاشمي ولا مولاه بشرط قطع المنفعة عن المملِّك من كل وجه لله تعالى».</p>
+        <p><b>المالكية:</b> «جزء من المال شرط وجوبه لمستحقه بلوغ المال نصابًا».</p>
+        <p><b>الشافعية:</b> «أخذ شيء مخصوص من مال مخصوص على أوصاف مخصوصة لطائفة مخصوصة».</p>
+        <p><b>الحنابلة:</b> «إخراج شيء مخصوص من مال مخصوص على وجه مخصوص».</p>
+      </div></details>
+    </div></details>
+
+    <details class="fiqh sx" data-t="صورة التخطيط الزكوي كما وصفها الباحث"><summary>اعرض التفصيل: صورة التخطيط كما وصفها الباحث <span class="chip">ص22-23</span></summary><div class="b">
+      <p>أن يحرص المكلَّف بالزكاة (وهو الشركات غالبًا) على تنظيم تصرفاته المالية والإجرائية خلال الحول الزكوي مراعيًا الأثر الزكوي المترتب على كل تصرف، ويستهدف احتساب مقدار الزكاة احتسابًا دقيقًا دون زيادة، وكذلك القيام ببعض التصرفات المالية والإجرائية التي تؤدي إلى تقليل العبء الزكوي بما لا يخالف الشريعة ولا نظام جباية الزكاة، كإغلاق بعض الديون المستحقة وتوزيع الأرباح المؤجلة على المساهمين؛ وكل ذلك بمتابعة متخصص في علمي الزكاة والمحاسبة.</p>
+      <p class="small">ومما نقله الباحث تعريفًا لأحد المحاسبين: «دراسة الآثار الزكوية والضريبية على معاملات ومركز المنشأة المالي لوضع خطط ونماذج عمل ... بشكل متوافق مع التشريعات الزكوية والضريبية».</p>
+    </div></details>
+  </div>
+
+  <!-- كيف يحدث -->
+  <div class="sp" id="a2">
+    <p class="lead">ذكر الباحث أن إجراءات التخطيط الزكوي تكون <b>وقاية</b> أو <b>معالجة</b>، والمعالجة موضوعية أو إجرائية. اضغط على أي فرع. <span class="pg-ref">ص23</span></p>
+    <div class="map" id="map">
+      <div class="root">التخطيط الزكوي</div>
+      <div class="brs">
+        <button class="nd on" data-m="w">وقائي<small>قبل التصرف المالي</small></button>
+        <button class="nd" data-m="r">علاجي<small>في البنود والإجراءات</small></button>
+      </div>
+      <div class="sub2"><span></span><div class="brs" style="grid-template-columns:1fr 1fr;margin:0"><button class="nd" data-m="o">موضوعي<small>بنود الوعاء</small></button><button class="nd" data-m="p">إجرائي<small>التصنيف والإقرار</small></button></div></div>
+    </div>
+    <div class="card sx" id="mapOut" data-t="خريطة التخطيط الزكوي وقائي وعلاجي"></div>
+
+    <h3>الحول الزكوي: أين يقع التخطيط؟ <span class="mine">تقريب من الصفحة</span></h3>
+    <p class="lead">اضغط كل مرحلة. هذا تقريب للفكرة وليس جدولًا محاسبيًا ولا فتوى زمنية؛ فليس كل إجراء مرتبطًا بوقت محدد.</p>
+    <div class="tl" id="tl"></div>
+  </div>
+
+  <!-- لماذا مهم -->
+  <div class="sp" id="a3">
+    <p class="lead">خمس فوائد ذكرها الباحث (اضغط كل بطاقة). <span class="pg-ref">ص25-26</span></p>
+    <div id="why"></div>
+    <h3>مثال الباحث: حين يساوي الدخلُ الزكاةَ <span class="pg-ref">ص26</span></h3>
+    <div class="card sx" data-t="مثال الربح 2.5 بالمئة يساوي الزكاة">
+      <p style="margin-top:0">شركة تقدم على تصرف مالي يُرجى ربحه 2.5%، وكان التصرف داخلًا ضمن الوعاء الزكوي. اضغط لترى الأثر:</p>
+      <div class="bars" id="bars">
+        <div class="br"><span class="lb">الربح المرجو</span><span class="tr"><i style="background:var(--accent)" data-w="100"></i></span><span class="v">2.5%</span></div>
+        <div class="br"><span class="lb">الزكاة عليه</span><span class="tr"><i style="background:var(--gold)" data-w="100"></i></span><span class="v">2.5%</span></div>
+        <div class="br"><span class="lb">الباقي</span><span class="tr"><i style="background:var(--bad)" data-w="2"></i></span><span class="v">0%</span></div>
+      </div>
+      <button class="btn ghost" id="barsGo">أظهر المقارنة</button>
+      <p class="small" style="margin:6px 0 0">يبيّن التخطيط الزكوي أن هذا التصرف «في حقيقته ليس مربحًا؛ إذ دخله يساوي زكاته مثلًا». النسبة 2.5% هنا من مثال الباحث، وليست حسابًا لحالة بعينها.</p>
+    </div>
+  </div>
+
+  <!-- تخطيط أم تجنب -->
+  <div class="sp" id="a4">
+    <p class="lead">أفاد المتخصصون الباحثَ أن «التجنب» مصطلح ضريبي لا زكوي، وأنه كالتخطيط يُقصد به تقليل الوعاء دون مخالفة الأنظمة؛ ومع ذلك رأى بعد التأمل ثلاثة فروق. <span class="pg-ref">ص24-25</span></p>
+    <div class="cmp" id="cmp"></div>
+    <div class="note nv"><b>رسالة مهمة:</b> ليس كل تخفيف للزكاة تحايلًا. فالباحث يقرر أن التخطيط قد يكون مشروعًا، وأن المنظور فيه هو <b>مراعاة الأثر الزكوي</b> وليس مجرد تجنب الزكاة.</div>
+  </div>
+</section>
+
+<!-- ================= مواقف ================= -->
+<section class="pg" id="mawaqif">
+  <h2>مواقف من الواقع</h2>
+  <p class="lead">حالات مبسطة مستمدة من أمثلة البحث. فكّر أولًا ثم اطّلع على التفسير. الأرقام والوقائع افتراضية للتعليم، وليست معالجة محاسبية معتمدة.</p>
+  <div id="cases"></div>
+</section>
+
+<!-- ================= الحكم ================= -->
+<section class="pg" id="hukm">
+  <h2>الحكم الشرعي</h2>
+  <p class="lead">كما حرّره الباحث: حكم التخطيط، والمعاوضة عليه، وأثره على الزكاة.</p>
+  <div class="chips"><button class="on" data-sp="h1">شجرة الحكم</button><button data-sp="h2">المعاوضة</button><button data-sp="h3">الأثر على الزكاة</button></div>
+
+  <div class="sp on" id="h1">
+    <div class="note nv">ما يلي <b>ترجيحات الباحث</b> وتصوره، وليس حكمًا قطعيًا على كل واقعة؛ فتفاصيل الوقائع والأنظمة تغيّر النتيجة.</div>
+    <div class="steps"><i class="on" id="st1"></i><i id="st2"></i><i id="st3"></i></div>
+    <div id="tree"></div>
+  </div>
+
+  <div class="sp" id="h2">
+    <div class="card sx" data-t="حكم المعاوضة على التخطيط الزكوي">
+      <p style="margin-top:0">أبرمت شركات عقد التخطيط الزكوي مع مكاتب محاسبية <b>مقابل عوض</b>. ولم يجد الباحث من ذكر حكمه، ورأى أن <b>الأصل الجواز بثلاثة ضوابط</b>. <span class="pg-ref">ص34</span></p>
+      <div class="flip"><button type="button" data-flip="g1"><span class="f"><span class="n">1</span><b>ألا يؤدي إلى التحايل على الزكاة</b><span class="hint">اضغط</span></span><span class="bk"><b>ألا يؤدي إلى التحايل على الزكاة والفرار منها</b>، كأن يبيع المال الزكوي قبل انتهاء الحول ثم يشتريه بعد ذلك؛ للحديث: «ولا يُجمع بين متفرق ولا يُفرَّق بين مجتمع خشية الصدقة». <span class="pg-ref">ص35</span></span></button></div>
+      <div class="flip"><button type="button" data-flip="g2"><span class="f"><span class="n">2</span><b>ألا يكون معاملة محرمة</b><span class="hint">اضغط</span></span><span class="bk"><b>ألا يكون معاملة محرمة</b>، كبيع ما حرمه الله ورسوله أو شرائه؛ لقوله تعالى ﴿وَلَا تَعَاوَنُوا عَلَى الْإِثْمِ وَالْعُدْوَٰنِ﴾ [المائدة: 2]. <span class="pg-ref">ص35-36</span></span></button></div>
+      <div class="flip"><button type="button" data-flip="g3"><span class="f"><span class="n">3</span><b>ألا يخالف نظامًا أو لائحة</b><span class="hint">اضغط</span></span><span class="bk"><b>ألا ينطوي على مخالفة لنظام أو لائحة سنّها ولي الأمر</b>؛ لقوله تعالى ﴿أَطِيعُوا اللَّهَ وَأَطِيعُوا الرَّسُولَ وَأُولِى الْأَمْرِ مِنكُمْ﴾ [النساء: 59]. <span class="pg-ref">ص36</span></span></button></div>
+    </div>
+    <details class="fiqh sx" data-t="أدلة جواز المعاوضة"><summary>اعرض التفصيل الفقهي: أدلة الجواز <span class="chip">ص35</span></summary><div class="b"><ol class="clean">
+      <li>الأصل في العقود الصحة والجواز، ومن ادّعى المنع فعليه الدليل؛ ولا يعلم الباحث دليلًا صحيحًا يمنع المعاوضة على التخطيط الزكوي وفق الضوابط.</li>
+      <li>لا يخرج عقد التخطيط الزكوي عن عقدي الإجارة والجعالة، وهما مشروعان بإجماع الفقهاء.</li>
+      <li>يحصل بالعقد التعاون على البر ﴿وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ﴾ [المائدة: 2].</li></ol></div></details>
+    <h3>افحص خدمة التخطيط الزكوي <span class="mine">أداة تعليمية</span></h3>
+    <div class="card" id="svc"></div>
+    <div class="note">هذه الأداة للتذكير بالضوابط وليست جهة اعتماد ولا فتوى.</div>
+  </div>
+
+  <div class="sp" id="h3">
+    <p class="lead">لا تحفظ نتيجتين منفصلتين؛ افهم الصلة: <b>الأثر تابع للحكم</b>. <span class="pg-ref">ص36</span></p>
+    <div class="card">
+      <b>اختر حكم التخطيط لترى أثره على الزكاة:</b>
+      <div class="opts2" style="margin-top:6px"><button class="opt" data-ef="ok">التخطيط جائز</button><button class="opt" data-ef="bad">التخطيط محرَّم</button></div>
+      <div id="efOut" class="verdict nv" style="font-weight:400">اختر أحد الحكمين.</div>
+    </div>
+    <p>المسألة: هل تسقط زكاة المال الذي تصرّف فيه المالك قبل انتهاء الحول (كأن يتفق مع الملّاك على توزيع أرباح مؤجلة قبل الحول ثم يستعيدها منهم، أو يوزعها دون استعادة)؟ اختلف الفقهاء على قولين:</p>
+    <table><tr><th>القول</th><th>من قال به</th></tr>
+      <tr><td><b>تسقط الزكاة</b></td><td>الحنفية والشافعية وقول للحنابلة</td></tr>
+      <tr><td><b>لا تسقط الزكاة</b></td><td>المالكية والحنابلة</td></tr></table>
+    <h3>الراجح عند الباحث <span class="pg-ref">ص42-43</span></h3>
+    <table><tr><th>إن كان التخطيط…</th><th>فالزكاة…</th></tr>
+      <tr><td><span class="tag t-ok">جائزًا</span></td><td><b>لا تجب</b> عن المال الذي تصرّف فيه المالك قبل انتهاء الحول</td></tr>
+      <tr><td><span class="tag t-bad">محرَّمًا</span></td><td><b>لا تسقط</b>، بل تجب عن المال المتصرَّف فيه فرارًا من الزكاة</td></tr></table>
+    <details class="fiqh sx" data-t="أدلة القولين في أثر التخطيط على الزكاة"><summary>اعرض التفصيل الفقهي: أدلة القولين وتعليل الترجيح <span class="chip">ص36-43</span></summary><div class="b">
+      <h3 style="margin-top:8px">دليل القول بالسقوط</h3>
+      <p>«لا زكاة في مال حتى يحول عليه الحول»؛ فالزكاة تجب إذا تحقق الحول ولم يتحقق هنا، ولا فرق بين نية الفرار وعدمها، والزكاة تجب بالحول لا بالفرار منها. <span class="pg-ref">ص37</span></p>
+      <p class="small">رُدّ بأن اشتراط الحول متفق عليه، وعدم التفريق بين نية الفرار وعدمها هو عين النزاع السابق. (ص38)</p>
+      <h3>أدلة القول بعدم السقوط (خمسة) <span class="pg-ref">ص39-41</span></h3>
+      <ol class="clean">
+        <li>آية أصحاب الجنة ﴿إِنَّا بَلَوْنَٰهُمْ كَمَا بَلَوْنَآ أَصْحَٰبَ الْجَنَّةِ…﴾ [القلم: 17-20]: قصدوا بقطع الثمار إسقاط حق المساكين فعاقبهم الله بإتلاف ثمارهم.</li>
+        <li>القياس على من قتل مورّثه عمدًا فلا يرثه.</li>
+        <li>حال المالك عند التصرف لا يخلو: فعل مباح فلا إثم، أو مكروه والإثم لا يلحق بالكراهة، أو محرم فيجب إخراج الزكاة بعد الوجوب.</li>
+        <li>معاملته بنقيض قصده، كمن طلّق زوجته في مرض الموت.</li>
+        <li>لئلا يكون ذريعة إلى إسقاطها جملة لما جُبلت عليه النفوس من الشح.</li></ol>
+      <h3>تعليل الباحث <span class="pg-ref">ص42-43</span></h3>
+      <p><b>إن كان جائزًا:</b> مضي الحول شرط لوجوب الزكاة بإجماع أهل العلم (حكاه ابن رشد وابن قدامة)، وهذا المال لم يحل عليه الحول في ملك المالك، ولم يتصرف فيه إلا لرفع الضرر عنه ببقائه في ملكه دون فائدة مرجوّة.</p>
+      <p><b>إن كان محرَّمًا:</b> قوة أدلة القول الآخر وضعف أدلة المقابل؛ وقاعدة «المعاملة بنقيض المقصود»؛ والسياسة الشرعية تقتضي عدم إسقاط الزكاة عن المتحايل عليها، ولا يصلح للناس إلا القول بعدم سقوطها.</p>
+    </div></details>
+  </div>
+</section>
+
+<!-- ================= جرّب ================= -->
+<section class="pg" id="jarrib">
+  <h2>جرّب بنفسك</h2>
+  <p class="lead">أدوات تعليمية مرتبطة بأفكار البحث. لا تحسب الزكاة الواجبة ولا تصدر فتوى.</p>
+  <div class="chips"><button class="on" data-sp="j1">هل هو تخطيط مشروع؟</button><button data-sp="j2">محاكي أثر القرار</button><button data-sp="j3">حاسبة النسبة</button><button data-sp="j4">قائمة مراجعة</button></div>
+
+  <div class="sp on" id="j1">
+    <p class="lead">اختر موقفًا، ثم أجب عن الأسئلة خطوة بخطوة، وستظهر خلاصة تعليمية.</p>
+    <div id="scList" class="opts2" style="grid-template-columns:1fr"></div>
+    <div id="scBox"></div>
+  </div>
+
+  <div class="sp" id="j2">
+    <div class="note"><b>تنبيه:</b> محاكاة مفاهيمية مبنية على أمثلة البحث؛ لا تعرض رقمًا على أنه زكاة واجبة ولا وعاء صحيحًا، وتحتاج كل نتيجة إلى مراجعة مختص.</div>
+    <div class="card"><b>ماذا تدرس الشركة؟</b>
+      <button class="opt" data-sim="0">الاستثمار في أصل لا تجب فيه الزكاة</button>
+      <button class="opt" data-sim="1">توزيع أرباح مؤجلة على المساهمين قبل نهاية الحول</button>
+      <button class="opt" data-sim="2">إسقاط دين متقابل بين شركتين مليئتين</button>
+      <button class="opt" data-sim="3">إبقاء مبلغ نقدي كبير دون استفادة منه</button>
+      <div id="simOut"></div></div>
+  </div>
+
+  <div class="sp" id="j3">
+    <div class="note"><b>افتراض ظاهر:</b> نفترض لأغراض الشرح فقط أن المبلغ المدخل وعاء زكوي صحيح، والنسبة 2.5% هي المذكورة في مثال البحث (ص26). هذه الحاسبة لا تثبت أن المبلغ داخل في الوعاء أصلًا، ولا تحدد ما يجب إخراجه شرعًا أو نظامًا، ولا تغني عن الحساب النظامي أو المختص.</div>
+    <div class="card">
+      <label>المبلغ المفترض أنه وعاء زكوي (ريال)</label><input type="number" inputmode="decimal" id="e1" placeholder="مثال: 1000000">
+      <label style="display:block;margin-top:10px">الربح المتوقع من التصرف خلال السنة (ريال)</label><input type="number" inputmode="decimal" id="e2" placeholder="مثال: 40000">
+      <div id="eo" style="display:none;margin-top:10px"></div>
+    </div>
+  </div>
+
+  <div class="sp" id="j4">
+    <p class="lead">أسئلة تقترحها الصفحة لتطرحها الشركة على المختص. حدّد ما أنجزتموه ليظهر ما يحتاج إلى مراجعة. <span class="mine">من إعداد الصفحة</span></p>
+    <div id="ckl"></div>
+    <div id="ckr" class="verdict nv">ضع علامات لتظهر الخلاصة.</div>
+    <div class="note">ليست شهادة امتثال ولا استشارة مهنية.</div>
+  </div>
+</section>
+
+<!-- ================= اختبر ================= -->
+<section class="pg" id="quiz">
+  <h2>اختبر فهمك</h2>
+  <p class="lead">أنشطة متنوعة، وبعد كل نشاط تفسير قصير مع الإحالة لموضعه في البحث.</p>
+  <div id="qbox"></div>
+</section>
+
+<!-- ================= عن البحث ================= -->
+<section class="pg" id="about">
+  <h2>عن البحث</h2>
+  <div class="chips"><button class="on" data-sp="b1">البحث</button><button data-sp="b2">قاموس المصطلحات</button><button data-sp="b3">النتائج والتوصيات</button></div>
+
+  <div class="sp on" id="b1">
+    <div class="card navy">
+      <h3>التخطيط الزكوي، حكمه وأثره</h3>
+      <p style="margin:4px 0">أ.د. حسن بن صالح القرني<br><span style="opacity:.85;font-size:.9rem">أستاذ الفقه المقارن بكلية الشريعة بجامعة الملك فيصل</span></p>
+      <p style="margin:6px 0;font-size:.88rem;opacity:.9">مجلة الجامعة الإسلامية للعلوم الشرعية — العدد (216) — الجزء (3) — السنة (60) — مارس 2026م<br>DOI: 10.36046/2323-060-216-021</p>
+      <a class="btn" style="background:#f0d79a;color:#0f2a47" href="https://drive.google.com/file/d/1U71tO-QuSIepRH6X1VznZefoCNaEzqln/view?usp=sharing" target="_blank" rel="noopener">الرجوع إلى البحث الأصلي</a>
+    </div>
+    <details class="sx" data-t="أهداف البحث" open><summary>أهداف البحث <span class="chip">ص15-16</span></summary><div class="b"><ol class="clean"><li>معرفة المراد بمصطلح التخطيط الزكوي وأهميته.</li><li>تحرير حكم التخطيط الزكوي.</li><li>بيان حكم المعاوضة على التخطيط الزكوي.</li><li>ذكر أثر التخطيط الزكوي على الزكاة.</li></ol></div></details>
+    <details class="sx" data-t="أسباب اختيار الموضوع وأهميته"><summary>لماذا اختار الباحث هذا الموضوع؟ <span class="chip">ص15-16</span></summary><div class="b"><ul class="clean">
+      <li>الأهمية الكبرى للزكاة، وزيادة انتشار التخطيط الزكوي لدى المحاسبين والشركات، وظهور عظمة الشريعة والتراث الفقهي في شمول قواعده لجميع النوازل. (ص15)</li>
+      <li>حاجة الشركات لمعرفة أحكامه وعلاقته بالمبالغ الكبيرة التي تؤديها لهيئة الزكاة والضريبة والجمارك زكاةً لأموالها. (ص16)</li>
+      <li>عدم وجود بحث فقهي — بعد البحث والتحري — يتعلق بالتخطيط الزكوي. (ص16)</li></ul></div></details>
+    <details class="sx" data-t="خطة البحث"><summary>بنية البحث <span class="chip">ص17-18</span></summary><div class="b"><ul class="clean">
+      <li><b>المقدمة:</b> الأهمية والأهداف والأسباب والدراسات السابقة والمنهج والخطة.</li>
+      <li><b>التمهيد (ثلاثة مطالب):</b> تعريف الزكاة، وتعريف التخطيط الزكوي، وأهمية التخطيط الزكوي.</li>
+      <li><b>المبحث الأول:</b> حكم التخطيط الزكوي والمعاوضة عليه (مطلبان: حكم التخطيط، وحكم المعاوضة عليه).</li>
+      <li><b>المبحث الثاني:</b> أثر التخطيط الزكوي على الزكاة.</li>
+      <li><b>الخاتمة</b> (النتائج والتوصيات)، ثم فهرس المصادر والمراجع.</li></ul></div></details>
+    <div class="note nv"><b>ما طبيعة البحث؟</b> بحث فقهي تأصيلي مختصر، وليس دليلًا محاسبيًا تفصيليًا ولا دورة في إعداد الإقرارات الزكوية؛ ولذلك لا تقدّم هذه المنصة حاسبة زكاة شاملة. وقد أوصى الباحث بأن يُدرس التخطيط الزكوي بفروعه بعد حصر المعالجات المحاسبية المقصودة (ص44).</div>
+  </div>
+
+  <div class="sp" id="b2">
+    <div class="note nv">المصطلحات المنسوبة إلى البحث مُشار إليها بذلك، وما عداها <b>تعريف مبسّط من إعداد الصفحة</b> للتقريب، وليس من نص البحث.</div>
+    <input class="s" id="gq" placeholder="ابحث في المصطلحات…" autocomplete="off">
+    <div id="gList"></div>
+  </div>
+
+  <div class="sp" id="b3">
+    <details class="sx" data-t="نتائج البحث" open><summary>أهم النتائج (ست) <span class="chip">ص43-44</span></summary><div class="b"><ol class="clean">
+      <li>الزكاة لغةً: النماء والزيادة، والطهارة والصلاح. واصطلاحًا: جزء من مال معين يُخرج وجوبًا لطائفة معينة.</li>
+      <li>التخطيط الزكوي مصطلح معاصر، والراجح أنه: مراعاة الأثر الزكوي في التصرفات المالية وبنود الوعاء الزكوي وإجراءاته.</li>
+      <li>له أهمية كبيرة: احتساب الزكاة صحيحًا، وتوفير الأموال للمكلَّف، والتأثير في القرارات المالية، وتوضيح العبء الزكوي الأكثر في بنود القوائم.</li>
+      <li>لا يخلو حكمه من حالتين: قبل التصرف المالي فلا مانع شرعًا؛ وبعده، فإن كان القصد التحايل فللفقهاء ثلاثة أقوال والراجح التحريم، وإن كان القصد رفع الضرر عن المالك فهو جائز.</li>
+      <li>المعاوضة عليه جائزة بثلاثة ضوابط: ألا يؤدي إلى التحايل، وألا يكون معاملة محرمة، وألا ينطوي على مخالفة نظام سنّه ولي الأمر.</li>
+      <li>أثره على الزكاة مرتبط بحكمه: إن كان جائزًا فلا تجب الزكاة على المالك عن المال المتصرَّف فيه، وإن كان محرمًا فإنها لا تسقط.</li></ol></div></details>
+    <details class="sx" data-t="توصيات البحث" open><summary>التوصيات (ثلاث) <span class="chip">ص44</span></summary><div class="b"><ol class="clean">
+      <li>أن يعنى الباحثون في المجال الفقهي بدراسة التخطيط الزكوي بفروعه وبيان أحكامه الشرعية بعد حصر أكبر قدر ممكن من المعالجات المحاسبية المقصودة، وهذا يتطلب تأصيلًا فقهيًا في كتابي الزكاة والمعاملات المالية واطلاعًا موسعًا في تخصص المحاسبة.</li>
+      <li>أن يحرص المحاسبون والمستشارون الزكويون على إتقان المسائل الفقهية المتعلقة بالزكاة؛ لأنهم يمارسونها باستمرار، والخطأ فيها يُسقط حقوق الفقراء.</li>
+      <li>أن ينشر المستشارون الزكويون فكرة التخطيط الزكوي لدى الشركات والتجار؛ ففيها خير عظيم لهم في احتساب الزكاة حسابًا دقيقًا وتحقيق أكبر قدر ممكن من الأرباح وحفظ الأموال.</li></ol></div></details>
+  </div>
+</section>
+
+<footer>
+  <div><b>إهداء</b> من جهاد بن جمال حولدار إلى أ.د. حسن بن صالح القرني. هذه الصفحة محاولة اجتهادية لتقريب بحثه «التخطيط الزكوي: حكمه وأثره» للقارئ، <b>ولم يراجعها الدكتور</b>؛ والمرجع هو البحث المنشور نفسه. وهي للتعريف والفائدة العلمية، وليست فتوى ولا استشارة زكوية ولا اعتمادًا نظاميًا.<button id="dot" aria-label=" "></button></div>
+  <div style="margin-top:6px"><a href="https://drive.google.com/file/d/1U71tO-QuSIepRH6X1VznZefoCNaEzqln/view?usp=sharing" target="_blank" rel="noopener">الرجوع إلى البحث الأصلي</a></div>
+</footer>
+</main>
+
+<nav class="tabs"><div class="in" id="tabs">
+  <button data-go="home" class="on"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v8a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg>الرئيسية</button>
+  <button data-go="afham"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 00-3.5 10.9c.7.6 1 1.3 1 2.1h5c0-.8.3-1.5 1-2.1A6 6 0 0012 3z"/></svg>افهم</button>
+  <button data-go="mawaqif"><svg viewBox="0 0 24 24"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>مواقف</button>
+  <button data-go="hukm"><svg viewBox="0 0 24 24"><path d="M12 4v16M6 20h12M5 7h14"/><path d="M5 7l-3 7a3 3 0 006 0zM19 7l-3 7a3 3 0 006 0z"/></svg>الحكم</button>
+  <button data-go="jarrib"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/><path d="M8 15h8"/></svg>جرّب</button>
+  <button data-go="quiz"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>اختبر</button>
+  <button data-go="about"><svg viewBox="0 0 24 24"><path d="M5 4h10a3 3 0 013 3v13H8a3 3 0 01-3-3z"/><path d="M5 17a3 3 0 013-3h10"/></svg>عن البحث</button>
+</div></nav>
+
+<!-- الإعدادات -->
+<div class="sheet" id="sSet"><div class="pane">
+  <h3>المظهر</h3>
+  <div class="seg" id="segTheme"><button data-v="light">نهاري</button><button data-v="dark">ليلي</button></div>
+  <h3>حجم الخط</h3>
+  <div class="seg"><button id="fMinus">أ−</button><button id="fPlus">أ＋</button><button id="fReset">افتراضي</button></div>
+  <h3>نوع الخط</h3>
+  <div class="seg" id="segFont"><button data-v="mix">مناسب (تلقائي)</button><button data-v="Tajawal">تجوال</button><button data-v="Cairo">كايرو</button><button data-v="Amiri">أميري</button></div>
+  <h3>الأصوات</h3>
+  <div class="seg" id="segSnd"><button data-v="1">تشغيل</button><button data-v="0">إيقاف</button></div>
+  <h3>مستوى العرض</h3>
+  <div class="seg" id="segMode2"><button data-v="simple">مبسَّط</button><button data-v="sci">علمي</button></div>
+  <p style="text-align:center;margin-top:16px"><button class="btn ghost" data-close>إغلاق</button></p>
+</div></div>
+
+<!-- البحث -->
+<div class="sheet" id="sSearch"><div class="pane">
+  <input class="s" id="q" placeholder="ابحث في المنصة… (الحول، المعاوضة، التحايل)" autocomplete="off">
+  <div id="qr" style="margin-top:10px"></div>
+  <p style="text-align:center;margin-top:12px"><button class="btn ghost" data-close>إغلاق</button></p>
+</div></div>
+
+<!-- تعريف مصطلح -->
+<div class="sheet" id="sGl"><div class="pane">
+  <h3 id="glT"></h3><p id="glD"></p><p class="small" id="glS"></p>
+  <p style="text-align:center;margin-top:12px"><button class="btn ghost" data-close>إغلاق</button></p>
+</div></div>
+
+<!-- لوحة الإدارة -->
+<div class="sheet" id="sAdmin"><div class="pane">
+  <h3>لوحة الإدارة</h3>
+  <div id="admLogin"><input type="text" id="admCode" placeholder="الرمز" autocomplete="off" inputmode="numeric" style="direction:ltr"><p style="margin:8px 0"><button class="btn" id="admGo">دخول</button></p></div>
+  <div id="admMain" style="display:none">
+    <div class="chips" style="position:static;padding-top:0"><button class="on" data-at="st">الإحصاءات</button><button data-at="cm">التعليقات</button></div>
+    <div id="admSt"></div><div id="admCm" style="display:none"></div>
+  </div>
+  <p style="text-align:center;margin-top:16px"><button class="btn ghost" data-close>إغلاق</button></p>
+</div></div>
+
+<script>
+/* ===== الإعدادات العامة ===== */
+var API_URL = "https://script.google.com/macros/s/AKfycbx4VjX9ZB-mu13X1TBcPMYyN3TM7UwoufmNfv3sZ_L88xuRYmjPchJo6kfuxcw1uN9DzA/exec";   // رابط تطبيق الويب من Google Apps Script (اتركه فارغًا لتعطيل الإحصاءات والتعليقات)
+
+var $ = function (s, r) { return (r || document).querySelector(s); };
+var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+function E(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+function R(t) { return '<span class="pg-ref">' + t + '</span>'; }
+function MINE(t) { return '<span class="mine">' + (t || 'من إعداد الصفحة') + '</span>'; }
+function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+function flash(el) { el.classList.remove('fx'); void el.offsetWidth; el.classList.add('fx'); }
+
+var store = {
+  get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } },
+  set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) { } }
+};
+
+var sid = store.get('sid', '');
+if (!sid) { sid = 's' + Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4); store.set('sid', sid); }
+
+function toast(t) {
+  var d = $('#toast'); if (!d) { d = E('div', 'toast'); d.id = 'toast'; document.body.appendChild(d); }
+  d.textContent = t; d.classList.add('on'); clearTimeout(toast._t); toast._t = setTimeout(function () { d.classList.remove('on'); }, 2200);
+}
+
+
+/* ===== أصوات خفيفة (بدون موسيقى) ===== */
+var AC = null;
+function snd(kind) {
+  if (store.get('snd', '1') !== '1') return;
+  try {
+    AC = AC || new (window.AudioContext || window.webkitAudioContext)();
+    if (AC.state === 'suspended') AC.resume();
+    var T = { tap: [[660, 0, .05, .035]], tab: [[523, 0, .07, .04], [784, .06, .09, .035]], open: [[392, 0, .08, .035], [587, .07, .12, .035]], ok: [[659, 0, .09, .05], [880, .09, .16, .05]], bad: [[220, 0, .16, .04]], done: [[523, 0, .1, .05], [659, .1, .1, .05], [784, .2, .1, .05], [1047, .3, .25, .05]] }[kind] || [];
+    T.forEach(function (n) {
+      var o = AC.createOscillator(), g = AC.createGain(), t0 = AC.currentTime + n[1];
+      o.type = 'sine'; o.frequency.value = n[0]; g.gain.setValueAtTime(0.0001, t0);
+      g.gain.exponentialRampToValueAtTime(n[3], t0 + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t0 + n[2]);
+      o.connect(g); g.connect(AC.destination); o.start(t0); o.stop(t0 + n[2] + 0.02);
+    });
+  } catch (e) { }
+}
+
+/* ===== تسجيل الأحداث (مجهول) ===== */
+function log(t, a, b) {
+  if (!API_URL) return;
+  try {
+    var u = API_URL + '?action=log&s=' + encodeURIComponent(sid) + '&t=' + encodeURIComponent(t) +
+      '&a=' + encodeURIComponent(a == null ? '' : a) + '&b=' + encodeURIComponent(b == null ? '' : b);
+    fetch(u, { mode: 'no-cors', keepalive: true }).catch(function () { });
+  } catch (e) { }
+}
+
+/* ===== المظهر والخط والحجم والمستوى ===== */
+var FONTS = {
+  mix: { ff: "'Tajawal','Cairo',system-ui,sans-serif", ffh: "'Amiri','Traditional Arabic',serif", ffx: "'Amiri','Traditional Arabic',serif" },
+  Tajawal: { ff: "'Tajawal',system-ui,sans-serif", ffh: "'Tajawal',system-ui,sans-serif", ffx: "'Tajawal',system-ui,sans-serif" },
+  Cairo: { ff: "'Cairo',system-ui,sans-serif", ffh: "'Cairo',system-ui,sans-serif", ffx: "'Cairo',system-ui,sans-serif" },
+  Amiri: { ff: "'Amiri','Traditional Arabic',serif", ffh: "'Amiri','Traditional Arabic',serif", ffx: "'Amiri','Traditional Arabic',serif" }
+};
+var S = {
+  theme: store.get('theme', 'light'),
+  font: store.get('font', 'mix'),
+  fs: parseInt(store.get('fs', '17'), 10) || 17,
+  mode: store.get('mode', 'simple')
+};
+if (!FONTS[S.font]) S.font = 'mix';
+if (S.theme !== 'light' && S.theme !== 'dark') S.theme = 'light';
+
+function marks(sel, v) { $$(sel + ' button').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-v') === v); }); }
+function applySet() {
+  var h = document.documentElement;
+  h.setAttribute('data-theme', S.theme);
+  var f = FONTS[S.font];
+  h.style.setProperty('--ff', f.ff); h.style.setProperty('--ffh', f.ffh); h.style.setProperty('--ffx', f.ffx);
+  h.style.setProperty('--fs', S.fs + 'px');
+  marks('#segTheme', S.theme); marks('#segFont', S.font); marks('#segMode', S.mode); marks('#segMode2', S.mode); marks('#segSnd', store.get('snd', '1'));
+  var m = document.querySelector('meta[name=theme-color]'); if (m) m.setAttribute('content', S.theme === 'dark' ? '#0b1520' : '#f6f3ec');
+}
+function applyMode() {
+  $$('details.fiqh').forEach(function (d) { d.open = (S.mode === 'sci'); });
+  marks('#segMode', S.mode); marks('#segMode2', S.mode);
+}
+function setSet(k, v) { S[k] = v; store.set(k, String(v)); applySet(); }
+
+/* ===== النوافذ السفلية ===== */
+function openSheet(id) { snd('open'); var s = $('#' + id); if (s) s.classList.add('on'); }
+function closeSheets() { $$('.sheet.on').forEach(function (s) { s.classList.remove('on'); }); }
+
+/* ===== التنقل ===== */
+var PAGES = ['home', 'afham', 'mawaqif', 'hukm', 'jarrib', 'quiz', 'about'];
+var NAMES = { home: 'الرئيسية', afham: 'افهم', mawaqif: 'مواقف', hukm: 'الحكم', jarrib: 'جرّب', quiz: 'اختبر', about: 'عن البحث' };
+var cur = 'home';
+
+function showSp(pg, sp, quiet) {
+  var sec = $('#' + pg); if (!sec) return;
+  var chips = $$('.chips button[data-sp]', sec);
+  if (!chips.length) return;
+  if (!sp) sp = chips[0].getAttribute('data-sp');
+  chips.forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-sp') === sp); });
+  $$('.sp', sec).forEach(function (p) { p.classList.toggle('on', p.id === sp); });
+  if (!quiet) log('sub', pg, sp);
+  if (sp === 'a3') setTimeout(runBars, 350);
+}
+function go(pg, sp, noScroll) {
+  if (PAGES.indexOf(pg) < 0) pg = 'home';
+  cur = pg;
+  $$('section.pg').forEach(function (s) { s.classList.toggle('on', s.id === pg); });
+  $$('#tabs button').forEach(function (b) {
+    var on = b.getAttribute('data-go') === pg; b.classList.toggle('on', on);
+    if (on) { try { b.scrollIntoView({ inline: 'center', block: 'nearest' }); } catch (e) { } }
+  });
+  showSp(pg, sp, true);
+  try { history.replaceState(null, '', '#' + pg + (sp ? '/' + sp : '')); } catch (e) { }
+  if (!noScroll) window.scrollTo(0, 0);
+  log('tab', pg); snd('tab');
+  if (pg === 'quiz' && typeof quizEnter === 'function') quizEnter();
+  closeSheets();
+}
+function fromHash() {
+  var h = (location.hash || '').replace('#', '').split('/');
+  if (h[0] && PAGES.indexOf(h[0]) >= 0) go(h[0], h[1], true);
+}
+
+/* ===== خريطة المصطلحات ===== */
+var GL = {
+  zakat: { t: 'الزكاة', d: 'جزء من مال معين يُخرج وجوبًا لطائفة معينة. هذا هو التعريف الذي رجّحه الباحث.', s: 'p', r: 'ص21' },
+  takhtit: { t: 'التخطيط الزكوي', d: 'مراعاة الأثر الزكوي في التصرفات المالية وبنود الوعاء الزكوي وإجراءاته.', s: 'p', r: 'ص23' },
+  wiqaya: { t: 'الوقاية (التخطيط الوقائي)', d: 'منع زيادة العبء الزكوي بمراعاة الأثر قبل التصرف، كالاستثمار في أصول لا تجب فيها الزكاة.', s: 'p', r: 'ص23' },
+  mueaIja: { t: 'المعالجة (التخطيط العلاجي)', d: 'تكون موضوعية (تتعلق ببنود الوعاء قبل نهاية الحول) أو إجرائية (تتعلق بطريقة تصنيف البنود أو رفع الإقرارات).', s: 'p', r: 'ص23' },
+  tajannub: { t: 'التجنب الزكوي', d: 'مصطلح ضريبي لا زكوي بحسب ما أفاده المتخصصون الباحثَ، وهو كالتخطيط يُقصد به تقليل الوعاء دون مخالفة الأنظمة. وللباحث ثلاثة فروق بينه وبين التخطيط.', s: 'p', r: 'ص24-25' },
+  tahayul: { t: 'التحايل على الزكاة', d: 'تصرف يُقصد به إسقاط الزكاة، كأن يبيع المال الزكوي قبيل انتهاء الحول ثم يشتريه بعد بدء الحول الثاني، أو يتفق مع الملّاك على توزيع أرباح مؤجلة قبل نهاية الحول ثم يستعيدها منهم. الراجح عند الباحث تحريمه.', s: 'p', r: 'ص27-31' },
+  darar: { t: 'رفع الضرر عن المالك', d: 'قصد التصرف ألا يضرّ المالك ببقاء مال زكوي لا يستفيد منه، لا إسقاط الزكاة. مثاله عند الباحث: إسقاط دينين متقابلين بين شركتين مليئتين، أو توزيع أرباح مؤجلة. ويرى الباحث جوازه.', s: 'p', r: 'ص31-34' },
+  firar: { t: 'الفرار من الزكاة', d: 'التصرف في المال بقصد إسقاط الزكاة. يرى الباحث أن التصرف قبل تملك المال الزكوي وانشغال الذمة لا ينطبق عليه وصف الفرار.', s: 'p', r: 'ص26-27' },
+  naqid: { t: 'المعاملة بنقيض المقصود', d: 'قاعدة تقضي بأن صاحب القصد الفاسد يُعامل بنقيض قصده؛ استدل بها الباحث على أن الزكاة لا تسقط عمّن تحايل عليها.', s: 'p', r: 'ص42-43' },
+  siyasa: { t: 'السياسة الشرعية', d: 'عبارة استعملها الباحث في ترجيحه: السياسة الشرعية تقتضي عدم إسقاط الزكاة عن المتحايل عليها. ومعناها العام تدبير شؤون الناس بما تقتضيه المصلحة الشرعية.', s: 'pm', r: 'ص42-43' },
+  dhariea: { t: 'الذريعة', d: 'الوسيلة المؤدية إلى أمر آخر. ومن أدلة الباحث على عدم سقوط الزكاة: لئلا يكون ذلك ذريعة إلى إسقاطها جملة.', s: 'pm', r: 'ص39-41' },
+  muawada: { t: 'المعاوضة', d: 'أخذ عوض (أجر) مقابل خدمة أو منفعة. وقد أبرمت شركات عقد التخطيط الزكوي مع مكاتب محاسبية مقابل عوض.', s: 'pm', r: 'ص34' },
+  ijara: { t: 'الإجارة والجعالة', d: 'عقدان مشروعان بإجماع الفقهاء كما ذكر الباحث، وقد جعل عقد التخطيط الزكوي لا يخرج عنهما. والإجارة عقد على منفعة بعوض؛ والجعالة التزام بعوض مقابل عمل معين.', s: 'pm', r: 'ص35' },
+  hawl: { t: 'الحول', d: 'مرور سنة على المال. نقل الباحث إجماع أهل العلم على أن مضي الحول شرط لوجوب الزكاة.', s: 'pm', r: 'ص42' },
+  wiaa: { t: 'الوعاء الزكوي', d: 'مجموع الأموال والبنود التي تُحتسب عليها الزكاة. ولم يعرّفه البحث، واستعمله للدلالة على البنود التي تُحسب منها الزكاة.', s: 'p0', r: '' },
+  qawaim: { t: 'القوائم المالية', d: 'تقارير تعرض المركز المالي للشركة ونتائجها، وتُستخرج منها بنود الوعاء الزكوي.', s: 'p0', r: '' },
+  mukallaf: { t: 'المكلَّف بالزكاة', d: 'من تجب عليه الزكاة. ذكر الباحث أن الغالب في التخطيط الزكوي أن يكون المكلّف شركة.', s: 'pm', r: 'ص22' },
+  mali: { t: 'المدين المليء', d: 'المدين القادر على سداد دينه. استعمل الباحث العبارة في أمثلته (المدينين المليئين، وشركتان مليئتان).', s: 'pm', r: 'ص27، 31' },
+  arbah: { t: 'الأرباح المؤجلة', d: 'أرباح لم تُوزَّع على المساهمين وبقيت في الشركة. ذكر الباحث توزيعها على المساهمين قبل نهاية الحول مثالًا على المعالجة الموضوعية.', s: 'pm', r: 'ص23' },
+  qabida: { t: 'الشركة القابضة', d: 'شركة تملك شركات تابعة. ذكر الباحث أن النظام خيّرها بين قائمة مالية واحدة لجميع التابعة أو قائمة لكل شركة على انفراد.', s: 'pm', r: 'ص24-25' }
+};
+/* s: p = من البحث، pm = مصطلح من البحث وتبسيطه من الصفحة، p0 = تبسيط من الصفحة */
+function srcLabel(s) { return s === 'p' ? 'من البحث' : (s === 'pm' ? 'المصطلح من البحث، والتبسيط من إعداد الصفحة' : 'تبسيط من إعداد الصفحة وليس من نص البحث'); }
+function G(k, txt) { return '<span class="gl" data-g="' + k + '">' + (txt || GL[k].t) + '</span>'; }
+function showGl(k) {
+  var g = GL[k]; if (!g) return;
+  $('#glT').textContent = g.t; $('#glD').textContent = g.d;
+  $('#glS').innerHTML = srcLabel(g.s) + (g.r ? ' · ' + R(g.r) : '');
+  openSheet('sGl'); log('gl', k);
+}
+function buildGlossary() {
+  var q = norm($('#gq').value || ''), box = $('#gList'); box.innerHTML = '';
+  var n = 0;
+  Object.keys(GL).forEach(function (k) {
+    var g = GL[k];
+    if (q && norm(g.t + ' ' + g.d).indexOf(q) < 0) return;
+    n++;
+    var d = E('div', 'gterm');
+    d.innerHTML = '<b>' + g.t + '</b> ' + (g.r ? R(g.r) : '') + '<p style="margin:2px 0">' + g.d + '</p><span class="small">' + srcLabel(g.s) + '</span>';
+    box.appendChild(d);
+  });
+  if (!n) box.innerHTML = '<p class="small">لا توجد نتيجة.</p>';
+}
+
+/* ===== البحث ===== */
+function norm(s) {
+  return (s || '').replace(/[ً-ْـ]/g, '').replace(/[أإآ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه').replace(/ؤ/g, 'و').replace(/ئ/g, 'ي').replace(/\s+/g, ' ').toLowerCase();
+}
+var EXTRA = [];   // عناصر بحث إضافية (الشجرة، القاموس)
+function searchIndex() {
+  var idx = [];
+  $$('.sx').forEach(function (el) {
+    var sec = el.closest('section.pg'); if (!sec) return;
+    var sp = el.closest('.sp');
+    var t = el.getAttribute('data-t') || (el.querySelector('summary') ? el.querySelector('summary').textContent : '') || '';
+    idx.push({ t: t.trim(), x: el.textContent.replace(/\s+/g, ' '), pg: sec.id, sp: sp ? sp.id : '', el: el });
+  });
+  EXTRA.forEach(function (e) { idx.push(e); });
+  return idx;
+}
+function doSearch() {
+  var q = norm($('#q').value.trim()), box = $('#qr'); box.innerHTML = '';
+  if (q.length < 2) { box.innerHTML = '<p class="small">اكتب كلمتين على الأقل من الكلمة.</p>'; return; }
+  var words = q.split(' ').filter(Boolean), res = [];
+  searchIndex().forEach(function (it) {
+    var tx = norm(it.t + ' ' + it.x), ok = words.every(function (w) { return tx.indexOf(w) >= 0; });
+    if (!ok) return;
+    var p = tx.indexOf(words[0]), score = (norm(it.t).indexOf(words[0]) >= 0 ? 0 : 1);
+    var sn = it.x.replace(/\s+/g, ' ');
+    var pos = Math.max(0, norm(sn).indexOf(words[0]) - 40);
+    it.snip = (pos > 0 ? '…' : '') + sn.substr(pos, 110) + '…';
+    it.sc = score; res.push(it);
+  });
+  res.sort(function (a, b) { return a.sc - b.sc; });
+  if (!res.length) { box.innerHTML = '<p class="small">لا توجد نتيجة. جرّب كلمة أخرى مثل: الحول، التحايل، المعاوضة.</p>'; log('search', '', 0); return; }
+  log('search', '', res.length);
+  res.slice(0, 12).forEach(function (it) {
+    var d = E('div', 'sr', '<b>' + (it.t || 'عنصر') + '</b><span class="res-tag">' + NAMES[it.pg] + '</span><br><small>' + it.snip + '</small>');
+    d.onclick = function () { gotoItem(it); };
+    box.appendChild(d);
+  });
+}
+function gotoItem(it) {
+  closeSheets();
+  if (it.fn) { it.fn(); return; }
+  go(it.pg, it.sp, true);
+  var el = it.el;
+  var p = el;
+  while (p && p !== document.body) { if (p.tagName === 'DETAILS') p.open = true; p = p.parentElement; }
+  setTimeout(function () {
+    try { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) { }
+    flash(el);
+  }, 120);
+}
+
+/* ===== المشاركة ===== */
+function share() {
+  var url = location.href.split('#')[0], text = 'التخطيط الزكوي: حكمه وأثره — منصة تفاعلية تقرّب بحث أ.د. حسن بن صالح القرني';
+  log('share');
+  if (navigator.share) { navigator.share({ title: 'التخطيط الزكوي', text: text, url: url }).catch(function () { }); return; }
+  try { navigator.clipboard.writeText(text + '\n' + url); toast('نُسخ الرابط'); } catch (e) { toast('انسخ الرابط من شريط العنوان'); }
+}
+
+/* ===== الأحداث العامة ===== */
+document.addEventListener('click', function (e) {
+  var t = e.target;
+  if (t.closest && t.closest('.opt,.nd,.flip>button,.rw>button,.it,.seg button,.chips button,summary,.btn,.mt button,.ord button,label.ck')) snd('tap');
+  var g = t.closest ? t.closest('[data-go]') : null;
+  if (g) { e.preventDefault(); go(g.getAttribute('data-go')); return; }
+  var gl = t.closest('.gl'); if (gl) { showGl(gl.getAttribute('data-g')); return; }
+  var cl = t.closest('[data-close]'); if (cl) { closeSheets(); return; }
+  if (t.classList && t.classList.contains('sheet')) { closeSheets(); return; }
+  var ch = t.closest('.chips button[data-sp]');
+  if (ch) { var sec = ch.closest('section.pg'); showSp(sec.id, ch.getAttribute('data-sp')); if (window.scrollY > 260) window.scrollTo(0, 0); return; }
+  var fl = t.closest('[data-flip]'); if (fl) { var f = fl.parentElement; f.classList.toggle('on'); if (f.classList.contains('on')) log('card', fl.getAttribute('data-flip')); return; }
+});
+
+/* ===== عام: سؤال اختيار من متعدد قابل لإعادة الاستخدام ===== */
+/* q: {q, opts:[..], a:index, exp, ref}  — onDone(correct) */
+function mcq(box, q, onDone, opt) {
+  opt = opt || {};
+  var wrap = E('div'); wrap.appendChild(E('p', '', '<b>' + q.q + '</b>'));
+  var done = false, btns = [];
+  var order = opt.noShuffle ? q.opts.map(function (_, i) { return i; }) : shuffle(q.opts.map(function (_, i) { return i; }));
+  order.forEach(function (i) {
+    var b = E('button', 'opt', q.opts[i]); b.type = 'button'; btns.push([b, i]);
+    b.onclick = function () {
+      if (done) return; done = true;
+      var ok = (i === q.a);
+      btns.forEach(function (p) { if (p[1] === q.a) p[0].classList.add('right'); });
+      if (!ok) b.classList.add('wrong');
+      var fb = E('div', 'verdict ' + (ok ? 'ok' : 'mid') + ' fb', (ok ? 'أحسنت. ' : 'ليس تمامًا. ') + '<span style="font-weight:400">' + (q.exp || '') + (q.ref ? ' ' + R(q.ref) : '') + '</span>');
+      wrap.appendChild(fb); flash(fb); snd(ok ? 'ok' : 'bad');
+      if (onDone) onDone(ok);
+    };
+    wrap.appendChild(b);
+  });
+  box.appendChild(wrap);
+  return wrap;
+}
+
+/* ===== افهم: أجزاء التعريف ===== */
+var DEFP = [
+  { t: 'مراعاة الأثر الزكوي', d: 'الأصل عند الباحث هو <b>مراعاة الأثر</b> وليس «تجنب الزكاة». وهذه المراعاة تشمل هدفين: احتساب القدر الصحيح من الزكاة دون زيادة أو نقصان، وتخفيف العبء عن المكلَّف.', r: 'ص23-24' },
+  { t: 'في التصرفات المالية', d: 'ما تُقدم عليه الشركة من تصرفات مالية خلال الحول (كالاستثمار أو البيع)؛ فيُنظر إلى أثرها الزكوي. ومن أمثلة الباحث: الاستثمار في أصول لا تجب فيها الزكاة.', r: 'ص23' },
+  { t: 'وبنود الوعاء الزكوي', d: 'البنود التي تُحسب منها الزكاة. وقد ذكر الباحث أن لكل مكلَّف معالجات تناسبه، وأن أكثرهم يشتركون في بعض المعالجات العامة كالتقليل من بند النقد.', r: 'ص24' },
+  { t: 'وإجراءاته', d: 'ما يتعلق بطريقة تصنيف البنود أو رفع الإقرارات. ومثاله عند الباحث: الشركة المستثمرة في شركة أجنبية يحق لها أن تزكي مبلغ الاستثمار بإدخاله ضمن قائمتها المالية، ويحق لها تزكيته عن طريق الشركة الأجنبية بشرط إثبات ذلك، ويختلف قدر الزكاة في الحالتين.', r: 'ص23-24' }
+];
+function initDef() {
+  $$('#defParts [data-d]').forEach(function (b) {
+    b.onclick = function () {
+      var was = b.classList.contains('sel');
+      $$('#defParts .opt').forEach(function (x) { x.classList.remove('sel'); });
+      if (was) { var o0 = $('#defOut'); o0.innerHTML = 'اختر جزءًا لتظهر شرحه.'; return; }
+      b.classList.add('sel');
+      var p = DEFP[+b.getAttribute('data-d')], o = $('#defOut');
+      o.innerHTML = '<b>' + p.t + '</b><br><span style="font-weight:400">' + p.d + ' ' + R(p.r) + '</span><br><span class="small" style="font-weight:400">ذكر الباحث أنه اختار هذا التعريف لإيجازه ولجمعه شقّي الوقاية والعلاج. ' + R('ص23') + '</span>';
+      flash(o); log('card', 'def' + b.getAttribute('data-d'));
+    };
+  });
+}
+
+/* ===== افهم: الخريطة ===== */
+var MAPD = {
+  w: { t: 'الوقاية (تخطيط وقائي)', d: 'منع زيادة العبء الزكوي بمراعاة الأثر <b>قبل التصرف</b>، كالاستثمار في أصول لا تجب فيها الزكاة.', r: 'ص23', go: 'ويُناقَش حكمه في «الحكم ← شجرة الحكم»: قبل التصرف لا مانع عند الباحث (ص26-27).' },
+  r: { t: 'المعالجة (تخطيط علاجي)', d: 'إجراءات تتعلق ببنود الوعاء وإجراءاته، وهي نوعان: <b>موضوعية</b> و<b>إجرائية</b>. اضغط على أحدهما.', r: 'ص23' },
+  o: { t: 'معالجة موضوعية', d: 'تتعلق ببنود الوعاء <b>قبل نهاية الحول</b>، كتوزيع أرباح مؤجلة على المساهمين تخفيفًا من بند النقد.', r: 'ص23', go: 'مثل هذا التصرف قد يكون جائزًا أو محرمًا بحسب القصد (ص27-34).' },
+  p: { t: 'معالجة إجرائية', d: 'تتعلق بطريقة تصنيف البنود أو رفع الإقرارات.', r: 'ص23' }
+};
+function initMap() {
+  function show(k) {
+    var d = MAPD[k], o = $('#mapOut');
+    o.innerHTML = '<b>' + d.t + '</b> ' + R(d.r) + '<p style="margin:4px 0 0">' + d.d + '</p>' + (d.go ? '<p class="small" style="margin:6px 0 0">' + d.go + '</p>' : '');
+    flash(o);
+  }
+  $$('#map .nd').forEach(function (b) {
+    b.onclick = function () {
+      $$('#map .nd').forEach(function (x) { x.classList.remove('on'); }); b.classList.add('on');
+      var k = b.getAttribute('data-m'); show(k); log('card', 'map_' + k);
+    };
+  });
+  show('w');
+}
+
+/* ===== افهم: خط الحول (تقريب من الصفحة) ===== */
+var TL = [
+  { t: 'بداية الحول', d: 'تُدرس القرارات المالية المرتقبة وأثرها الزكوي <b>قبل تنفيذها</b>، وهذا هو الجانب الوقائي.', r: 'ص23' },
+  { t: 'أثناء الحول', d: 'تتخذ الشركة تصرفاتها المالية. وتظهر البنود التي قد تشكل عبئًا زكويًا أكثر، ويُنظر في معالجة تضخمها بما يوافق الشريعة والأنظمة.', r: 'ص25-26' },
+  { t: 'قبل نهاية الحول', d: 'مجال المعالجة الموضوعية لبنود الوعاء، كتوزيع أرباح مؤجلة على المساهمين. والحكم هنا يتبع القصد: رفع الضرر جائز، والتحايل محرم على الراجح.', r: 'ص23، 27-34' },
+  { t: 'عند إعداد الإقرار', d: 'مجال المعالجة الإجرائية: طريقة تصنيف البنود ورفع الإقرارات، ومنها الخيارات النظامية المتاحة كالقائمة الموحدة أو المنفردة للشركة القابضة.', r: 'ص23-25' },
+  { t: 'بعد انتهاء الحول', d: 'يمكن الاستفادة مما ظهر من أعباء في بنود القوائم لتوجيه قرارات الحول القادم.', r: 'ص26 (الوجه الخامس)' }
+];
+function initTl() {
+  var box = $('#tl');
+  TL.forEach(function (s, i) {
+    var it = E('div', 'it' + (i === 0 ? ' on' : ''));
+    it.innerHTML = '<div class="rail"><span class="nb">' + (i + 1) + '</span><span class="ln"></span></div><div class="bd"><b>' + s.t + '</b><div class="more">' + s.d + ' ' + R(s.r) + '</div></div>';
+    it.onclick = function () { $$('#tl .it').forEach(function (x) { x.classList.remove('on'); }); it.classList.add('on'); log('card', 'tl' + i); };
+    box.appendChild(it);
+  });
+}
+
+/* ===== افهم: لماذا هو مهم ===== */
+var WHY = [
+  { t: 'احتساب الزكاة صحيحًا', d: 'دون زيادة أو نقصان، وإبراء الذمة شرعًا ونظامًا. وذكر الباحث أن كثيرًا من الشركات تبيّن لها بعد التخطيط أنها كانت تخرج الزكاة خطأً، وفي الغالب أكثر مما يجب شرعًا.' },
+  { t: 'الالتزام بالأنظمة', d: 'ضمان الالتزام بالأنظمة واللوائح دون خرقها، وتجنب المخالفات والغرامات.' },
+  { t: 'توفير أموال للمكلَّف', d: 'بالامتناع عن تصرفات مالية لعبئها الزكوي، أو بتصرفات أثناء الحول لتقليل الوعاء؛ ويُستفاد من الوفر في أعمال ومشاريع أخرى.' },
+  { t: 'التأثير في القرارات المالية', d: 'يقدّم دراسة تبين القوة والضعف في التصرفات والمشاريع. ومثاله في الأسفل: تصرف ربحه المرجو 2.5% يتبين أن دخله يساوي زكاته.' },
+  { t: 'توضيح العبء الأكثر', d: 'تبيّن الجوانب التي تشكل العبء الزكوي الأكثر في بنود القوائم المالية؛ مؤشرًا لتصرفات قادمة ولمعالجة تضخم البنود بما يوافق الشريعة والأنظمة.' }
+];
+function initWhy() {
+  var box = $('#why');
+  WHY.forEach(function (w, i) {
+    var f = E('div', 'flip');
+    f.innerHTML = '<button type="button" data-flip="why' + i + '"><span class="f"><span class="n">' + (i + 1) + '</span><b>' + w.t + '</b><span class="hint">اضغط لتقرأ</span></span><span class="bk"><b>' + w.t + '</b><br>' + w.d + ' ' + R('ص25-26') + '</span></button>';
+    box.appendChild(f);
+  });
+}
+var barsDone = false;
+function runBars() {
+  if (barsDone) return; barsDone = true;
+  $$('#bars .tr i').forEach(function (i) { i.style.width = i.getAttribute('data-w') + '%'; });
+}
+
+/* ===== افهم: التخطيط والتجنب ===== */
+var CMP = [
+  { q: 'على ماذا ينصب؟', a: 'أعم؛ يشمل الجانب الوقائي <b>قبل تملك المال</b> كالاستشارات.', b: 'ينصب على <b>الأموال التي يملكها</b> المكلَّف.' },
+  { q: 'كيف يتحقق؟', a: 'قد يكون بالثغرات، وقد يكون وفق خطوات صريحة في النظام. مثاله: خيّر النظام الشركات القابضة بين قائمة مالية واحدة لجميع التابعة وتزكيتها زكاة واحدة، أو قائمة لكل شركة وتزكيتها على انفراد؛ ويختلف الوعاء وقدر الزكاة.', b: 'باستغلال <b>الثغرات النظامية</b> لإسقاط الزكاة كلها أو بعضها.' },
+  { q: 'ما هدفه؟', a: 'أعم: رفع مستوى الاستفادة من الأموال بأكبر قدر؛ فالبند الذي لا يستفيد منه المالك (كبعض الديون القديمة) أو فائدته قليلة جدًا ويرتب عبئًا زكويًا يُعالج، ولا يُنظر إليه لمجرد التخفف من زكاته.', b: 'التخفف من الزكاة.' }
+];
+function initCmp() {
+  var box = $('#cmp');
+  CMP.forEach(function (c, i) {
+    var r = E('div', 'rw');
+    r.innerHTML = '<button type="button">' + (i + 1) + '. ' + c.q + '</button><div class="two"><div><h4>التخطيط الزكوي</h4>' + c.a + '</div><div><h4>التجنب</h4>' + c.b + '</div></div>';
+    r.firstChild.onclick = function () { r.classList.toggle('on'); log('card', 'cmp' + i); };
+    box.appendChild(r);
+  });
+  box.appendChild(E('p', 'small', 'الفروق الثلاثة من اجتهاد الباحث ' + R('ص24-25')));
+}
+function initBars() { $('#barsGo').onclick = function () { barsDone = false; $$('#bars .tr i').forEach(function (i) { i.style.width = '0'; }); setTimeout(runBars, 80); log('card', 'bars'); }; }
+
+/* ===== مواقف ===== */
+var CASES = [
+  { id: 'c1', t: 'استثمار قبل الشراء', tag: 'وقائي', ref: 'ص23، 26-27',
+    s: 'شركة تدرس الاستثمار في أصل لا تجب فيه الزكاة. وقبل أن تنفذ القرار، سألت: ما أثره الزكوي؟',
+    qs: [{ q: 'ما نوع هذا الإجراء؟', opts: ['وقائي (قبل التصرف)', 'علاجي موضوعي', 'علاجي إجرائي'], a: 0, exp: 'الاستثمار في أصول لا تجب فيها الزكاة هو مثال الباحث على الوقاية: منع زيادة العبء بمراعاة الأثر قبل التصرف. وحكمه عند الباحث: لا مانع شرعًا قبل التصرف.', ref: 'ص23، 26-27' }] },
+  { id: 'c2', t: 'عبء زكوي يقارب الربح', tag: 'قبل التصرف', ref: 'ص26-27',
+    s: 'شركة تقدم على تصرف مالي، فتبيّن لها أن عبئه الزكوي يقارب الربح الذي ترجوه منه، فرجعت عنه قبل تنفيذه.',
+    qs: [{ q: 'ما حكم رجوعها عند الباحث؟', opts: ['لا مانع شرعًا', 'محرم لأنه فرار من الزكاة', 'مكروه'], a: 0, exp: 'قال الباحث: «لا أرى مانعًا شرعيًا»؛ فالأصل في المعاملات الحل، والمكلَّف لم يملك المال الزكوي ولم تنشغل ذمته بعد، فلا ينطبق وصف الفرار.', ref: 'ص26-27' }] },
+  { id: 'c3', t: 'أرباح مؤجلة قبل نهاية الحول', tag: 'بعد التصرف · خطوتان', ref: 'ص27، 31-34',
+    s: 'شركة لديها أرباح مؤجلة لا تستفيد منها وتشكل عبئًا زكويًا، فوزعتها على المساهمين قبل نهاية الحول.',
+    qs: [
+      { q: 'إن كان قصدها رفع الضرر عن المالك، فما حكم ذلك عند الباحث؟', opts: ['جائز', 'محرم', 'مكروه'], a: 0, exp: 'مثّل الباحث لرفع الضرر بهذه الصورة، وقال: «يظهر لي جواز هذا التخطيط ومشروعيته». وعلّل بأن الأصل في المعاملات الحل، وبرفع الضرر الواقع على المالك، وبأن المدير ملزم ببذل العناية في حفظ أموال الملّاك.', ref: 'ص31-34' },
+      { q: 'وإن اتفقت الشركة مع المساهمين على أن يعيدوا الأرباح إليها بعد التوزيع؟', opts: ['يبقى جائزًا كما هو', 'صورة تحايل راجحها التحريم', 'لا يؤثر القصد في الحكم'], a: 1, exp: 'هذه من صور التحايل التي ذكرها الباحث: الاتفاق مع الملّاك على توزيع بعض الأرباح المؤجلة قبل نهاية الحول ثم استعادتها منهم. وللفقهاء فيها ثلاثة أقوال، والراجح عنده التحريم، ولا تسقط الزكاة عن المال المتصرَّف فيه.', ref: 'ص27، 31، 42-43' }
+    ] },
+  { id: 'c4', t: 'استثمار في شركة أجنبية', tag: 'إجرائي', ref: 'ص24',
+    s: 'شركة استثمرت في شركة أجنبية، ولها في تزكية هذا الاستثمار طريقتان.',
+    extra: '<div class="paths"><div><b>الطريق الأول</b>تزكية المبلغ بإدخاله ضمن قائمتها المالية.</div><div><b>الطريق الثاني</b>تزكيته عن طريق الشركة الأجنبية، بشرط إثبات ذلك.</div><div class="arrow">ويختلف قدر الزكاة في الحالتين (ص24)</div></div>',
+    qs: [{ q: 'ماذا قرر الباحث عن الطريقتين؟', opts: ['لكل منهما أثر مختلف في قدر الزكاة', 'قدر الزكاة واحد في الحالتين', 'الطريق الثاني ممنوع'], a: 0, exp: 'ذكر الباحث هذا المثال في «إجراءات الوعاء»: يحق للشركة الطريقان، ويختلف قدر الزكاة في الحالتين. ولم يذكر أيهما أقل.', ref: 'ص24' }] },
+  { id: 'c5', t: 'قائمة موحدة أم قوائم منفردة؟', tag: 'خطوات صريحة في النظام', ref: 'ص24-25',
+    s: 'خيّر النظام الشركات القابضة بين قائمة مالية واحدة لجميع الشركات التابعة وتزكيتها زكاة واحدة، أو قائمة لكل شركة وتزكيتها على انفراد. فاختارت شركة قابضة أحد الخيارين.',
+    qs: [{ q: 'هل هذا الاختيار استغلال لثغرة نظامية؟', opts: ['لا، هو خطوة صريحة في النظام', 'نعم، هو تجنب بالثغرات', 'يحرم لأنه يغيّر قدر الزكاة'], a: 0, exp: 'ذكره الباحث مثالًا على أن التخطيط قد يكون «وفق خطوات صريحة في النظام» لا بالثغرات؛ ويختلف الوعاء وقدر الزكاة بين الخيارين.', ref: 'ص24-25' }] },
+  { id: 'c6', t: 'دينان متقابلان بين شركتين', tag: 'رفع الضرر', ref: 'ص31-34',
+    s: 'شركتان مليئتان، كل منهما مدينة للأخرى بمبلغ متساوٍ. فأسقطت كل شركة الدين الذي لها على الأخرى مقابل دينها.',
+    qs: [{ q: 'ما الحكم عند الباحث؟', opts: ['جائز، فهو من رفع الضرر', 'محرم لأنه تحايل', 'لا حكم له'], a: 0, exp: 'هذا من أمثلة الباحث لقصد رفع الضرر: يظهر له جواز هذا التخطيط ومشروعيته. ومما علّل به: أن المالك لا يستفيد غالبًا من المال المزكّى، ولا يُتصور أن يتصرف أحد في مال زكوي يستفيد منه طلبًا للتخفف.', ref: 'ص31-34' }] },
+  { id: 'c7', t: 'بيع قبيل الحول وشراء بعده', tag: 'تحايل', ref: 'ص27-31',
+    s: 'شركة تبيع مالًا زكويًا قبيل انتهاء الحول، ثم تشتريه بعد بدء الحول الثاني، لتسقط عن نفسها الزكاة.',
+    qs: [{ q: 'ما الراجح عند الباحث في هذه الصورة؟', opts: ['التحريم', 'الإباحة', 'الكراهة'], a: 0, exp: 'ذكر الباحث ثلاثة أقوال: الإباحة (قول أبي يوسف من الحنفية)، والكراهة (قول محمد بن الحسن ومذهب الشافعية)، والتحريم (قول للحنفية ومذهب المالكية وقول للشافعية ومذهب الحنابلة). ورجّح التحريم. ولا تسقط الزكاة في هذه الحالة.', ref: 'ص27-31، 42-43' }] }
+];
+function initCases() {
+  var box = $('#cases');
+  CASES.forEach(function (c, idx) {
+    var d = E('div', 'card sx'); d.setAttribute('data-t', c.t);
+    d.innerHTML = '<div class="cs-h"><b>' + (idx + 1) + '. ' + c.t + '</b><span class="tag t-nv">' + c.tag + '</span></div><p style="margin:2px 0 6px">' + c.s + '</p>' + (c.extra || '');
+    var area = E('div'); d.appendChild(area);
+    var qi = 0, ok = 0;
+    (function next() {
+      if (qi >= c.qs.length) {
+        var f = E('p', 'small', 'المصدر في البحث: ' + R(c.ref) + ' · الوقائع افتراضية للتعليم، والأمثلة مستمدة من البحث.'); area.appendChild(f);
+        log('case', c.id, ok + '/' + c.qs.length); return;
+      }
+      var holder = E('div'); area.appendChild(holder);
+      mcq(holder, c.qs[qi], function (r) { if (r) ok++; qi++; setTimeout(next, 350); });
+    })();
+    box.appendChild(d);
+  });
+}
+
+/* ===== الحكم: شجرة الحكم ===== */
+var QAWLS = [
+  { k: 'يُباح', who: 'الحنفية (قول أبي يوسف).', why: 'امتناع عن الوجوب وليس فيه إبطال لحق الفقراء، والهرب من المعصية طاعة.', rep: 'رُدّ: نية الفرار ظاهرة، ولم ينوِ الخوف من عدم الامتثال.', r: 'ص28' },
+  { k: 'يُكره', who: 'قول للحنفية (محمد بن الحسن) ومذهب الشافعية.', why: 'الفرار من العبادة مكروه وليس من أخلاق المؤمنين (رُدّ بأنه استدلال بمحل النزاع)، وهو حيلة فيها إضرار بالفقراء وقصد إبطال حقهم مآلًا (رُدّ بأنه محل اتفاق ولذلك قال أصحاب القول الثالث بالتحريم).', rep: '', r: 'ص29-30' },
+  { k: 'يحرم', who: 'قول للحنفية ومذهب المالكية وقول للشافعية ومذهب الحنابلة.', why: '(1) حديث «ولا يُجمع بين متفرق ولا يُفرق بين مجتمع خشية الصدقة» والنهي يقتضي التحريم (أُجيب: التصرف في المال مشروع، ولو قيل بالتحريم فهو تأثيم بالقصد لا الفعل؛ ونوقش بأن التأثيم بالقصد وارد في الشرع كمن سافر في رمضان ليفطر). (2) أن فيه إضرارًا بالفقراء وذريعة لإسقاط حقهم.', rep: '', r: 'ص30-31', win: true }
+];
+var treeState = { path: [] };
+function treeRender() {
+  var box = $('#tree'), p = treeState.path; box.innerHTML = '';
+  var step = p.length === 0 ? 1 : (p.length === 1 && p[0] === 'before' ? 3 : (p.length === 1 ? 2 : 3));
+  $('#st1').classList.toggle('on', true); $('#st2').classList.toggle('on', step >= 2); $('#st3').classList.toggle('on', step >= 3);
+  var crumbs = { before: 'قبل التصرف المالي', after: 'بعد التصرف المالي', tahayul: 'قصد التحايل', darar: 'قصد رفع الضرر' };
+  if (p.length) box.appendChild(E('div', 'crumb', 'مسارك: ' + p.map(function (x) { return crumbs[x]; }).join(' ← ')));
+  var c = E('div', 'card'); box.appendChild(c);
+  if (!p.length) {
+    c.innerHTML = '<b>متى يقع التصرف المالي؟</b><p class="small" style="margin:2px 0 6px">يفرّق الباحث بين حالتين. ' + R('ص26-27') + '</p>';
+    [['before', 'قبل التصرف المالي', 'الشركة تدرس قرارًا لم تنفذه بعد'], ['after', 'بعد التصرف المالي', 'الشركة تملك المال أو تصرفت فيه فعلًا']].forEach(function (o) {
+      var b = E('button', 'opt', '<b>' + o[1] + '</b><br><span class="small">' + o[2] + '</span>'); b.onclick = function () { treeState.path = [o[0]]; log('tree', o[0]); treeRender(); }; c.appendChild(b);
+    });
+  } else if (p[0] === 'before') {
+    c.innerHTML = '<div class="verdict ok">لا مانع شرعًا من التخطيط الزكوي قبل التصرف المالي، عند الباحث ' + R('ص26-27') + '</div>' +
+      '<p><b>مثاله:</b> رجوع الشركة عن تصرف مالي بسبب عبئه الزكوي الذي يقارب ربحه المرجو.</p>' +
+      '<p><b>تعليله:</b> الأصل في المعاملات الحل. وإن اعتُرض بأنه فرار من الزكاة، فالمكلَّف لم يملك المال الزكوي ولم تنشغل ذمته بعد، فلا ينطبق وصف الفرار.</p>' +
+      '';
+  } else if (p.length === 1) {
+    c.innerHTML = '<b>ما قصد المكلَّف من التصرف؟</b><p class="small" style="margin:2px 0 6px">مثال الباحث: شركة تملك مالًا زكويًا وتزكيه كل عام فتبيعه تخفيفًا، أو تطلب من بعض المدينين المليئين تسديد الديون تخفيفًا. ' + R('ص27') + '</p>';
+    [['tahayul', 'التحايل على الزكاة', 'كأن يبيع المال قبيل الحول ثم يشتريه بعد بدء الحول الثاني إسقاطًا للزكاة'], ['darar', 'رفع الضرر عن المالك', 'كإسقاط دينين متقابلين بين شركتين مليئتين، أو توزيع أرباح مؤجلة']].forEach(function (o) {
+      var b = E('button', 'opt', '<b>' + o[1] + '</b><br><span class="small">' + o[2] + '</span>'); b.onclick = function () { treeState.path = ['after', o[0]]; log('tree', o[0]); treeRender(); }; c.appendChild(b);
+    });
+  } else if (p[1] === 'tahayul') {
+    c.innerHTML = '<b>قصد التحايل: للفقهاء ثلاثة أقوال</b> ' + R('ص27-31') + '<p class="small" style="margin:2px 0 6px">من صوره عند الباحث: بيع المال الزكوي قبيل انتهاء الحول ثم شراؤه بعد بدء الحول الثاني، أو الاتفاق مع الملّاك على توزيع أرباح مؤجلة قبل نهاية الحول ثم استعادتها منهم.</p>';
+    QAWLS.forEach(function (q) {
+      var d = E('details', 'sub');
+      d.innerHTML = '<summary>' + q.k + (q.win ? ' <span class="tag t-bad">الراجح عند الباحث</span>' : '') + '</summary><div class="b"><p><b>القائلون به:</b> ' + q.who + '</p><p><b>دليلهم:</b> ' + q.why + '</p>' + (q.rep ? '<p class="small">' + q.rep + '</p>' : '') + R(q.r) + '</div>';
+      c.appendChild(d);
+    });
+    c.appendChild(E('div', 'verdict bad', 'الراجح عند الباحث: التحريم، لقوة أدلتهم وضعف تعليلات القولين الآخرين ' + R('ص31')));
+    c.appendChild(E('div', 'note nv', '<b>الأثر على الزكاة:</b> إن كان التخطيط محرَّمًا فإن الزكاة <b>لا تسقط</b> عن المال المتصرَّف فيه ' + R('ص42-43')));
+  } else {
+    c.innerHTML = '<div class="verdict ok">قصد رفع الضرر: يظهر للباحث جواز هذا التخطيط ومشروعيته ' + R('ص31-32') + '</div>' +
+      '<p><b>أمثلته:</b> شركتان مليئتان كل منهما مدينة للأخرى بمبلغ متساوٍ فتُسقط كل شركة ما لها على الأخرى مقابل دينها، أو توزيع الشركة أرباحًا للمساهمين قبل نهاية الحول وكانت مؤجلة.</p>' +
+      '<b>ثلاثة تعليلات ' + R('ص32-34') + '</b><ol class="clean"><li>الأصل في المعاملات الحل.</li><li>رفع الضرر الواقع على المالك؛ إذ لا يستفيد غالبًا من المال المزكّى، ولا يُتصور أن يتصرف أحد في مال زكوي يستفيد منه طلبًا للتخفف، والشريعة جاءت برفع الضرر «لا ضرر ولا ضرار».</li><li>المدير المباشر لأموال الملّاك ملزم شرعًا ونظامًا ببذل العناية والحفاظ عليها، وكثير من قدر الزكاة ناتج عن تقصير في دراسة الجدوى، ولو قيل بوجوب التخطيط الزكوي في بعض الحالات لكان القول وجيهًا.</li></ol>' +
+      '<p class="small">وإن اعتُرض بأنه فرار: الأصل في الزكاة أنها حق مالي للفقراء مواساةً لهم وسدًّا لفقرهم، ولا تأمر الشريعة بدفع زكاة على مال لا فائدة منه ولا ينمو، فالتخطيط هنا يرفع الضرر ولا يفرّ ' + R('ص34') + '</p>' +
+      '<div class="note nv"><b>الأثر على الزكاة:</b> إن كان التخطيط جائزًا فلا تجب الزكاة عن المال الذي تصرّف فيه المالك قبل انتهاء الحول ' + R('ص42') + '</div>';
+  }
+  if (p.length) { var rb = E('button', 'btn ghost', 'ابدأ من جديد'); rb.onclick = function () { treeState.path = []; treeRender(); }; var bb = E('button', 'btn ghost', 'رجوع'); bb.onclick = function () { treeState.path.pop(); treeRender(); }; var row = E('div', 'row'); row.style.marginTop = '8px'; row.appendChild(bb); row.appendChild(rb); box.appendChild(row); }
+  flash(c);
+}
+
+/* ===== الحكم: فاحص خدمة التخطيط ===== */
+var SVC = [
+  { q: 'هل الخدمة خالية مما يؤدي إلى التحايل على الزكاة والفرار منها (كبيع المال الزكوي قبل الحول ثم شرائه بعده)؟', r: 'ص35' },
+  { q: 'هل الخدمة لا تتضمن معاملة محرمة (كبيع ما حرمه الله ورسوله أو شرائه)؟', r: 'ص35-36' },
+  { q: 'هل الخدمة لا تنطوي على مخالفة لنظام أو لائحة سنّها ولي الأمر؟', r: 'ص36' }
+];
+function initSvc() {
+  var box = $('#svc'), ans = [];
+  function render() {
+    box.innerHTML = '<p style="margin-top:0">افترض أن مكتبًا محاسبيًا يعرض على شركة خدمة تخطيط زكوي مقابل عوض. أجب عن الأسئلة الثلاثة المأخوذة من ضوابط الباحث:</p>';
+    SVC.forEach(function (s, i) {
+      var d = E('div'); d.style.margin = '10px 0';
+      d.innerHTML = '<b>' + (i + 1) + '. ' + s.q + '</b> ' + R(s.r);
+      var row = E('div', 'seg'); row.style.marginTop = '6px';
+      [['y', 'نعم'], ['n', 'لا'], ['u', 'غير متأكد']].forEach(function (o) {
+        var b = E('button', ans[i] === o[0] ? 'on' : '', o[1]); b.onclick = function () { ans[i] = o[0]; render(); }; row.appendChild(b);
+      });
+      d.appendChild(row); box.appendChild(d);
+    });
+    if (ans.filter(Boolean).length === 3) {
+      var no = ans.indexOf('n') >= 0, un = ans.indexOf('u') >= 0, v;
+      if (no) v = '<div class="verdict bad">بحسب إجابتك لا يتحقق أحد الضوابط الثلاثة؛ فلا تدخل الخدمة في جواز المعاوضة الذي قرره الباحث حتى يزول المانع.</div>';
+      else if (un) v = '<div class="verdict mid">لم تتحقق من كل الضوابط بعد. اطلب من المكتب بيان طبيعة الخدمة، وراجع مختصًا في الزكاة والفقه قبل التعاقد.</div>';
+      else v = '<div class="verdict ok">بحسب إجاباتك لا تظهر مخالفة للضوابط الثلاثة التي ذكرها الباحث. وهذا لا يغني عن مراجعة مختص ولا يُعدّ اعتمادًا للخدمة.</div>';
+      box.appendChild(E('div', '', v)); log('svc', ans.join(''));
+    }
+  }
+  render();
+}
+
+/* ===== الحكم: الأثر على الزكاة ===== */
+function initEffect() {
+  $$('[data-ef]').forEach(function (b) {
+    b.onclick = function () {
+      var was = b.classList.contains('sel');
+      $$('[data-ef]').forEach(function (x) { x.classList.remove('sel'); });
+      var o = $('#efOut');
+      if (was) { o.className = 'verdict nv'; o.style.fontWeight = '400'; o.innerHTML = 'اختر أحد الحكمين.'; return; }
+      b.classList.add('sel');
+      var ok = b.getAttribute('data-ef') === 'ok';
+      o.className = 'verdict ' + (ok ? 'ok' : 'bad'); o.style.fontWeight = '400';
+      o.innerHTML = ok
+        ? '<b>لا تجب الزكاة</b> عن المال الذي تصرّف فيه المالك قبل انتهاء الحول ' + R('ص42') + '<br>لأن مضي الحول شرط لوجوب الزكاة بإجماع أهل العلم (حكاه ابن رشد وابن قدامة)، وهذا المال لم يحل عليه الحول في ملكه، ولم يتصرف فيه إلا لرفع الضرر عنه.'
+        : '<b>لا تسقط الزكاة</b>؛ تجب عن المال الذي تصرّف فيه فرارًا منها ' + R('ص42-43') + '<br>لقوة أدلة القول بعدم السقوط وضعف الآخر، ولقاعدة «المعاملة بنقيض المقصود»، ولأن السياسة الشرعية تقتضي عدم إسقاط الزكاة عن المتحايل عليها.';
+      flash(o); log('card', 'ef_' + b.getAttribute('data-ef'));
+    };
+  });
+}
+
+/* ===== جرّب: سيناريوهات متفرعة ===== */
+var SC = [
+  { id: 's1', t: 'رجعتُ عن تصرف بسبب عبئه الزكوي', n: {
+    a: { q: 'متى اتخذت الشركة هذا القرار؟', o: [
+      ['قبل تنفيذ التصرف، ولم تملك المال الزكوي بعد', { k: 'ok', h: 'لا مانع شرعًا عند الباحث', b: 'الأصل في المعاملات الحل، والمكلَّف لم يملك المال الزكوي ولم تنشغل ذمته بعد فلا ينطبق وصف الفرار.', r: 'ص26-27' }],
+      ['بعد أن ملكت المال وتصرفت فيه', 'b']] },
+    b: { q: 'ما قصدها من التصرف؟', o: [
+      ['رفع الضرر عن المالك لأنه لا يستفيد من هذا المال', { k: 'ok', h: 'جائز عند الباحث', b: 'قصد رفع الضرر يظهر للباحث معه جواز التخطيط ومشروعيته.', r: 'ص31-34' }],
+      ['إسقاط الزكاة عن مال تجب فيه', { k: 'bad', h: 'من التحايل؛ والراجح التحريم', b: 'ولا تسقط الزكاة عن المال المتصرَّف فيه عند الباحث.', r: 'ص27-31، 42-43' }]] } } },
+  { id: 's2', t: 'وزّعنا أرباحًا مؤجلة قبل نهاية الحول', n: {
+    a: { q: 'هل اتفقت الشركة مع المساهمين على استعادة الأرباح بعد توزيعها؟', o: [
+      ['نعم، اتفقنا على استعادتها', { k: 'bad', h: 'صورة تحايل ذكرها الباحث', b: 'الراجح عنده التحريم، ولا تسقط الزكاة عن المال المتصرَّف فيه.', r: 'ص27، 31، 42-43' }],
+      ['لا، وُزّعت دون اتفاق على استعادتها', 'b']] },
+    b: { q: 'ما القصد من التوزيع؟', o: [
+      ['رفع الضرر عن المالك لأنه لا يستفيد من هذه الأرباح المحتجزة', { k: 'ok', h: 'جائز عند الباحث', b: 'ذكره الباحث مثالًا على رفع الضرر. وإن كان التخطيط جائزًا فلا تجب الزكاة عن المال المتصرَّف فيه قبل انتهاء الحول.', r: 'ص31-32، 42' }],
+      ['إسقاط الزكاة فقط', { k: 'bad', h: 'يدخل في قصد التحايل', b: 'الحكم عند الباحث يتبع القصد؛ والراجح في التحايل التحريم.', r: 'ص27-31' }]] } } },
+  { id: 's3', t: 'أسقطنا دينًا متقابلًا مع شركة أخرى', n: {
+    a: { q: 'هل الشركتان مليئتان والدينان متساويان؟', o: [
+      ['نعم، كل منهما مليئة والدينان متساويان', { k: 'ok', h: 'جائز عند الباحث', b: 'هذا مثاله لقصد رفع الضرر: يظهر له جواز هذا التخطيط ومشروعيته.', r: 'ص31-32' }],
+      ['لا، تختلف الصورة عن ذلك', { k: 'mid', h: 'الصورة تختلف عن مثال الباحث', b: 'لا يمكن نقل حكمه مباشرة؛ تحتاج الحالة إلى نظر مختص في تفاصيلها.', r: 'ص31-32' }]] } } },
+  { id: 's4', t: 'مكتب محاسبي اقترح معاملة محرمة', n: {
+    a: { q: 'هل يتضمن الإجراء المقترح معاملة محرمة (كبيع ما حرمه الله ورسوله)؟', o: [
+      ['نعم', { k: 'bad', h: 'لا تجوز المعاوضة على هذه الخدمة', b: 'من ضوابط المعاوضة عند الباحث: ألا يكون التخطيط معاملة محرمة، لقوله تعالى ﴿وَلَا تَعَاوَنُوا عَلَى الْإِثْمِ وَالْعُدْوَٰنِ﴾.', r: 'ص35-36' }],
+      ['لا', { k: 'ok', h: 'يتحقق هذا الضابط', b: 'تبقى الضوابط الأخرى: ألا يؤدي إلى التحايل، وألا يخالف نظامًا أو لائحة.', r: 'ص35-36' }]] } } },
+  { id: 's5', t: 'مكتب اقترح ما يخالف لائحة', n: {
+    a: { q: 'هل ينطوي الإجراء المقترح على مخالفة لنظام أو لائحة سنّها ولي الأمر؟', o: [
+      ['نعم', { k: 'bad', h: 'لا تجوز المعاوضة على هذه الخدمة', b: 'من ضوابط المعاوضة: ألا ينطوي التخطيط على مخالفة لنظام أو لائحة؛ لقوله تعالى ﴿أَطِيعُوا اللَّهَ وَأَطِيعُوا الرَّسُولَ وَأُولِى الْأَمْرِ مِنكُمْ﴾.', r: 'ص36' }],
+      ['لا', { k: 'ok', h: 'يتحقق هذا الضابط', b: 'تبقى الضوابط الأخرى: ألا يؤدي إلى التحايل، وألا يكون معاملة محرمة.', r: 'ص35-36' }]] } } }
+];
+function initScenarios() {
+  var list = $('#scList'), box = $('#scBox');
+  SC.forEach(function (s) {
+    var b = E('button', 'opt', '<b>' + s.t + '</b>'); b.onclick = function () { var was = b.classList.contains('sel'); $$('#scList .opt').forEach(function (x) { x.classList.remove('sel'); }); if (was) { box.innerHTML = ''; return; } b.classList.add('sel'); run(s); log('sc', s.id); }; list.appendChild(b);
+  });
+  function run(s) {
+    box.innerHTML = '';
+    var card = E('div', 'card'); box.appendChild(card);
+    (function step(key) {
+      var n = s.n[key], blk = E('div'); card.appendChild(blk);
+      blk.appendChild(E('p', '', '<b>' + n.q + '</b>'));
+      n.o.forEach(function (o) {
+        var b = E('button', 'opt', o[0]);
+        b.onclick = function () {
+          $$('.opt', blk).forEach(function (x) { x.disabled = true; }); b.classList.add('sel');
+          if (typeof o[1] === 'string') { step(o[1]); }
+          else {
+            var v = o[1], d = E('div', 'verdict ' + v.k, v.h + '<div style="font-weight:400;margin-top:4px">' + v.b + ' ' + R(v.r) + '</div>');
+            card.appendChild(d); flash(d); snd(v.k === 'ok' ? 'ok' : 'bad');
+            card.appendChild(E('p', 'small', 'تعليمي بحسب ترجيحات الباحث، وليس فتوى على واقعتك.'));
+            var again = E('button', 'btn ghost', 'أعد السيناريو'); again.onclick = function () { run(s); }; card.appendChild(again);
+            log('sc_end', s.id, v.k);
+          }
+        };
+        blk.appendChild(b);
+      });
+    })('a');
+    flash(card);
+  }
+}
+
+/* ===== جرّب: محاكي أثر القرار (مفاهيمي) ===== */
+var SIM = [
+  { t: 'استثمار في أصل لا تجب فيه الزكاة', rows: [['نوع الإجراء', 'وقائي: مراعاة الأثر قبل التصرف (ص23).'], ['ما يُنظر فيه', 'أثر القرار على الوعاء الزكوي قبل تنفيذه، والمقارنة بين بدائله.'], ['عند الباحث', 'قبل التصرف لا مانع شرعًا (ص26-27).'], ['تنبيه', 'لا يحدد البحث الأصول التي لا تجب فيها الزكاة، ولا يقدّر الأثر؛ فهذا يحتاج إلى مختص.']] },
+  { t: 'توزيع أرباح مؤجلة قبل نهاية الحول', rows: [['نوع الإجراء', 'معالجة موضوعية لبنود الوعاء قبل نهاية الحول (ص23).'], ['ما يُنظر فيه', 'القصد: رفع الضرر أم إسقاط الزكاة؟ وهل اتُّفق على استعادة الأرباح؟'], ['عند الباحث', 'جائز إن كان القصد رفع الضرر (ص31-32). والاتفاق على الاستعادة صورة تحايل راجحها التحريم (ص27، 31).'], ['الأثر على الزكاة', 'إن جاز: لا تجب عن المال المتصرَّف فيه قبل الحول (ص42). وإن حرم: لا تسقط (ص42-43).']] },
+  { t: 'إسقاط دين متقابل بين شركتين مليئتين', rows: [['نوع الإجراء', 'من أمثلة الباحث على التصرفات المخففة للعبء: إغلاق بعض الديون المستحقة (ص22-23)، وإسقاط الدينين المتقابلين (ص31).'], ['ما يُنظر فيه', 'هل الشركتان مليئتان؟ وهل الدينان متساويان؟'], ['عند الباحث', 'يظهر له جواز هذا التخطيط ومشروعيته لقصد رفع الضرر (ص31-32).'], ['الأثر على الزكاة', 'إن كان التخطيط جائزًا فلا تجب الزكاة عن المال المتصرَّف فيه قبل الحول (ص42).']] },
+  { t: 'إبقاء مبلغ نقدي كبير دون استفادة منه', rows: [['نوع الإجراء', 'معالجة لبند النقد، وهو من المعالجات العامة التي ذكرها الباحث (ص24).'], ['ما يُنظر فيه', 'هل للشركة استفادة من هذا المبلغ؟ فالبند الذي لا يستفيد منه المالك أو فائدته قليلة جدًا ويرتب عبئًا زكويًا يُعالج (ص25).'], ['عند الباحث', 'لا تأمر الشريعة بدفع زكاة على مال لا فائدة منه ولا ينمو (ص34).'], ['تنبيه', 'ليس في البحث تفصيل لطريقة معالجة بند النقد؛ لذلك لا تقدّم الصفحة خطوات محاسبية.']] }
+];
+function initSim() {
+  $$('[data-sim]').forEach(function (b) {
+    b.onclick = function () {
+      var was = b.classList.contains('sel'), o = $('#simOut');
+      $$('[data-sim]').forEach(function (x) { x.classList.remove('sel'); });
+      if (was) { o.innerHTML = ''; return; }
+      b.classList.add('sel');
+      var s = SIM[+b.getAttribute('data-sim')];
+      o.innerHTML = '<div class="verdict nv" style="margin-bottom:6px">' + s.t + '</div>' + s.rows.map(function (r) { return '<div style="padding:7px 0;border-bottom:1px dashed var(--line)"><b style="color:var(--accent)">' + r[0] + '</b><div>' + r[1] + '</div></div>'; }).join('') +
+        '<p class="small">تصور مفاهيمي من إعداد الصفحة مبني على أمثلة البحث.</p>';
+      flash(o); log('sim', b.getAttribute('data-sim'));
+    };
+  });
+}
+
+/* ===== جرّب: حاسبة النسبة ===== */
+function fmt(n) { return (Math.round(n * 100) / 100).toLocaleString('en-US'); }
+function initCalc() {
+  function upd() {
+    var a = parseFloat($('#e1').value), b = parseFloat($('#e2').value), o = $('#eo');
+    if (!(a > 0) || !(b >= 0)) { o.style.display = 'none'; return; }
+    var z = a * 0.025, net = b - z, pr = b / a * 100, c, msg;
+    if (b <= z) { c = 'bad'; msg = 'الربح المتوقع لا يزيد على الزكاة المفترضة؛ وهذا نمط المثال الذي ذكره الباحث (ربح مرجو يقارب الزكاة عليه) ' + R('ص26'); }
+    else { c = 'ok'; msg = 'الربح المتوقع يزيد على الزكاة المفترضة، لكن القرار لا يقوم على هذه المقارنة وحدها.'; }
+    o.style.display = 'block';
+    o.innerHTML = '<div class="stat"><span>الزكاة المفترضة (2.5%)</span><b><bdi>' + fmt(z) + '</bdi> ريال</b></div><div class="stat"><span>الربح المتوقع</span><b><bdi>' + fmt(b) + '</bdi> ريال</b></div><div class="stat"><span>نسبة الربح إلى المبلغ</span><b><bdi>' + fmt(pr) + '%</bdi></b></div><div class="stat"><span>الربح − الزكاة المفترضة</span><b><bdi>' + fmt(net).replace('-', '−') + '</bdi> ريال</b></div><div class="verdict ' + c + '" style="font-weight:400;margin-top:8px">' + msg + '</div>';
+    clearTimeout(upd._t); upd._t = setTimeout(function () { log('est'); }, 1500);
+  }
+  $('#e1').oninput = upd; $('#e2').oninput = upd;
+}
+
+/* ===== جرّب: قائمة المراجعة ===== */
+var CKL = [
+  { t: 'حدّدنا نوع الإجراء المقترح: وقائي قبل التصرف أم علاجي بعده؟', r: 'ص23' },
+  { t: 'قصده رفع ضرر أو تحسين الاستفادة من الأموال، وليس مجرد إسقاط الزكاة.', r: 'ص25، 31-34' },
+  { t: 'خالٍ من صور التحايل (كبيع المال قبل الحول ثم شرائه، أو توزيع ثم استعادة).', r: 'ص27' },
+  { t: 'لا يتضمن معاملة محرمة.', r: 'ص35-36' },
+  { t: 'لا يخالف نظامًا أو لائحة.', r: 'ص36' },
+  { t: 'راجعه مختص في الزكاة والمحاسبة (والفقهي عند الحاجة).', r: 'ص22-23، 44' }
+];
+function initCkl() {
+  var box = $('#ckl');
+  CKL.forEach(function (c, i) {
+    var l = E('label', 'ck'); l.innerHTML = '<input type="checkbox"><span>' + c.t + ' ' + R(c.r) + '</span>';
+    l.firstChild.onchange = upd; box.appendChild(l);
+  });
+  function upd() {
+    var n = $$('#ckl input:checked').length, r = $('#ckr'), t;
+    if (n === 6) { r.className = 'verdict ok'; t = 'اكتملت الأسئلة الستة. هذا لا يغني عن المراجعة المتخصصة.'; }
+    else if (n === 0) { r.className = 'verdict nv'; t = 'ضع علامات لتظهر الخلاصة.'; }
+    else { r.className = 'verdict mid'; t = 'أنجزتم ' + n + ' من 6. راجعوا ما بقي قبل اتخاذ القرار.'; }
+    r.textContent = t; log('check', n);
+  }
+}
+
+/* ===== الاختبار: أنشطة متنوعة ===== */
+var SKILLS = {
+  def: { t: 'فهم التعريف والتصنيف', back: ['afham', 'a1'] },
+  hukm: { t: 'الحكم الشرعي', back: ['hukm', 'h1'] },
+  mua: { t: 'المعاوضة وضوابطها', back: ['hukm', 'h2'] },
+  ath: { t: 'الأثر على الزكاة', back: ['hukm', 'h3'] }
+};
+var QZ = [
+  { sk: 'def', type: 'classify', q: 'صنّف كل إجراء: وقائي أم علاجي؟ (والعلاجي موضوعي أو إجرائي)', cats: ['وقائي', 'علاجي موضوعي', 'علاجي إجرائي'],
+    items: [['الاستثمار في أصول لا تجب فيها الزكاة', 0], ['توزيع أرباح مؤجلة على المساهمين قبل نهاية الحول', 1], ['اختيار طريقة تصنيف البنود في الإقرار', 2]],
+    exp: 'الوقاية: مراعاة الأثر قبل التصرف. والمعالجة الموضوعية تتعلق ببنود الوعاء قبل نهاية الحول (كتوزيع أرباح مؤجلة)، والإجرائية بطريقة تصنيف البنود أو رفع الإقرارات.', ref: 'ص23' },
+  { sk: 'def', type: 'mcq', q: 'أي العبارات هي تعريف التخطيط الزكوي الذي اختاره الباحث؟',
+    opts: ['مراعاة الأثر الزكوي في التصرفات المالية وبنود الوعاء الزكوي وإجراءاته', 'إسقاط الزكاة بوسائل نظامية', 'تقليل أي التزام مالي على الشركة بأي وسيلة', 'حساب مقدار الزكاة الواجب على الشركات'], a: 0,
+    exp: 'اختاره لإيجازه ولجمعه شقّي الوقاية والعلاج، والأصل فيه «مراعاة الأثر» وليس تجنب الزكاة.', ref: 'ص23-24' },
+  { sk: 'def', type: 'match', q: 'طابق كل مصطلح بمعناه عند الباحث', pairs: [
+    ['الوقاية', 'مراعاة الأثر قبل التصرف لمنع زيادة العبء'], ['معالجة موضوعية', 'معالجة بنود الوعاء قبل نهاية الحول'], ['معالجة إجرائية', 'طريقة تصنيف البنود أو رفع الإقرارات'], ['المعاملة بنقيض المقصود', 'معاملة صاحب القصد الفاسد بنقيض قصده']],
+    exp: 'الأولى والثانية والثالثة من تقسيم الإجراءات (ص23)، والرابعة قاعدة استدل بها الباحث (ص42-43).', ref: 'ص23، 42-43' },
+  { sk: 'def', type: 'mcq', q: 'أي ما يلي من الفروق التي ذكرها الباحث بين التخطيط والتجنب؟',
+    opts: ['التخطيط أعم؛ يشمل الجانب الوقائي قبل تملك المال كالاستشارات', 'التخطيط محرم دائمًا والتجنب جائز دائمًا', 'التجنب لا يكون إلا بعد انتهاء الحول', 'لا فرق بينهما إطلاقًا'], a: 0,
+    exp: 'ذكر ثلاثة فروق: التجنب ينصب على الأموال المملوكة، والتخطيط أعم؛ وقد يكون التخطيط بالثغرات أو وفق خطوات صريحة في النظام؛ وهدف التجنب التخفف من الزكاة بينما هدف التخطيط أعم.', ref: 'ص24-25' },
+  { sk: 'hukm', type: 'mcq', q: 'ما حكم التخطيط الزكوي قبل التصرف المالي عند الباحث؟',
+    opts: ['لا مانع شرعًا', 'محرم لأنه فرار من الزكاة', 'مكروه', 'واجب في كل الأحوال'], a: 0,
+    exp: 'الأصل في المعاملات الحل، والمكلَّف لم يملك المال الزكوي ولم تنشغل ذمته بعد فلا ينطبق وصف الفرار.', ref: 'ص26-27' },
+  { sk: 'hukm', type: 'order', q: 'رتّب خطوات النظر في الحكم عند الباحث (اضغط على الخطوات بالترتيب)',
+    steps: ['النظر: هل الحالة قبل التصرف المالي أم بعده؟', 'إن كان بعده: تحديد القصد (تحايل أم رفع ضرر)', 'تحديد الحكم بحسب القصد', 'بيان أثره على الزكاة بحسب الحكم'],
+    exp: 'يفرّق الباحث أولًا بين ما قبل التصرف وما بعده، ثم ينظر في القصد، ثم يبني على الحكم أثره في الزكاة.', ref: 'ص26-27، 31، 36' },
+  { sk: 'hukm', type: 'mcq', q: 'ما الراجح عند الباحث في التحايل على الزكاة بعد التصرف؟',
+    opts: ['التحريم', 'الإباحة', 'الكراهة', 'الجواز بشرط'], a: 0,
+    exp: 'ذكر ثلاثة أقوال (إباحة وكراهة وتحريم) ورجّح التحريم لقوة أدلته وضعف تعليلات القولين الآخرين.', ref: 'ص27-31' },
+  { sk: 'hukm', type: 'mcq', q: 'ما الخطأ في العبارة: «يرى الباحث أن كل تخفيف للزكاة تحايل محرم»؟',
+    opts: ['قبل التصرف لا مانع، وبعده الحكم بحسب القصد: تحايل محرم أو رفع ضرر جائز', 'لا خطأ فيها', 'الباحث يبيح كل أنواع التخطيط', 'الباحث لم يتناول حكم التخطيط'], a: 0,
+    exp: 'التفريق بين ما قبل التصرف وبعده، وبين قصد التحايل وقصد رفع الضرر، هو جوهر ترجيحات الباحث.', ref: 'ص26-34' },
+  { sk: 'mua', type: 'multi', q: 'اختر ضوابط المعاوضة على التخطيط الزكوي التي ذكرها الباحث (ثلاثة)',
+    opts: ['ألا يؤدي إلى التحايل على الزكاة', 'ألا يكون معاملة محرمة', 'ألا ينطوي على مخالفة نظام أو لائحة', 'أن يكون العوض نسبة من الزكاة المُوفَّرة', 'أن تكون الشركة قابضة'], correct: [0, 1, 2],
+    exp: 'الضوابط الثلاثة: ألا يؤدي إلى التحايل، وألا يكون معاملة محرمة، وألا يخالف نظامًا أو لائحة. أما العوض بنسبة من الزكاة وكون الشركة قابضة فليسا من ضوابط الباحث.', ref: 'ص35-36' },
+  { sk: 'mua', type: 'mcq', q: 'ما الخطأ في العبارة: «تجوز المعاوضة على التخطيط الزكوي بلا أي قيد»؟',
+    opts: ['الجواز مقيد بثلاثة ضوابط', 'لا خطأ فيها', 'المعاوضة محرمة دائمًا', 'المعاوضة جائزة بشرط واحد فقط'], a: 0,
+    exp: 'قرر الباحث أن الأصل الجواز، لكن بثلاثة ضوابط. وأدلة الجواز: الأصل في العقود الصحة، وعقد التخطيط لا يخرج عن الإجارة والجعالة، وفيه تعاون على البر.', ref: 'ص34-36' },
+  { sk: 'ath', type: 'mcq', q: 'إن كان التخطيط جائزًا، فما أثره على زكاة المال الذي تصرّف فيه المالك قبل انتهاء الحول؟',
+    opts: ['لا تجب الزكاة عنه', 'تجب الزكاة عنه كاملة', 'تجب نصف الزكاة', 'يرجع الأمر للمكتب المحاسبي'], a: 0,
+    exp: 'لأن مضي الحول شرط وجوب بإجماع أهل العلم، وهذا المال لم يحل عليه الحول في ملك المالك.', ref: 'ص42' },
+  { sk: 'ath', type: 'mcq', q: 'وإن كان التخطيط محرَّمًا (تحايلًا)، فما أثره على الزكاة؟',
+    opts: ['لا تسقط الزكاة', 'تسقط الزكاة', 'تسقط جزئيًا', 'لا أثر للحكم في الزكاة'], a: 0,
+    exp: 'لقوة أدلة القول بعدم السقوط، ولقاعدة المعاملة بنقيض المقصود، وللسياسة الشرعية.', ref: 'ص42-43' },
+  { sk: 'ath', type: 'mcq', q: 'ما الخطأ في العبارة: «إذا كان التخطيط محرمًا فإن الزكاة تسقط عن المال الذي تصرف فيه»؟',
+    opts: ['الزكاة لا تسقط في هذه الحالة', 'لا خطأ فيها', 'الزكاة تسقط في الحالتين', 'لا علاقة بين الحكم والأثر'], a: 0,
+    exp: 'أثر التخطيط على الزكاة مرتبط بحكمه: جائز فلا تجب، محرم فلا تسقط.', ref: 'ص36، 42-43' }
+];
+var QS = { i: 0, sc: [], on: false };
+
+function quizEnter() { if (!QS.on) quizIntro(); }
+function quizIntro() {
+  var b = $('#qbox'); b.innerHTML = '';
+  var c = E('div', 'card');
+  c.innerHTML = '<h3 style="margin-top:0">' + QZ.length + ' نشاطًا متنوعًا</h3><p>تصنيف، وترتيب، ومطابقة، وكشف خطأ، واختيار من متعدد. بعد كل نشاط تفسير قصير بموضعه في البحث، وفي النهاية ملخص بمهاراتك.</p><p class="small">الاختبار تعليمي لتثبيت الفهم، وليس تقييمًا رسميًا.</p>';
+  var s = E('button', 'btn', 'ابدأ الاختبار'); s.onclick = function () { QS = { i: 0, sc: [], on: true }; log('quiz_start'); quizStep(); };
+  c.appendChild(s); b.appendChild(c);
+}
+function quizStep() {
+  var b = $('#qbox'); b.innerHTML = '';
+  if (QS.i >= QZ.length) return quizEnd();
+  var it = QZ[QS.i];
+  var pr = E('div', '', '<div class="small">النشاط ' + (QS.i + 1) + ' من ' + QZ.length + ' · ' + SKILLS[it.sk].t + '</div><div class="progress"><b style="width:' + Math.round(QS.i / QZ.length * 100) + '%"></b></div>');
+  b.appendChild(pr);
+  var card = E('div', 'card'); b.appendChild(card);
+  var fin = function (score, exp) {
+    QS.sc[QS.i] = score; if (score >= 0.99) snd('ok'); else if (score < 0.5) snd('bad'); log('q', QS.i, score.toFixed(2));
+    if (exp) { var fb = E('div', 'verdict nv fb', '<span style="font-weight:400">' + it.exp + ' ' + R(it.ref) + '</span>'); card.appendChild(fb); flash(fb); }
+    var nx = E('button', 'btn', QS.i === QZ.length - 1 ? 'عرض النتيجة' : 'التالي'); nx.onclick = function () { QS.i++; quizStep(); window.scrollTo(0, 0); };
+    card.appendChild(nx);
+  };
+  var T = {
+    mcq: function () { mcq(card, it, function (ok) { fin(ok ? 1 : 0, false); }); },
+    classify: function () {
+      card.appendChild(E('p', '', '<b>' + it.q + '</b>'));
+      var done = 0, ok = 0;
+      it.items.forEach(function (x) {
+        var row = E('div'); row.style.margin = '10px 0'; row.appendChild(E('div', '', x[0]));
+        var seg = E('div', 'seg'); seg.style.marginTop = '4px';
+        it.cats.forEach(function (cn, ci) {
+          var bt = E('button', '', cn); bt.onclick = function () {
+            if (row.getAttribute('data-d')) return; row.setAttribute('data-d', '1'); done++;
+            var right = (ci === x[1]); if (right) ok++;
+            $$('button', seg).forEach(function (q, qi) { if (qi === x[1]) q.classList.add('on'); }); bt.style.outline = right ? '2px solid var(--ok)' : '2px solid var(--bad)';
+            if (done === it.items.length) fin(ok / it.items.length, true);
+          }; seg.appendChild(bt);
+        });
+        row.appendChild(seg); card.appendChild(row);
+      });
+    },
+    order: function () {
+      card.appendChild(E('p', '', '<b>' + it.q + '</b>'));
+      var wrap = E('div', 'ord'), picked = [];
+      shuffle(it.steps.map(function (s, i) { return i; })).forEach(function (si) {
+        var bt = E('button', '', '<span class="bdg">·</span><span>' + it.steps[si] + '</span>');
+        bt.onclick = function () {
+          if (bt.classList.contains('sel') || picked.length >= it.steps.length) return;
+          picked.push(si); bt.classList.add('sel'); bt.firstChild.textContent = picked.length;
+          if (picked.length === it.steps.length) {
+            var c = 0; picked.forEach(function (p, k) { if (p === k) c++; });
+            $$('button', wrap).forEach(function (x) { x.disabled = true; });
+            var right = E('div', 'small', '<b>الترتيب الصحيح:</b><ol class="clean">' + it.steps.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol>');
+            card.appendChild(right); fin(c / it.steps.length, true);
+          }
+        }; wrap.appendChild(bt);
+      });
+      card.appendChild(wrap);
+    },
+    match: function () {
+      card.appendChild(E('p', '', '<b>' + it.q + '</b>'));
+      card.appendChild(E('p', 'small', 'اضغط مصطلحًا ثم اضغط معناه.'));
+      var perm = shuffle(it.pairs.map(function (_, i) { return i; }));
+      var grid = E('div', 'mt'), selT = null, made = [], n = 0, locked = false;
+      it.pairs.forEach(function (p, i) {
+        var t = E('button', '', p[0]); t.setAttribute('data-t', i);
+        var m = E('button', '', it.pairs[perm[i]][1]); m.setAttribute('data-m', perm[i]);
+        t.onclick = function () { if (locked || t.classList.contains('done')) return; $$('button[data-t]', grid).forEach(function (x) { x.classList.remove('sel'); }); t.classList.add('sel'); selT = t; };
+        m.onclick = function () {
+          if (locked || !selT || m.classList.contains('done')) return;
+          var k = n % 4; n++; selT.classList.remove('sel'); selT.classList.add('done', 'p' + k); m.classList.add('done', 'p' + k);
+          made.push([+selT.getAttribute('data-t'), +m.getAttribute('data-m'), selT, m]); selT = null;
+          if (made.length === it.pairs.length) {
+            locked = true; var ok = 0;
+            made.forEach(function (x) { if (x[0] === x[1]) ok++; else { x[2].classList.add('bad'); x[3].classList.add('bad'); } });
+            var key = E('div', 'small', '<b>المطابقة الصحيحة:</b><ul class="clean">' + it.pairs.map(function (p) { return '<li>' + p[0] + ' ← ' + p[1] + '</li>'; }).join('') + '</ul>');
+            card.appendChild(key); fin(ok / it.pairs.length, true);
+          }
+        };
+        grid.appendChild(t); grid.appendChild(m);
+      });
+      card.appendChild(grid);
+    },
+    multi: function () {
+      card.appendChild(E('p', '', '<b>' + it.q + '</b>'));
+      var sel = [], btns = [];
+      it.opts.forEach(function (o, i) {
+        var bt = E('button', 'opt', o); bt.onclick = function () { var k = sel.indexOf(i); if (k >= 0) { sel.splice(k, 1); bt.classList.remove('sel'); } else { sel.push(i); bt.classList.add('sel'); } }; btns.push(bt); card.appendChild(bt);
+      });
+      var chk = E('button', 'btn', 'تحقق'); chk.onclick = function () {
+        var good = 0, bad = 0; sel.forEach(function (i) { if (it.correct.indexOf(i) >= 0) good++; else bad++; });
+        btns.forEach(function (bt, i) { bt.disabled = true; bt.classList.remove('sel'); if (it.correct.indexOf(i) >= 0) bt.classList.add('right'); else if (sel.indexOf(i) >= 0) bt.classList.add('wrong'); });
+        chk.remove(); fin(Math.max(0, (good - bad) / it.correct.length), true);
+      };
+      card.appendChild(chk);
+    }
+  };
+  T[it.type]();
+}
+function quizEnd() {
+  var b = $('#qbox'); b.innerHTML = '';
+  var tot = 0; QS.sc.forEach(function (s) { tot += s; });
+  var pct = Math.round(tot / QZ.length * 100);
+  var by = {}; QZ.forEach(function (q, i) { (by[q.sk] = by[q.sk] || []).push(QS.sc[i] || 0); });
+  var c = E('div', 'card'); b.appendChild(c);
+  var msg = pct >= 85 ? 'ممتاز، فهمك للبحث متين.' : (pct >= 60 ? 'جيد، وراجع الأجزاء المشار إليها أدناه.' : 'عُد إلى الأقسام المقترحة ثم أعد المحاولة.');
+  c.innerHTML = '<div class="bigo">' + pct + '%</div><p><b>' + msg + '</b></p><div class="skills" id="skl"></div>';
+  Object.keys(SKILLS).forEach(function (k) {
+    var a = by[k] || [0], m = a.reduce(function (x, y) { return x + y; }, 0) / a.length, ok = m >= 0.7;
+    var d = E('div', 'sk ' + (ok ? 'ok' : 'no'), '<i>' + (ok ? '✓' : '!') + '</i><span style="flex:1"><b>' + SKILLS[k].t + '</b></span>');
+    if (!ok) { var l = E('button', 'btn ghost', 'راجع'); l.style.minHeight = '0'; l.style.padding = '2px 12px'; l.onclick = function () { go(SKILLS[k].back[0], SKILLS[k].back[1]); }; d.appendChild(l); }
+    $('#skl', c).appendChild(d);
+  });
+  var row = E('div', 'row'); row.style.marginTop = '8px';
+  var again = E('button', 'btn', 'أعد الاختبار'); again.onclick = function () { QS = { i: 0, sc: [], on: true }; quizStep(); window.scrollTo(0, 0); };
+  var sh = E('button', 'btn ghost', 'شارك المنصة'); sh.onclick = share;
+  row.appendChild(again); row.appendChild(sh); c.appendChild(row);
+  log('quiz_done', pct); snd('done');
+}
+
+/* ===== الاتصال بالخادم (Apps Script) ===== */
+function apiGet(q) {
+  return fetch(API_URL + '?' + q).then(function (r) { return r.json(); });
+}
+function apiPost(o) {
+  return fetch(API_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(o) }).then(function (r) { return r.json(); });
+}
+function dateAr(t) {
+  try { var d = new Date(t); if (isNaN(d)) return ''; return d.toLocaleDateString('ar-SA-u-ca-gregory', { day: 'numeric', month: 'long', year: 'numeric' }); } catch (e) { return ''; }
+}
+
+/* ===== التعليقات في الصفحة الرئيسية ===== */
+var CM = { open: true, visible: true, items: [] };
+function cmLoad() {
+  if (!API_URL) return;
+  $('#cmSec').style.display = 'block';
+  apiGet('action=comments').then(function (j) {
+    if (!j || j.ok === false) throw 0;
+    CM.open = j.open !== false; CM.visible = j.visible !== false; CM.items = j.items || [];
+    cmRender();
+  }).catch(function () { $('#cmList').innerHTML = '<p class="small">تعذّر تحميل التعليقات الآن.</p>'; });
+}
+function cmRender() {
+  var top = $('#cmTop'); top.innerHTML = '';
+  if (!CM.open) {
+    top.appendChild(E('div', 'note nv', 'باب التعليقات مغلق حاليًا.')); $('#cmForm').style.display = 'none';
+  } else {
+    var b = E('button', 'btn', 'اترك تعليقًا'); b.id = 'cmOpen';
+    b.onclick = function () { var f = $('#cmForm'); f.style.display = f.style.display === 'none' ? 'block' : 'none'; if (f.style.display === 'block') $('#cmText').focus(); };
+    top.appendChild(b);
+  }
+  var l = $('#cmList'); l.innerHTML = '';
+  if (!CM.visible) { l.innerHTML = '<p class="small">التعليقات مخفية حاليًا.</p>'; return; }
+  if (!CM.items.length) { l.innerHTML = '<p class="small">لا توجد تعليقات بعد. كن أول من يعلّق.</p>'; return; }
+  CM.items.forEach(function (c) {
+    var d = E('div', 'cm'), h = E('div', 'h'), n = E('b'), t = E('span'), p = E('p');
+    n.textContent = c.name || 'زائر'; t.textContent = dateAr(c.time); p.textContent = c.text;
+    h.appendChild(n); h.appendChild(t); d.appendChild(h); d.appendChild(p); l.appendChild(d);
+  });
+}
+function cmInit() {
+  $('#cmText').addEventListener('input', function () { $('#cmCnt').textContent = this.value.length + ' / 500'; });
+  $('#cmSend').onclick = function () {
+    var txt = $('#cmText').value.trim(), nm = $('#cmName').value.trim(), msg = $('#cmMsg'), btn = this;
+    if (txt.length < 2) { msg.textContent = 'اكتب تعليقًا أولًا.'; return; }
+    btn.disabled = true; msg.textContent = 'جارٍ الإرسال…';
+    apiPost({ action: 'addComment', sid: sid, name: nm, text: txt, hp: $('#cmHp').value }).then(function (j) {
+      btn.disabled = false;
+      if (j && j.ok) {
+        $('#cmText').value = ''; $('#cmCnt').textContent = '0 / 500'; msg.textContent = 'شكرًا، تم إرسال تعليقك.'; $('#cmForm').style.display = 'none';
+        log('cm'); toast('تم إرسال تعليقك'); cmLoad();
+      } else {
+        var m = { closed: 'باب التعليقات مغلق حاليًا.', rate: 'وصلت للحد المسموح من التعليقات في الساعة. حاول لاحقًا.', empty: 'اكتب تعليقًا أولًا.', long: 'التعليق أطول من المسموح.' };
+        msg.textContent = m[j && j.err] || 'تعذّر الإرسال، حاول مرة أخرى.';
+      }
+    }).catch(function () { btn.disabled = false; msg.textContent = 'تعذّر الإرسال، تحقق من الاتصال.'; });
+  };
+}
+
+/* ===== لوحة الإدارة ===== */
+var ADM = { code: '' };
+function admOpen() {
+  if (!API_URL) { toast('الإحصاءات غير مفعّلة بعد'); return; }
+  ADM.code = ''; $('#admLogin').style.display = 'block'; $('#admMain').style.display = 'none'; $('#admCode').value = '';
+  openSheet('sAdmin'); setTimeout(function () { $('#admCode').focus(); }, 200);
+}
+var STAT_LABELS = { visitors: 'عدد الزوار', opens: 'مرات الفتح', shares: 'المشاركات', quizDone: 'اختبارات مكتملة', quizAvg: 'متوسط نتيجة الاختبار %', searches: 'عمليات البحث', comments: 'التعليقات' };
+function admStats() {
+  var box = $('#admSt'); box.innerHTML = '<p class="small">جارٍ التحميل…</p>';
+  apiPost({ action: 'stats', code: ADM.code }).then(function (j) {
+    if (!j || !j.ok) { box.innerHTML = '<p class="small">تعذّر جلب الإحصاءات.</p>'; return; }
+    box.innerHTML = '';
+    Object.keys(STAT_LABELS).forEach(function (k) { if (j[k] != null) box.appendChild(E('div', 'stat', '<span>' + STAT_LABELS[k] + '</span><b>' + j[k] + '</b>')); });
+    [['tabs', 'الأقسام الأكثر زيارة'], ['cards', 'البطاقات والمواقف'], ['sc', 'السيناريوهات'], ['perQ', 'أنشطة الاختبار (متوسط النتيجة)']].forEach(function (g) {
+      var o = j[g[0]]; if (!o || !Object.keys(o).length) return;
+      box.appendChild(E('h3', '', g[1]));
+      Object.keys(o).sort(function (a, b) { return o[b] - o[a]; }).slice(0, 15).forEach(function (k) { box.appendChild(E('div', 'stat', '<span>' + (NAMES[k] || k) + '</span><b>' + o[k] + '</b>')); });
+    });
+  }).catch(function () { box.innerHTML = '<p class="small">تعذّر الاتصال.</p>'; });
+}
+function admComments() {
+  var box = $('#admCm'); box.innerHTML = '<p class="small">جارٍ التحميل…</p>';
+  apiPost({ action: 'adminComments', code: ADM.code }).then(function (j) {
+    if (!j || !j.ok) { box.innerHTML = '<p class="small">تعذّر جلب التعليقات.</p>'; return; }
+    box.innerHTML = '';
+    var ctl = E('div', 'row'); ctl.style.marginBottom = '10px';
+    var bo = E('button', 'btn ghost', j.open ? 'إغلاق باب التعليقات' : 'فتح باب التعليقات');
+    bo.onclick = function () { apiPost({ action: 'setOpen', code: ADM.code, value: !j.open }).then(admComments); };
+    var bv = E('button', 'btn ghost', j.visible ? 'إخفاء كل التعليقات' : 'إظهار كل التعليقات');
+    bv.onclick = function () { apiPost({ action: 'setVisible', code: ADM.code, value: !j.visible }).then(admComments); };
+    ctl.appendChild(bo); ctl.appendChild(bv); box.appendChild(ctl);
+    box.appendChild(E('p', 'small', 'الحالة: الباب ' + (j.open ? 'مفتوح' : 'مغلق') + ' · التعليقات ' + (j.visible ? 'ظاهرة' : 'مخفية') + ' · العدد ' + (j.items || []).length));
+    (j.items || []).forEach(function (c) {
+      var d = E('div', 'cm adm' + (c.status === 'hidden' ? ' hid' : '')), h = E('div', 'h'), n = E('b'), t = E('span'), p = E('p');
+      n.textContent = (c.name || 'زائر'); t.textContent = dateAr(c.time) + (c.status === 'hidden' ? ' · مخفي' : ''); p.textContent = c.text;
+      h.appendChild(n); h.appendChild(t); d.appendChild(h); d.appendChild(p);
+      var ac = E('div', 'ac');
+      var tg = E('button', '', c.status === 'hidden' ? 'إظهار' : 'إخفاء');
+      tg.onclick = function () { apiPost({ action: 'setStatus', code: ADM.code, id: c.id, status: c.status === 'hidden' ? 'shown' : 'hidden' }).then(admComments); };
+      var dl = E('button', 'dl', 'حذف');
+      dl.onclick = function () { if (dl.getAttribute('data-c') === '1') { apiPost({ action: 'del', code: ADM.code, id: c.id }).then(admComments); } else { dl.setAttribute('data-c', '1'); dl.textContent = 'تأكيد الحذف'; } };
+      ac.appendChild(tg); ac.appendChild(dl); d.appendChild(ac); box.appendChild(d);
+    });
+  }).catch(function () { box.innerHTML = '<p class="small">تعذّر الاتصال.</p>'; });
+}
+function admInit() {
+  $('#admGo').onclick = function () {
+    var c = $('#admCode').value.trim(); if (!c) return;
+    apiPost({ action: 'stats', code: c }).then(function (j) {
+      if (j && j.ok) { ADM.code = c; $('#admLogin').style.display = 'none'; $('#admMain').style.display = 'block'; $('#admSt').innerHTML = ''; admStats(); }
+      else toast('الرمز غير صحيح');
+    }).catch(function () { toast('تعذّر الاتصال'); });
+  };
+  $('#admCode').addEventListener('keydown', function (e) { if (e.key === 'Enter') $('#admGo').click(); });
+  $$('[data-at]').forEach(function (b) {
+    b.onclick = function () {
+      $$('[data-at]').forEach(function (x) { x.classList.toggle('on', x === b); });
+      var st = b.getAttribute('data-at') === 'st'; $('#admSt').style.display = st ? 'block' : 'none'; $('#admCm').style.display = st ? 'none' : 'block';
+      if (st) admStats(); else admComments();
+    };
+  });
+  var taps = 0, tm;
+  $('#dot').onclick = function () { taps++; clearTimeout(tm); tm = setTimeout(function () { taps = 0; }, 1200); if (taps >= 3) { taps = 0; admOpen(); } };
+}
+
+/* ===== التشغيل ===== */
+function initFlow() {
+  var st = $$('#flow .st'), i = 0;
+  function tick() { st.forEach(function (s, k) { s.classList.toggle('on', k <= i); }); i = (i + 1) % (st.length + 1); if (i === 0) i = 0; }
+  tick(); setInterval(tick, 1500);
+}
+function buildExtra() {
+  var tf = function (path) { return function () { go('hukm', 'h1'); treeState.path = path; treeRender(); window.scrollTo(0, 0); }; };
+  EXTRA.push({ t: 'شجرة الحكم: قبل التصرف المالي', x: 'لا مانع شرعًا من التخطيط الزكوي قبل التصرف المالي الأصل في المعاملات الحل لم يملك المكلف المال الزكوي ولم تنشغل ذمته فلا ينطبق وصف الفرار', pg: 'hukm', fn: tf(['before']) });
+  EXTRA.push({ t: 'شجرة الحكم: قصد التحايل (ثلاثة أقوال)', x: QAWLS.map(function (q) { return q.k + ' ' + q.who + ' ' + q.why; }).join(' ') + ' الراجح التحريم تحايل بيع المال الزكوي قبيل الحول ثم شراؤه', pg: 'hukm', fn: tf(['after', 'tahayul']) });
+  EXTRA.push({ t: 'شجرة الحكم: قصد رفع الضرر', x: 'رفع الضرر جواز التخطيط دينان متقابلان شركتان مليئتان توزيع أرباح مؤجلة لا ضرر ولا ضرار بذل العناية الحفاظ على أموال الملاك', pg: 'hukm', fn: tf(['after', 'darar']) });
+  Object.keys(GL).forEach(function (k) {
+    EXTRA.push({ t: 'مصطلح: ' + GL[k].t, x: GL[k].d, pg: 'about', fn: function () { go('about', 'b2'); $('#gq').value = GL[k].t; buildGlossary(); window.scrollTo(0, 0); } });
+  });
+}
+function boot() {
+  applySet();
+  initDef(); initMap(); initTl(); initWhy(); initBars(); initCmp(); initCases(); treeRender(); initSvc(); initEffect(); initScenarios(); initSim(); initCalc(); initCkl();
+  buildGlossary(); buildExtra(); cmInit(); admInit(); initFlow();
+  applyMode();
+
+  $('#bSearch').onclick = function () { openSheet('sSearch'); $('#qr').innerHTML = ''; setTimeout(function () { $('#q').focus(); }, 250); };
+  var st; $('#q').addEventListener('input', function () { clearTimeout(st); st = setTimeout(doSearch, 200); });
+  $('#bShare').onclick = share;
+  $('#bSet').onclick = function () { openSheet('sSet'); };
+  $('#segSnd').addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; store.set('snd', b.getAttribute('data-v')); marks('#segSnd', b.getAttribute('data-v')); snd('ok'); });
+  $$('section.pg').forEach(function (s) {
+    if (s.id === 'home') return;
+    var h = $('h2', s), l = $('.lead', s), ic = $('#tabs [data-go=' + s.id + '] svg');
+    var ph = E('div', 'phead'), pi = E('div', 'pi'), tx = E('div');
+    if (ic) pi.innerHTML = ic.outerHTML;
+    s.insertBefore(ph, h); tx.appendChild(h); if (l && l.parentNode === s) tx.appendChild(l);
+    ph.appendChild(pi); ph.appendChild(tx);
+  });
+  ['segTheme', 'segFont', 'segMode', 'segMode2'].forEach(function (id) {
+    $('#' + id).addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return; var v = b.getAttribute('data-v');
+      if (id === 'segTheme') setSet('theme', v); else if (id === 'segFont') setSet('font', v);
+      else { S.mode = v; store.set('mode', v); applyMode(); log('mode', v); }
+    });
+  });
+  $('#fMinus').onclick = function () { setSet('fs', Math.max(14, S.fs - 1)); };
+  $('#fPlus').onclick = function () { setSet('fs', Math.min(22, S.fs + 1)); };
+  $('#fReset').onclick = function () { setSet('fs', 17); };
+  $('#gq').addEventListener('input', buildGlossary);
+  $('#lnkOrig').addEventListener('click', function () { log('orig'); });
+  window.addEventListener('scroll', function () {
+    var h = document.documentElement, p = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
+    $('#prog').style.width = Math.min(100, p * 100) + '%';
+  }, { passive: true });
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
+  if (!location.hash) { try { $$('section.pg')[0].classList.add('on'); } catch (e) { } }
+  cmLoad();
+  log('open');
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
+
+
+</script>
+</body>
+</html>
